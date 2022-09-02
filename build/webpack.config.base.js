@@ -9,7 +9,9 @@ module.exports = {
   target: 'web',
   resolve: {
     alias: {
-      '@docs': resolve('../docs')
+      '@docs': resolve('../docs'),
+      '@packages': resolve('../packages'),
+      '@themes': resolve('../themes'),
     },
     extensions: ['.js', '.jsx', '.json', '.tsx', '.ts', '.vue', '.css', '.scss']
   },

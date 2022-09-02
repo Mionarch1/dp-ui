@@ -47,8 +47,12 @@ const goRoute = route => {
     font-weight: 800;
     margin-bottom: 8px;
     line-height: 24px;
-    color: #333333;
     cursor: pointer;
+    background: linear-gradient(90deg, #ffdb4c 0%, #ff9e2d 10%, #333333 25%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
   }
   .business-title {
     color: #ffdd00;

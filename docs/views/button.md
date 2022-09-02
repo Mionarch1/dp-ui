@@ -10,7 +10,7 @@ Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内
 
 ```html
 <template>
-  <button>123123</button>
+  <dp-button>button</dp-button>
 </template>
 ```
 
