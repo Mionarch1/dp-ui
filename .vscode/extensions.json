@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "vue.vscode-typescript-vue-plugin",
+    "dbaeumer.vscode-eslint",
+    "rvest.vs-code-prettier-eslint"
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "type": "",
+    "children": [
+      {
+        "type": " ",
+        "children": [
+          {
+            "nameZh": "",
+            "nameEn": "Quickly",
+            "path": "/"
+          },
+          {
+            "nameZh": "",
+            "nameEn": "Update",
+            "path": "/update"
+          }
+        ]
+      },
+      {
+        "type": "Basic",
+        "children": [
+          {
+            "nameZh": "按钮",
+            "nameEn": "Button",
+            "path": "/button"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,79 @@
+<template>
+  <div class="c-sider">
+    <div class="c-sider-business" v-for="nav in navs" :key="nav.type">
+      <div class="business-title">{{ nav.type }}</div>
+      <div
+        class="c-sider-type"
+        v-for="typeNav in nav.children"
+        :key="typeNav.type"
+      >
+        <div class="type-title">{{ typeNav.type }}</div>
+        <div
+          :class="[
+            'c-sider-component',
+            { 'is-active': route.path === component.path }
+          ]"
+          v-for="component in typeNav.children"
+          :key="component.nameEn"
+          @click="goRoute(component)"
+        >
+          {{ component.nameEn }} {{ component.nameZh }}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import navs from './components';
+import { useRoute, useRouter } from 'vue-router';
+
+const route = useRoute();
+const router = useRouter();
+
+const goRoute = route => {
+  router.push(route.path);
+};
+</script>
+
+<style lang="scss" scoped>
+.c-sider {
+  font-family: Plus Jakarta Sans;
+  min-width: 260px;
+  padding: 32px 32px 0;
+  .business-title,
+  .type-title {
+    font-family: Plus Jakarta Sans;
+    font-weight: 800;
+    margin-bottom: 8px;
+    line-height: 24px;
+    color: #333333;
+    cursor: pointer;
+  }
+  .business-title {
+    color: #ffdd00;
+  }
+  &-component {
+    line-height: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #525252;
+    transition: all 0.2s;
+    padding: 10px 16px;
+    line-height: 1.5;
+    font-size: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 6px 0px;
+    &:hover {
+      color: #525252;
+    }
+    &.is-active {
+      color: #525252;
+      background-color: #fff9e4;
+      font-family: Plus Jakarta Sans;
+      font-weight: 800;
+    }
+  }
+}
+</style>
