@@ -1,3 +1,4 @@
+// var start
 $color-black-100: #f5f5f5 !default;
 $color-black-200: #c8c8c8 !default;
 $color-black-300: #999999 !default;
@@ -52,3 +53,11 @@ $color-white-lighter: #fafafa !default;
 
 $color-yellow-light: #ffff54 !default;
 $color-yellow-dark: #b79a00 !default;
+
+// var end
+
+// button start
+$button-background-default: $color-yellow-200;
+$button-border-default: $color-yellow-500;
+$button-font-default: $color-black-500;
+// button end

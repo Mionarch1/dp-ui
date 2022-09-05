@@ -28,7 +28,7 @@ export default {
     const meta = ref(null);
     const isExpanded = ref(false);
     const controlText = computed(() =>
-      isExpanded.value ? 'Colsed' : 'Opened'
+      isExpanded.value ? 'Colse' : 'Open'
     );
     const codeAreaHeight = computed(() =>
       [...meta.value.children].reduce((t, i) => i.offsetHeight + t, 26)
