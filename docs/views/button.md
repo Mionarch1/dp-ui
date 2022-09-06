@@ -16,6 +16,34 @@ Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内
 
 :::
 
+## default
+
+Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内嵌入一个 `Icon`。
+
+:::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
+
+```html
+<template>
+  <dp-button>button</dp-button>
+</template>
+```
+
+:::
+
+## default
+
+Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内嵌入一个 `Icon`。
+
+:::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
+
+```html
+<template>
+  <dp-button>button</dp-button>
+</template>
+```
+
+:::
+
 ### Attributes
 
 | 参数    | 说明           | 类型    | 可选值                                               | 默认值    |
