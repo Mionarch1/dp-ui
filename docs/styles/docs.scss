@@ -1,3 +1,27 @@
+#app {
+  height: 100%;
+}
+
+.scroll-css::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: #efefef;
+}
+.scroll-css::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #efefef;
+}
+.scroll-css::-webkit-scrollbar-track {
+  background: #efefef;
+}
+.scroll-css::-webkit-scrollbar-track-piece {
+  background: #fff;
+}
+.scroll-css::-webkit-scrollbar-button {
+  height: 6px;
+  background: #efefef;
+}
+
 .element-doc {
   h1,
   h2,
@@ -9,11 +33,8 @@
     font-family: 'Plus Jakarta Sans';
     font-style: normal;
     font-weight: 800;
-    background: linear-gradient(90deg, #ffdb4c 0%, #ff9e2d 10%, #333333 25%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+    color: #333;
+    text-shadow: 4px 2px #ffdb4c;
   }
 
   h1 {

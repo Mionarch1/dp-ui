@@ -21,9 +21,109 @@
         "type": "Basic",
         "children": [
           {
+            "nameZh": "图标",
+            "nameEn": "Icon",
+            "path": "/icon"
+          },
+          {
             "nameZh": "按钮",
             "nameEn": "Button",
             "path": "/button"
+          },
+          {
+            "nameZh": "标签",
+            "nameEn": "Tag",
+            "path": "/tag"
+          }
+        ]
+      },
+      {
+        "type": "Form",
+        "children": [
+          {
+            "nameZh": "输入框",
+            "nameEn": "Input",
+            "path": "/input"
+          },
+          {
+            "nameZh": "选择器",
+            "nameEn": "Select",
+            "path": "/select"
+          },
+          {
+            "nameZh": "开关",
+            "nameEn": "Switch",
+            "path": "/switch"
+          },
+          {
+            "nameZh": "日期选择器",
+            "nameEn": "Date Picker",
+            "path": "/date-picker"
+          },
+          {
+            "nameZh": "月份选择器",
+            "nameEn": "Month Picker",
+            "path": "/month-picker"
+          }
+        ]
+      },
+      {
+        "type": "Data",
+        "children": [
+          {
+            "nameZh": "分享",
+            "nameEn": "Share",
+            "path": "/share"
+          },
+          {
+            "nameZh": "骨架屏",
+            "nameEn": "Skeleton",
+            "path": "/skeleton"
+          }
+        ]
+      },
+      {
+        "type": "Navigation",
+        "children": [
+          {
+            "nameZh": "标签页",
+            "nameEn": "Tabs",
+            "path": "/tabs"
+          }
+        ]
+      },
+      {
+        "type": "Feedback",
+        "children": [
+          {
+            "nameZh": "提示",
+            "nameEn": "Alert",
+            "path": "/alert"
+          },
+          {
+            "nameZh": "对话框",
+            "nameEn": "Dialog",
+            "path": "/dialog"
+          },
+          {
+            "nameZh": "抽屉",
+            "nameEn": "Drawer",
+            "path": "/drawer"
+          },
+          {
+            "nameZh": "消息提示",
+            "nameEn": "Message",
+            "path": "/message"
+          },
+          {
+            "nameZh": "加载",
+            "nameEn": "Loading",
+            "path": "/loading"
+          },
+          {
+            "nameZh": "文字提示",
+            "nameEn": "Tooltip",
+            "path": "/tooltip"
           }
         ]
       }

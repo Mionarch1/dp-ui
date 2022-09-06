@@ -1,5 +1,5 @@
 <template>
-  <div class="c-sider">
+  <div class="c-sider scroll-css">
     <div class="c-sider-business" v-for="nav in navs" :key="nav.type">
       <div class="business-title">{{ nav.type }}</div>
       <div
@@ -40,7 +40,8 @@ const goRoute = route => {
 .c-sider {
   font-family: Plus Jakarta Sans;
   min-width: 260px;
-  padding: 32px 32px 0;
+  padding: 32px;
+  overflow: hidden auto;
   .business-title,
   .type-title {
     font-family: Plus Jakarta Sans;
@@ -48,7 +49,7 @@ const goRoute = route => {
     margin-bottom: 8px;
     line-height: 24px;
     cursor: pointer;
-    background: linear-gradient(90deg, #ffdb4c 0%, #ff9e2d 10%, #333333 25%);
+    background: linear-gradient(90deg, #ffdb4c 0%, #ff9e2d 30%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

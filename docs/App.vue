@@ -17,14 +17,18 @@ import CSider from '@docs/components/common/CSider';
 
 <style lang="scss" scoped>
 .root {
+  height: 100%;
+  overflow: hidden;
   &-main {
+    height: calc(100% - 54px);
     display: flex;
     justify-content: flex-start;
   }
   &-view {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 54px);
     padding: 30px 48px 0;
+    overflow: hidden auto;
   }
 }
 </style>
