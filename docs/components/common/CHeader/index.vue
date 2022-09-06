@@ -6,7 +6,12 @@
     />
     <div class="c-header-navs">
       <div
-        class="nav-item"
+        :class="[
+          'nav-item',
+          {
+            'is-active': route.name && route.name.indexOf(nav.type) >= 0
+          }
+        ]"
         v-for="nav in navs"
         :key="nav.name"
         @click="goRoute(nav)"
@@ -61,18 +66,30 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
+const route = useRoute();
 const router = useRouter();
 const navs = [
-  // {
-  //   name: 'Components',
-  //   path: '/components'
-  // }
+  {
+    name: 'Desktop',
+    type: 'desktop',
+    path: '/desktop/quickly'
+  },
+  {
+    name: 'Mobile',
+    type: 'mobile',
+    path: '/mobile/quickly'
+  },
+  {
+    name: 'Material',
+    type: 'material',
+    path: '/material/quickly'
+  }
 ];
 
 const goRoute = route => {
-  router.push(route);
+  router.push(route.path);
 };
 
 const goLink = link => {
@@ -109,14 +126,19 @@ const goLink = link => {
     color: #ffdd00;
     font-size: 13px;
     font-family: Plus Jakarta Sans;
+    font-weight: bold;
     margin-right: 12px;
+    letter-spacing: 0.06em;
     transition: all 0.2s;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
     &:hover {
       background-color: #525252;
+      border-bottom-color: #ffdd00;
     }
     &.is-active {
       background-color: #333333;
-      border-bottom: 2px solid #ffdd00;
+      border-bottom-color: #ffdd00;
     }
   }
   &-code {
