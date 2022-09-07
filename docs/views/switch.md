@@ -1,14 +1,14 @@
 # Tag
 
-To trigger an operation.
+A switch between two opposing states, usually used to trigger an on/OFF switch.
 
 ## demo
 
-:::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
+:::demo 
 
 ```html
 <template>
-  <dp-switch v-model="isOpen" @click="handleClick" activeColor="#ea2376"></dp-switch>
+  <dp-switch v-model="isOpen" @change="handleClick" activeColor="#ea2376"></dp-switch>
 </template>
 <script>
 export default {
@@ -38,3 +38,7 @@ export default {
 | inactiveColor    | off 状态时的背景颜色           | String  |                           |`#E5E7EB`|
 | disabled    | 是否禁用           | Boolean  |                             |`#fff`|
 
+### Event
+| 事件名    | 说明                                                       | 默认值 |
+| ------- | --------------------------------------------------------  | ----- |
+|change   |  切换开关时触发的事件                                        |       |
