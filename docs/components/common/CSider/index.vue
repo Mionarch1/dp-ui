@@ -25,6 +25,7 @@
 </template>
 
 <script setup>
+import guide from './guide';
 import desktop from './desktop';
 import mobile from './mobile';
 import material from './material';
@@ -40,6 +41,7 @@ const goRoute = route => {
 
 const navs = computed(() => {
   if (!route.name) return [];
+  if (route.name.indexOf('guide') >= 0) return guide;
   if (route.name.indexOf('desktop') >= 0) return desktop;
   if (route.name.indexOf('mobile') >= 0) return mobile;
   if (route.name.indexOf('material') >= 0) return material;

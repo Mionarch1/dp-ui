@@ -19,7 +19,7 @@ module.exports = {
       '@packages': resolve('../packages'),
       '@themes': resolve('../themes')
     },
-    extensions: ['.js', '.jsx', '.json', '.tsx', '.ts', '.vue', '.css', '.scss']
+    extensions: ['.js', '.jsx', '.json', '.tsx', '.ts', '.vue', '.css', '.scss', '.md']
   },
   plugins: [
     new HtmlWebpackPlugin({

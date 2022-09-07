@@ -71,6 +71,11 @@ import { useRoute, useRouter } from 'vue-router';
 const route = useRoute();
 const router = useRouter();
 const navs = [
+{
+    name: 'Guide',
+    type: 'guide',
+    path: '/guide'
+  },
   {
     name: 'Desktop',
     type: 'desktop',
@@ -123,11 +128,11 @@ const goLink = link => {
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100px;
     color: #ffdd00;
     font-size: 13px;
     font-family: Plus Jakarta Sans;
     font-weight: bold;
-    margin-right: 12px;
     letter-spacing: 0.06em;
     transition: all 0.2s;
     border-top: 4px solid transparent;
@@ -142,6 +147,7 @@ const goLink = link => {
     }
   }
   &-code {
+    margin-left: 12px;
     cursor: pointer;
   }
 }
