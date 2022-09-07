@@ -1,7 +1,6 @@
-const Webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.base');
-const { resolve } = require('./utils');
+const { resolve } = require('../utils');
 
 module.exports = merge(common, {
   mode: 'production',
