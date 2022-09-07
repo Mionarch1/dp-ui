@@ -33,6 +33,6 @@ To trigger an operation.
 | size    | 尺寸           | String  | large / middle / small                            |`middle`|
 
 ### Event
-| 参数    | 说明                                                       | 默认值 |
+| 事件名    | 说明                                                       | 默认值 |
 | ------- | --------------------------------------------------------  | ----- |
 |click   |  点击 Tag 时触发的事件                                        |       |
