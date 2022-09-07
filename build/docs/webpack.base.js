@@ -1,5 +1,5 @@
 const Webpack = require('webpack');
-const { resolve, loadEnv } = require('./utils');
+const { resolve, loadEnv } = require('../utils');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');

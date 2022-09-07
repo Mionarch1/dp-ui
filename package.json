@@ -4,11 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=chat webpack-dev-server --config build/webpack.dev.js --mode development",
-    "build:docs": "cross-env NODE_ENV=chat webpack --config build/webpack.docs.js  --mode production",
-    "build:themes": "gulp",
-    "build:packages": "cross-env NODE_ENV=production webpack --config build/webpack.packages.js",
-    "build:libs": "yarn build:packages && yarn build:themes"
+    "dev": "cross-env NODE_ENV=chat webpack-dev-server --config build/docs/webpack.dev.js --mode development",
+    "build:docs": "cross-env NODE_ENV=chat webpack --config build/docs/webpack.docs.js  --mode production",
+    "build:desktop": "rm -rf libs/dp-ui && cross-env NODE_ENV=production webpack --config build/package/webpack.desktop.js",
+    "build:mobile": "rm -rf libs/dpm-ui && cross-env NODE_ENV=production webpack --config build/package/webpack.mobile.js",
+    "build:material": "rm -rf libs/meta-ui && cross-env NODE_ENV=production webpack --config build/package/webpack.material.js",
+    "build:libs": "rm -rf libs && yarn build:desktop && yarn build:mobile && yarn build:material"
   },
   "dependencies": {
     "vue": "3.2.31",
@@ -20,9 +21,6 @@
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.1",
-    "gulp": "^4.0.2",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
     "highlight.js": "^11.6.0",
     "html-webpack-plugin": "^5.5.0",
     "markdown-it": "^13.0.1",
