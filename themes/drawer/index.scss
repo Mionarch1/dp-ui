@@ -1,13 +1,16 @@
 .drawer-fade-enter-active {
 	animation: fade 0.3s;
 }
+
 .drawer-fade-leave-active {
 	animation: fade 0.3s reverse;
 }
+
 @keyframes fade {
 	from {
 		opacity: 0;
 	}
+
 	to {
 		opacity: 1;
 	}
@@ -16,31 +19,37 @@
 @mixin drawer-animation($direction) {
 	@keyframes #{$direction}-drawer-in {
 		0% {
-			@if $direction == left {
+			@if $direction ==left {
 				transform: translate(-100%, 0px);
 			}
-			@if $direction == right {
+
+			@if $direction ==right {
 				transform: translate(100%, 0px);
 			}
-			@if $direction == bottom {
+
+			@if $direction ==bottom {
 				transform: translate(0, 100%);
 			}
-      @if $direction == top {
+
+			@if $direction ==top {
 				transform: translate(0, -100%);
 			}
 		}
 
 		100% {
-			@if $direction == left {
+			@if $direction ==left {
 				transform: translate(0px, 0px);
 			}
-			@if $direction == right {
+
+			@if $direction ==right {
 				transform: translate(0px, 0px);
 			}
-			@if $direction == bottom {
+
+			@if $direction ==bottom {
 				transform: translate(0px, 0px);
 			}
-      @if $direction == top {
+
+			@if $direction ==top {
 				transform: translate(0px, 0px);
 			}
 		}
@@ -48,31 +57,37 @@
 
 	@keyframes #{$direction}-drawer-out {
 		0% {
-			@if $direction == left {
+			@if $direction ==left {
 				transform: translate(0px, 0px);
 			}
-			@if $direction == right {
+
+			@if $direction ==right {
 				transform: translate(0px, 0px);
 			}
-			@if $direction == bottom {
+
+			@if $direction ==bottom {
 				transform: translate(0px, 0px);
 			}
-      @if $direction == top {
+
+			@if $direction ==top {
 				transform: translate(0px, 0px);
 			}
 		}
 
 		100% {
-			@if $direction == left {
+			@if $direction ==left {
 				transform: translate(-100%, 0px);
 			}
-			@if $direction == right {
+
+			@if $direction ==right {
 				transform: translate(100%, 0px);
 			}
-			@if $direction == bottom {
+
+			@if $direction ==bottom {
 				transform: translate(0, 100%);
 			}
-      @if $direction == top {
+
+			@if $direction ==top {
 				transform: translate(0, -100%);
 			}
 		}
@@ -88,12 +103,13 @@
 	&-#{$direction}-out {
 		animation: #{$direction}-drawer-out 0.3s;
 	}
+
 	&-#{$direction}-in {
 		animation: #{$direction}-drawer-in 0.3s 1ms;
 	}
 }
 
-.DP-drawer-wrapper {
+.dp-drawer-wrapper {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -103,25 +119,33 @@
 	margin: 0;
 	z-index: 1000;
 	background-color: rgba(0, 0, 0, 0.5);
-	.DP-drawer {
+
+	.dp-drawer {
 		overflow: hidden;
 		position: absolute;
 		background: #fff;
 		border-radius: 3px 0 0 3px;
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 		box-sizing: border-box;
+		// 内边距
+		padding: 20px;
+
 		@each $direction in (left, right, bottom, top) {
 			@include animation($direction);
 		}
+
 		&-left {
 			left: 0px;
 		}
+
 		&-right {
 			right: 0px;
 		}
+
 		&-bottom {
 			bottom: 0px;
 		}
+
 		&-body {
 			color: #000;
 			font-size: 14px;
@@ -129,4 +153,3 @@
 		}
 	}
 }
-
