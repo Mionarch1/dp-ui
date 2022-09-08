@@ -1,0 +1,32 @@
+.dp-alert {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 12px;
+  gap: 6px;
+  //width: 312px;
+  background: #fffbe0;
+  border: 1px solid #ffdd00;
+  border-radius: 8px;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  &-success {
+    background: #e5f7e7;
+    border: 1px solid #26bc35;
+  }
+  &-warning {
+    background: #fffbe0;
+    border: 1px solid #ffdd00;
+  }
+  &-info {
+    background: #f4f4f5;
+    border: 1px solid #C6C6C6;
+  }
+  &-error {
+    background: #ffe7e6;
+    border: 1px solid #ff3a2e;
+  }
+}
