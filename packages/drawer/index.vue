@@ -4,13 +4,13 @@
     @after-enter="afterEnter"
     @after-leave="afterLeave"
   >
-    <div class="dp-drawer-wrapper" v-show="visible" @click.self="handleClose">
+    <div class="dp-drawer-wrapper" v-show="modelValue" @click.self="handleClose">
       <div
         :class="[
           'dp-drawer',
           `dp-drawer-${direction}`,
           `dp-drawer-${direction}-out`,
-          visible && `dp-drawer-${direction}-in`
+          modelValue && `dp-drawer-${direction}-in`
         ]"
         :style="style"
       >
@@ -27,7 +27,7 @@ import { computed } from 'vue';
 
 const props = defineProps({
   direction: { type: String, default: 'right' },
-  visible: { type: Boolean, default: false },
+  modelValue: { type: Boolean, default: false },
   width: { type: String, default: '250px' },
   borderRadius: { type: String, default: '0px' }
 });
@@ -40,10 +40,10 @@ const style = computed(() => {
   };
 });
 
-const emit = defineEmits(['update:visible', 'onOpened', 'onClosed']);
+const emit = defineEmits(['update:modelValue', 'onOpened', 'onClosed']);
 
 const handleClose = () => {
-  emit('update:visible', false);
+  emit('update:modelValue', false);
 };
 const afterEnter = () => {
   emit('onOpened');
