@@ -99,7 +99,6 @@ const isActive = month => {
   const { modelValue = '' } = props;
   if (!modelValue) return;
   const val = modelValue.split('-');
-  // console.log(modelValue);
   return true;
 };
 
@@ -111,18 +110,12 @@ const onOpen = () => {
   if (!props.modelValue) {
     state.year = date.getFullYear();
     state.month = date.getMonth() + 1;
-    // console.log(
-    // 	'without props modelvalue: ',
-    // 	props.modelValue,
-    // 	state.month,
-    // 	state.year
-    // );
+
   } else {
     const { modelValue } = props;
     const val = modelValue.split(' ');
     state.month = val[0];
     state.year = val[1];
-    // console.log('with props modelvalue: ', modelValue, state.month, state.year);
   }
   state.visible = true;
 };
