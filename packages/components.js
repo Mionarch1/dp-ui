@@ -1,2 +1,2 @@
-export { default as DpDrawer} from './drawer';
+export { default as DpMonthPicker} from './month-picker';
 export { default as DpButton } from './button';

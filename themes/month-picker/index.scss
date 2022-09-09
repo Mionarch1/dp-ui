@@ -1,0 +1,170 @@
+i {
+	font-style:normal;
+}
+.dp-month-picker {
+	position: relative;
+	// width: 280px;
+
+	.dp-picker-inner {
+		position: absolute;
+		z-index: 500;
+
+		.picker-arrow {
+			position: relative;
+			left: 20%;
+			bottom: -7px;
+			width: 0;
+			height: 0;
+			margin-top: -4px;
+			margin-left: -8px;
+			border-width: 0 8px 8px;
+			border-style: solid;
+			border-color: transparent transparent #f0f0f0;
+			z-index: 501;
+
+			&::after {
+				content: '';
+				width: 0;
+				height: 0;
+				position: absolute;
+				bottom: -8px;
+				left: -6px;
+				border-width: 0 6px 6px;
+				border-style: solid;
+				border-color: transparent transparent #ffffff;
+			}
+		}
+
+		.dp-picker-box {
+			width: 320px;
+			height: 250px;
+			position: relative;
+			top: 6px;
+			left: 0px;
+			right: 0;
+			border: 1px solid #f0f0f0;
+			border-radius: 5px;
+			z-index: 500;
+			background: #ffffff;
+			overflow-x: hidden;
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+			.dp-picker-select {
+				display: flex;
+				padding: 6px 0;
+				height: 34px;
+				line-height: 34px;
+				color: #595959;
+				border-bottom: 1px solid #f0f0f0;
+				justify-content: space-around;
+				align-content: center;
+				align-items: center;
+
+				.dp-button {
+					button {
+						border: none;
+
+						.dp-icon {
+							i {
+								font-size: 20px;
+							}
+						}
+					}
+				}
+
+				.picker-select-middle {
+					width: 60%;
+					display: flex;
+					justify-content: center;
+					font-family: Plus Jakarta Sans;
+
+					.picker-select-year,
+					.picker-select-month {
+						color: #434343;
+						letter-spacing: 0.6px;
+						font-size: 14px;
+						font-weight: 600;
+						margin: 0 2px;
+						cursor: pointer;
+						transition: all 0.2s ease-in-out;
+
+						&:hover {
+							color: #449efb;
+							transition: all 0.2s ease-in-out;
+						}
+					}
+				}
+			}
+
+			.dp-picker-content {
+				width: 100%;
+				height: auto;
+				.month {
+					display: inline-block;
+					color: #282828;
+					font-family: Plus Jakarta Sans;
+					font-style: normal;
+					font-weight: 400;
+					font-size: 13px;
+					border: none;
+					width: 73px;
+					height: 64px;
+
+					.block {
+						width: 44px;
+						height: 34px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin: 15px;
+						box-sizing: content-box;
+            border-radius: 4px;
+					}
+          .block-active{
+            background-color: #2e4399!important;
+            color: #fff!important;
+          }
+				}
+			}
+		}
+	}
+}
+
+.option-slide-enter-active {
+	transition: all 0.2s ease-out;
+}
+
+.option-slide-leave-active {
+	transition: all 0.2s ease;
+}
+
+.option-slide-enter-from,
+.option-slide-leave-to {
+	transform: translateY(-20px);
+	opacity: 0;
+}
+
+:deep(.dp-input) {
+	width: 150px !important;
+}
+.openPicker {
+	border: 1px solid blue !important;
+}
+:deep(.dp-input-inner) {
+	text-align: center;
+	font-size: 14px;
+	color: #374151;
+}
+.rev {
+	transform: rotate(180deg); /* Equal to rotateZ(45deg) */
+}
+.icon {
+	margin-right: 12px;
+	margin-left: 0;
+}
+
+:deep(.dp-input) {
+	.dp-input-inner {
+		width: 100%;
+	}
+}
