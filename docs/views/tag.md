@@ -1,6 +1,6 @@
 # Tag
 
-To trigger an operation.
+Used to mark.
 
 ## demo
 
