@@ -1,10 +1,10 @@
 # Tag
 
-To trigger an operation.
+This command is used to display the prompt information when the mouse hover.
 
 ## demo
 
-:::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
+:::demo 
 
 ```html
 <template>
