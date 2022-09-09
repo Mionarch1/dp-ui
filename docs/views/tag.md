@@ -4,7 +4,7 @@ To trigger an operation.
 
 ## demo
 
-:::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
+:::demo 
 
 ```html
 <template>

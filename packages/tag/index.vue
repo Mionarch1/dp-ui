@@ -28,6 +28,6 @@ const props = defineProps({
   }
 });
 const onClick = ()=>{
-	console.log('出发了点击事件');
+	console.log('触发了点击事件');
 }
 </script>
