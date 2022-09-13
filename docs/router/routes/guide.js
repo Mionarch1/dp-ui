@@ -2,7 +2,7 @@ export default [
   {
     name: 'guide',
     path: '/guide',
-    component: () => import('@docs/views/guide/index.md')
+    component: () => import('@docs/views/guide/index')
   },
   {
     name: 'guide-icon',

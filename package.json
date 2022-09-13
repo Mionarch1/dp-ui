@@ -12,6 +12,7 @@
     "build:libs": "rm -rf libs && yarn build:desktop && yarn build:mobile && yarn build:material"
   },
   "dependencies": {
+    "amplitude-js": "^8.21.0",
     "vue": "3.2.31",
     "vue-router": "4.0.13"
   },
