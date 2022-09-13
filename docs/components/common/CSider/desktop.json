@@ -8,12 +8,12 @@
           {
             "nameZh": "",
             "nameEn": "Quickly",
-            "path": "/"
+            "path": "/desktop/quickly"
           },
           {
             "nameZh": "",
             "nameEn": "Update",
-            "path": "/update"
+            "path": "/desktop/update"
           }
         ]
       },
@@ -23,17 +23,17 @@
           {
             "nameZh": "图标",
             "nameEn": "Icon",
-            "path": "/icon"
+            "path": "/desktop/icon"
           },
           {
             "nameZh": "按钮",
             "nameEn": "Button",
-            "path": "/button"
+            "path": "/desktop/button"
           },
           {
             "nameZh": "标签",
             "nameEn": "Tag",
-            "path": "/tag"
+            "path": "/desktop/tag"
           }
         ]
       },
@@ -43,27 +43,27 @@
           {
             "nameZh": "输入框",
             "nameEn": "Input",
-            "path": "/input"
+            "path": "/desktop/input"
           },
           {
             "nameZh": "选择器",
             "nameEn": "Select",
-            "path": "/select"
+            "path": "/desktop/select"
           },
           {
             "nameZh": "开关",
             "nameEn": "Switch",
-            "path": "/switch"
+            "path": "/desktop/switch"
           },
           {
             "nameZh": "日期选择器",
             "nameEn": "Date Picker",
-            "path": "/date-picker"
+            "path": "/desktop/date-picker"
           },
           {
             "nameZh": "月份选择器",
             "nameEn": "Month Picker",
-            "path": "/month-picker"
+            "path": "/desktop/month-picker"
           }
         ]
       },
@@ -73,12 +73,12 @@
           {
             "nameZh": "分享",
             "nameEn": "Share",
-            "path": "/share"
+            "path": "/desktop/share"
           },
           {
             "nameZh": "骨架屏",
             "nameEn": "Skeleton",
-            "path": "/skeleton"
+            "path": "/desktop/skeleton"
           }
         ]
       },
@@ -88,7 +88,7 @@
           {
             "nameZh": "标签页",
             "nameEn": "Tabs",
-            "path": "/tabs"
+            "path": "/desktop/tabs"
           }
         ]
       },
@@ -98,32 +98,32 @@
           {
             "nameZh": "提示",
             "nameEn": "Alert",
-            "path": "/alert"
+            "path": "/desktop/alert"
           },
           {
             "nameZh": "对话框",
             "nameEn": "Dialog",
-            "path": "/dialog"
+            "path": "/desktop/dialog"
           },
           {
             "nameZh": "抽屉",
             "nameEn": "Drawer",
-            "path": "/drawer"
+            "path": "/desktop/drawer"
           },
           {
             "nameZh": "消息提示",
             "nameEn": "Message",
-            "path": "/message"
+            "path": "/desktop/message"
           },
           {
             "nameZh": "加载",
             "nameEn": "Loading",
-            "path": "/loading"
+            "path": "/desktop/loading"
           },
           {
             "nameZh": "文字提示",
             "nameEn": "Tooltip",
-            "path": "/tooltip"
+            "path": "/desktop/tooltip"
           }
         ]
       }

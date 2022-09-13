@@ -1,5 +1,5 @@
 const Webpack = require('webpack');
-const { resolve, loadEnv } = require('./utils');
+const { resolve, loadEnv } = require('../utils');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -19,7 +19,7 @@ module.exports = {
       '@packages': resolve('../packages'),
       '@themes': resolve('../themes')
     },
-    extensions: ['.js', '.jsx', '.json', '.tsx', '.ts', '.vue', '.css', '.scss']
+    extensions: ['.js', '.jsx', '.json', '.tsx', '.ts', '.vue', '.css', '.scss', '.md']
   },
   plugins: [
     new HtmlWebpackPlugin({

@@ -3,8 +3,8 @@ import plugins from '@docs/plugins';
 import App from '@docs/App';
 import '@docs/styles';
 
-import DPUI from '@packages';
-import '@themes';
+import DPUI from '@packages/desktop';
+import '@themes/desktop';
 
 const app = createApp(App);
 app.use(plugins);
