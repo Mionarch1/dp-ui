@@ -53,7 +53,7 @@ export default {
 };
 </script>
 <script setup>
-import { clickOutside } from '../../../utils/md-loader/util.js';
+import { clickOutside } from '../../../utils/packages/util';
 import { ref, reactive, computed, toRefs } from 'vue';
 
 const emit = defineEmits(['update:modelValue', 'change']);
