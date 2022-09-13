@@ -1,15 +1,11 @@
-const components = require.context('../../views', false, /\.md$/).keys();
-let routes = [];
+import desktopRoutes from './desktop';
+import mobileRoutes from './mobile';
+import materialRoutes from './material';
+import guideRoutes from './guide';
 
-components.forEach(component => {
-  let name = component.split('/')[1].split('.')[0];
-  const isRoot = name === 'quickly';
-  routes.push({
-    name,
-    path: isRoot ? '/' : `/${name}`,
-    component: () => import(`../../views/${name}.md`)
-  });
-});
-
-export default routes;
-
+export default [
+  ...desktopRoutes,
+  ...mobileRoutes,
+  ...materialRoutes,
+  ...guideRoutes
+];
