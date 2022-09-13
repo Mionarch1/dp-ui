@@ -1,3 +1,4 @@
+import '@themes/desktop'
 import * as components from './components';
 
 export default {

@@ -1,5 +1,5 @@
 const { merge } = require('webpack-merge');
-const { resolve, loadEnv } = require('./utils');
+const { resolve, loadEnv } = require('../utils');
 const common = require('./webpack.base');
 
 const NODE_ENV = process.env.NODE_ENV || 'production';
@@ -9,7 +9,7 @@ module.exports = merge(common, {
   mode: 'development',
   output: {
     filename: 'dpui-docs/js/[name].[fullhash].js',
-    path: resolve('../dist'),
+    path: resolve('../../dist'),
     publicPath: '/'
   },
   devServer: {

@@ -1,4 +1,4 @@
-const { stripTemplate, stripScript, getRealComponentCode } = require('./util')
+const { stripTemplate, stripScript, stripStyle, getRealComponentCode } = require('./util')
 
 const md = require('./config.js')
 
@@ -11,6 +11,7 @@ module.exports = source => {
   const commentEndLen = commentEnd.length
 
   const output = []
+  const styles = []
   let start = 0
   let id = 0
   let componentsString = ''
@@ -24,6 +25,8 @@ module.exports = source => {
     const componentContent = content.slice(demoStart + commentStartLen, demoEnd)
     const template = stripTemplate(componentContent)
     const script = stripScript(componentContent)
+    const style = stripStyle(componentContent)
+    styles.push(style)
 
     const demoComponent = getRealComponentCode(template, script)
     const demoComponentName = `element-demo-${id}`
@@ -61,5 +64,8 @@ module.exports = source => {
       </section>
     </template>
     ${pageScript}
+    <style>
+      ${styles.join('')}
+    </style>
   `
 }

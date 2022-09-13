@@ -29,6 +29,7 @@ export default {
   },
   methods: {
     handleClick() {
+      console.log(11);
       this.showDrawer = true;
     },
     onClosed() {

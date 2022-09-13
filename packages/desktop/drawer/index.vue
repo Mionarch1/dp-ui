@@ -14,6 +14,7 @@
         ]"
         :style="style"
       >
+       <i>{{'<'}}</i>
         <div class="dp-drawer-body">
           <slot></slot>
         </div>

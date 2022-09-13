@@ -1,4 +1,4 @@
 import router from './router'
-// import './hooks';
+import './hooks';
 
 export default router
