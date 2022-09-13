@@ -1,7 +1,11 @@
 <template>
   <!-- 下拉框 -->
   <div class="dp-select">
-    <div ref="select_button" class="dp-select-button" @click="selectOpen = !selectOpen">
+    <div
+      ref="select_button"
+      class="dp-select-button"
+      @click="selectOpen = !selectOpen"
+    >
       <!-- 选中内容 -->
       <span>{{ selctValue }}</span>
       <div class="select-icon" :class="{ selectOpen: selectOpen }">
@@ -11,7 +15,12 @@
     <!-- 下拉框 -->
     <teleport to="body">
       <transition name="select">
-        <div ref="select_dropdown" v-show="selectOpen" :style="dropdownStyle" class="dp-select-dropdown">
+        <div
+          ref="select_dropdown"
+          v-show="selectOpen"
+          :style="dropdownStyle"
+          class="dp-select-dropdown"
+        >
           <ul>
             <slot name="selectDropDown"></slot>
           </ul>
@@ -31,13 +40,15 @@ import {
   watch,
   onDeactivated,
   provide,
-  getCurrentInstance
+  getCurrentInstance,
+  useSlots
 } from 'vue';
 
 const props = defineProps({
-  selected: { type: String, default: '' },
+  selected: { type: String, default: '' }
 });
 const page = getCurrentInstance();
+const slots = useSlots();
 
 // 获取按钮
 const select_button = ref(null);
@@ -67,18 +78,18 @@ watch(selectOpen, val => {
     calculateLocation();
 });
 
-watch(selctValue, () => {
-  ctx.emit('update:modelValue', selctValue.value);
-});
+// watch(selctValue, () => {
+  // setupContext.emit('update:modelValue', selctValue.value);
+// });
 
 // 计算位置
-function calculateLocation () {
+const calculateLocation = () => {
   var select_button_dom = select_button.value.getBoundingClientRect();
   dropdownPosition.value.w = select_button_dom.width;
   dropdownPosition.value.x = select_button_dom.left;
   dropdownPosition.value.y =
     select_button_dom.top + select_button_dom.height + 5;
-}
+};
 
 window.addEventListener('click', event => {
   if (
@@ -132,7 +143,7 @@ onMounted(() => {
     selctValue.value = props.selected;
     Bus.$emit('chooseActive', { token: token, value: selctValue.value });
   } else {
-    selctValue.value = ctx.slots.selectDropDown()[0].props.value;
+    selctValue.value = slots.selectDropDown()[0].props.value;
     Bus.$emit('chooseActive', { token: token, value: selctValue.value });
   }
 });

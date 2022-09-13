@@ -5,7 +5,7 @@ To trigger an operation.
 ## default
 
 当选项过多时，使用下拉菜单展示并选择内容。
-:::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
+:::demo 
 
 ```html
 <template>
