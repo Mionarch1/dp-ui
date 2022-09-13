@@ -1,0 +1,69 @@
+// 下拉框
+.dp-select-button{
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: #E6E8EC 2px solid;
+    background-color: #FCFCFD;
+    cursor: pointer;
+    transition: border .2s;
+}
+.dp-select-button:hover{
+    border: #E0C200 2px solid;
+}
+.dp-select-button span{
+    font-weight: 500;
+    user-select: none;
+}
+
+// icon
+.select-icon{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: #E6E8EC 2px solid;
+    transition: all .2s;
+}
+.select-icon.selectOpen{
+    transform: rotate(180deg);
+}
+
+// 下拉框
+.dp-select-dropdown{
+    position: fixed;
+    background-color: #FCFCFD;
+}
+.dp-select-dropdown ul{
+    overflow: hidden;
+    border-radius: 12px;
+    border: #E6E8EC 2px solid;
+    box-shadow: 0 4px 12px rgba(35,38,47 ,0.1);
+}
+
+.select-enter-from, .select-leave-to{
+    opacity: 0;
+    transform: scale(0.9);
+}
+.select-enter-active, .select-leave-active{
+    transform-origin: top center;
+    transition: opacity .4s cubic-bezier(0.5, 0, 0, 1.25), transform .2s cubic-bezier(0.5, 0, 0, 1.25);
+}
+// select-item.vue
+.dp-select-item{
+  padding: 16px;
+}
+.dp-select-item.active{
+  color: #3772FF;
+  background-color: #F3F5F6;
+  user-select: none;
+}
