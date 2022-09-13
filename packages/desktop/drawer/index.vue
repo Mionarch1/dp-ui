@@ -18,6 +18,7 @@
         ]"
         :style="style"
       >
+        <i v-if="isNest" @click="handleClose">{{ '<' }}</i>
         <div class="dp-drawer-body">
           <slot></slot>
         </div>
@@ -38,6 +39,7 @@ const props = defineProps({
   modelValue: { type: Boolean, default: false },
   width: { type: String, default: '250px' },
   borderRadius: { type: String, default: '0px' },
+  isNest: { type: Boolean, default: false }
 });
 
 const style = computed(() => {

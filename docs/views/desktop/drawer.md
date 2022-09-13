@@ -18,6 +18,18 @@ Exhale a temporary sidebar that supports up, down, left and right.
 	  direction="bottom"
 	>
 	Hi,desty!
+  <dp-button @click="handleClick1">open</dp-button>
+	</dp-drawer>
+  <dp-drawer
+	  v-model="showDrawer1"
+	  @on-closed="onClosed"
+	  width="12.5%"
+	  @on-opened="onOpened"
+	  border-radius="24px 24px 0 0"
+	  direction="bottom"
+    :isNest="true"
+	>
+	Hi,desty!!!!
 	</dp-drawer>
 </template>
 <script>
@@ -25,12 +37,15 @@ export default {
   data() {
     return {
       showDrawer: false,
+      showDrawer1: false,
     };
   },
   methods: {
     handleClick() {
-      console.log(11);
       this.showDrawer = true;
+    },
+    handleClick1() {
+      this.showDrawer1 = true;
     },
     onClosed() {
     },
@@ -51,6 +66,7 @@ export default {
 | direction    | Drawer 打开的方向      | String  | right / left / top / bottom        | `right` |
 | width    | 尺寸                      | String  |                                    | `250px`  |
 | borderRadius    | 圆角属性            | String  |                                    | `-`  |
+| isNest    |是否为嵌套的Drawer，嵌套必须指定该属性并赋值为 true   |Boolean  |                                    | `-`  |
 
 ### Event
 | 事件名   | 说明            | 参数   |
