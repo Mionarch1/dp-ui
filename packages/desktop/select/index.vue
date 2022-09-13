@@ -1,11 +1,7 @@
 <template>
   <!-- 下拉框 -->
   <div class="dp-select">
-    <div
-      ref="select_button"
-      class="dp-select-button"
-      @click="selectOpen = !selectOpen"
-    >
+    <div ref="select_button" class="dp-select-button" @click="selectOpen = !selectOpen">
       <!-- 选中内容 -->
       <span>{{ selctValue }}</span>
       <div class="select-icon" :class="{ selectOpen: selectOpen }">
@@ -15,12 +11,7 @@
     <!-- 下拉框 -->
     <teleport to="body">
       <transition name="select">
-        <div
-          ref="select_dropdown"
-          v-show="selectOpen"
-          :style="dropdownStyle"
-          class="dp-select-dropdown"
-        >
+        <div ref="select_dropdown" v-show="selectOpen" :style="dropdownStyle" class="dp-select-dropdown">
           <ul>
             <slot name="selectDropDown"></slot>
           </ul>
@@ -30,7 +21,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { tokenFun } from './components/token';
 import Bus from './components/selectBus';
 import {
@@ -42,122 +33,107 @@ import {
   provide,
   getCurrentInstance
 } from 'vue';
-export default {
-  name: 'DpSelect',
-  props: {
-    selected: String
-  },
-  setup(props, ctx) {
-    const page = getCurrentInstance();
 
-    // 获取按钮
-    const select_button = ref(null);
-    const select_dropdown = ref(null);
+const props = defineProps({
+  selected: { type: String, default: '' },
+});
+const page = getCurrentInstance();
 
-    // 打开状态
-    const selectOpen = ref(false);
+// 获取按钮
+const select_button = ref(null);
+const select_dropdown = ref(null);
 
-    // 选中内容
-    const selctValue = ref('');
+// 打开状态
+const selectOpen = ref(false);
 
-    // 下拉框位置
-    const dropdownPosition = ref({ x: 0, y: 0, w: 0 });
+// 选中内容
+const selctValue = ref('');
 
-    // 下拉框位置
-    const dropdownStyle = computed(() => {
-      return {
-        left: `${dropdownPosition.value.x}px`,
-        top: `${dropdownPosition.value.y}px`,
-        width: `${dropdownPosition.value.w}px`
-      };
-    });
+// 下拉框位置
+const dropdownPosition = ref({ x: 0, y: 0, w: 0 });
 
-    watch(selectOpen, val => {
-      if (val)
-        // 计算位置
-        calculateLocation();
-    });
+// 下拉框位置
+const dropdownStyle = computed(() => {
+  return {
+    left: `${dropdownPosition.value.x}px`,
+    top: `${dropdownPosition.value.y}px`,
+    width: `${dropdownPosition.value.w}px`
+  };
+});
 
-    watch(selctValue, () => {
-      ctx.emit('update:modelValue', selctValue.value);
-    });
-
+watch(selectOpen, val => {
+  if (val)
     // 计算位置
-    function calculateLocation() {
-      var select_button_dom = select_button.value.getBoundingClientRect();
-      dropdownPosition.value.w = select_button_dom.width;
-      dropdownPosition.value.x = select_button_dom.left;
-      dropdownPosition.value.y =
-        select_button_dom.top + select_button_dom.height + 5;
-    }
+    calculateLocation();
+});
 
-    window.addEventListener('click', event => {
-      if (
-        !select_button.value.contains(event.target) &&
-        !select_dropdown.value.contains(event.target)
-      ) {
-        selectOpen.value = false;
-      }
-    });
-    window.addEventListener('touchstart', event => {
-      if (
-        !select_button.value.contains(event.target) &&
-        !select_dropdown.value.contains(event.target)
-      ) {
-        selectOpen.value = false;
-      }
-    });
+watch(selctValue, () => {
+  ctx.emit('update:modelValue', selctValue.value);
+});
 
-    window.addEventListener('resize', () => {
-      // 计算面板位置
-      calculateLocation();
-    });
-    window.addEventListener('scroll', () => {
-      // 计算面板位置
-      calculateLocation();
-    });
+// 计算位置
+function calculateLocation () {
+  var select_button_dom = select_button.value.getBoundingClientRect();
+  dropdownPosition.value.w = select_button_dom.width;
+  dropdownPosition.value.x = select_button_dom.left;
+  dropdownPosition.value.y =
+    select_button_dom.top + select_button_dom.height + 5;
+}
 
-    onDeactivated(() => {
-      window.removeEventListener('resize');
-      window.removeEventListener('scroll');
-      window.removeEventListener('click');
-      window.removeEventListener('touchstart');
-      Bus.$off('chooseSelectItem');
-    });
-
-    var token = 'select-' + tokenFun();
-    // 获取生成的token
-    page.token = token;
-    // 给子元素派发token
-    provide('token', token);
-
-    onMounted(() => {
-      Bus.$on('chooseSelectItem', res => {
-        if (res.token === page.token) {
-          selctValue.value = res.value;
-          selectOpen.value = false;
-          Bus.$emit('chooseActive', { token: token, value: selctValue.value });
-        }
-      });
-      if (props.selected) {
-        selctValue.value = props.selected;
-        Bus.$emit('chooseActive', { token: token, value: selctValue.value });
-      } else {
-        selctValue.value = ctx.slots.selectDropDown()[0].props.value;
-        Bus.$emit('chooseActive', { token: token, value: selctValue.value });
-      }
-    });
-
-    return {
-      selectOpen,
-      selctValue,
-      select_dropdown,
-      select_button,
-      dropdownStyle,
-      dropdownPosition,
-      calculateLocation,
-      token
-    };
+window.addEventListener('click', event => {
+  if (
+    !select_button.value.contains(event.target) &&
+    !select_dropdown.value.contains(event.target)
+  ) {
+    selectOpen.value = false;
   }
-};
+});
+window.addEventListener('touchstart', event => {
+  if (
+    !select_button.value.contains(event.target) &&
+    !select_dropdown.value.contains(event.target)
+  ) {
+    selectOpen.value = false;
+  }
+});
+
+window.addEventListener('resize', () => {
+  // 计算面板位置
+  calculateLocation();
+});
+window.addEventListener('scroll', () => {
+  // 计算面板位置
+  calculateLocation();
+});
+
+onDeactivated(() => {
+  window.removeEventListener('resize');
+  window.removeEventListener('scroll');
+  window.removeEventListener('click');
+  window.removeEventListener('touchstart');
+  Bus.$off('chooseSelectItem');
+});
+
+var token = 'select-' + tokenFun();
+// 获取生成的token
+page.token = token;
+// 给子元素派发token
+provide('token', token);
+
+onMounted(() => {
+  Bus.$on('chooseSelectItem', res => {
+    if (res.token === page.token) {
+      selctValue.value = res.value;
+      selectOpen.value = false;
+      Bus.$emit('chooseActive', { token: token, value: selctValue.value });
+    }
+  });
+  if (props.selected) {
+    selctValue.value = props.selected;
+    Bus.$emit('chooseActive', { token: token, value: selctValue.value });
+  } else {
+    selctValue.value = ctx.slots.selectDropDown()[0].props.value;
+    Bus.$emit('chooseActive', { token: token, value: selctValue.value });
+  }
+});
 </script>

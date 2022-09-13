@@ -28,21 +28,6 @@ To trigger an operation.
     </template>
   </dp-select>
 </template>
-<script setup>
-  import { ref } from 'vue';
-
-
-  const a = ref(1);
-
-  const aaa = () => {
-    a.value += 1;
-  };
-
-  defineExpose({
-    a,
-    aaa
-  });
-</script>
 ```
 
 :::
@@ -50,12 +35,10 @@ To trigger an operation.
 ### Attributes
 
 dp-select 为 select 下选项父标签, 必须含有插槽 #selectDropDown 才能正常使用;
+
 dp-select-item 为 select 下选项子标签(选项标签), dp-select-item 内可以继续写入其他 HTML 内容, 每项的具体值由
 
-| 参数    | 说明           | 类型    | 可选值                                               | 默认值    |
-| ------- | -------------- | ------- | ---------------------------------------------------- | --------- |
-| type    | 类型           | String  | default / primary / nomal / warm / danger / disabled | `default` |
-| shape   | 形状           | String  | square / round                                       | `square`  |
-| size    | 尺寸           | String  | large / medium / small / mini                        | `medium`  |
-| icon    | 图标名称       | String  | ——                                                   | `square`  |
-| loading | 是否加载中状态 | Boolean | ——                                                   | `false`   |
+| 参数     | 说明                                                                      | 类型   | 可选值 | 默认值    |
+| -------- | ------------------------------------------------------------------------- | ------ | ------ | --------- |
+| selected | 默认选中的值,如果不填或为空则默认选中插槽中的第一个 tk-select-item 中的值 | String |        | `default` |
+| value    | 词选项默认返回的数据 (必须设置)                                           | String |        |           |
