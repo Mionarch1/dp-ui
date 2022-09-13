@@ -4,7 +4,11 @@
     @after-enter="afterEnter"
     @after-leave="afterLeave"
   >
-    <div class="dp-drawer-wrapper" v-show="modelValue" @click.self="handleClose">
+    <div
+      class="dp-drawer-wrapper"
+      v-show="modelValue"
+      @click.self="handleClose"
+    >
       <div
         :class="[
           'dp-drawer',
@@ -14,7 +18,6 @@
         ]"
         :style="style"
       >
-       <i>{{'<'}}</i>
         <div class="dp-drawer-body">
           <slot></slot>
         </div>
@@ -25,12 +28,16 @@
 
 <script setup>
 import { computed } from 'vue';
+import { getCurrentInstance } from 'vue';
+
+const instance = getCurrentInstance();
+const { ctx } = getCurrentInstance();
 
 const props = defineProps({
   direction: { type: String, default: 'right' },
   modelValue: { type: Boolean, default: false },
   width: { type: String, default: '250px' },
-  borderRadius: { type: String, default: '0px' }
+  borderRadius: { type: String, default: '0px' },
 });
 
 const style = computed(() => {
