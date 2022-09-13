@@ -1,6 +1,7 @@
 i {
-	font-style:normal;
+	font-style: normal;
 }
+
 .dp-month-picker {
 	position: relative;
 	// width: 280px;
@@ -99,6 +100,7 @@ i {
 			.dp-picker-content {
 				width: 100%;
 				height: auto;
+
 				.month {
 					display: inline-block;
 					color: #282828;
@@ -118,12 +120,15 @@ i {
 						align-items: center;
 						margin: 15px;
 						box-sizing: content-box;
-            border-radius: 4px;
+						border-radius: 4px;
 					}
-          .block-active{
-            background-color: #2e4399!important;
-            color: #fff!important;
-          }
+
+					.block-active {
+						// background-color: #2e4399!important;
+						// color: #fff!important;
+						background-color: $color-yellow-500  !important;
+						font-weight: 700;
+					}
 				}
 			}
 		}
@@ -147,17 +152,22 @@ i {
 :deep(.dp-input) {
 	width: 150px !important;
 }
+
 .openPicker {
 	border: 1px solid blue !important;
 }
+
 :deep(.dp-input-inner) {
 	text-align: center;
 	font-size: 14px;
 	color: #374151;
 }
+
 .rev {
-	transform: rotate(180deg); /* Equal to rotateZ(45deg) */
+	transform: rotate(180deg);
+	/* Equal to rotateZ(45deg) */
 }
+
 .icon {
 	margin-right: 12px;
 	margin-left: 0;

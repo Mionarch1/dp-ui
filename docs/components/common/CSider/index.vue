@@ -25,7 +25,11 @@
 </template>
 
 <script setup>
-import navs from './components';
+import guide from './guide';
+import desktop from './desktop';
+import mobile from './mobile';
+import material from './material';
+import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
@@ -34,6 +38,14 @@ const router = useRouter();
 const goRoute = route => {
   router.push(route.path);
 };
+
+const navs = computed(() => {
+  if (!route.name) return [];
+  if (route.name.indexOf('guide') >= 0) return guide;
+  if (route.name.indexOf('desktop') >= 0) return desktop;
+  if (route.name.indexOf('mobile') >= 0) return mobile;
+  if (route.name.indexOf('material') >= 0) return material;
+});
 </script>
 
 <style lang="scss" scoped>
