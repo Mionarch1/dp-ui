@@ -1,7 +1,7 @@
-.tabs {
+.dp-tabs {
   .tabs-nav-wrap {
     position: relative;
-    border-bottom: 1px solid #dcdee2;
+    border-bottom: 1px solid $button-border-default;
     margin-bottom: 16px;
   }
   .tabs-tab {
@@ -15,7 +15,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background: #FFDD00;
+    background: $color-yellow-500;
     border-radius: 2px;
     height: 4px;
     transition: transform 300ms ease-in-out;
@@ -23,7 +23,7 @@
     -moz-transition: transform 300ms ease-in-out;
     -ms-transition: transform 300ms ease-in-out;
     -o-transition: transform 300ms ease-in-out;
-}
+  }
 
   .tabs-nav-scroll {
     overflow: hidden;
@@ -35,7 +35,8 @@
     transition: transform 0.5s ease-in-out;
   }
 
-  .tabs-nav-prev, .tabs-nav-next {
+  .tabs-nav-prev,
+  .tabs-nav-next {
     position: absolute;
     width: 36px;
     height: 100%;

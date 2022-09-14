@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs">
+  <div class="dp-tabs">
     <div
       ref="navWrap"
       class="tabs-nav-wrap"
@@ -36,7 +36,7 @@
         </div>
       </div>
     </div>
-    <div class="pane-content">
+    <div class="dp-pane-content">
       <slot></slot>
     </div>
   </div>
@@ -62,7 +62,6 @@ const tabElement = ref([]);
 const activeKey = ref('');
 const barWidth = ref(0);
 const barOffset = ref(0);
-// const scrollable = ref(true);
 const navWrap = ref(null);
 const navScroll = ref(null);
 const nav = ref(null);
@@ -118,16 +117,6 @@ const handleChange = index => {
   activeKey.value = nav.label;
   updataBar();
 };
-// const handleResize = () => {
-//   const navWidth = nav.value.offsetWidth;
-//   const scrollWidth = navScroll.value.offsetWidth;
-//   if (scrollWidth < navWidth) {
-//     scrollable.value = true;
-//   } else {
-//     scrollable.value = false;
-//   }
-//   updateMove();
-// };
 const updateMove = () => {
   const navWidth = nav.value.offsetWidth;
   const scrollWidth = navScroll.value.offsetWidth;
@@ -187,11 +176,6 @@ watch(activeKey, () => {
 });
 onMounted(() => {
   initTabs();
-  // this.observer = elementResizeDetectorMaker()
-  // this.observer.listenTo(this.$refs.navWrap, this.handleResize)
 });
 provide('activeKey', activeKey);
-// onBeforeUnmount() {
-//   this.observer.removeListener(this.$refs.navWrap, this.handleResize)
-// }
 </script>
