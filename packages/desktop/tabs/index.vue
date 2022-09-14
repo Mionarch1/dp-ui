@@ -1,16 +1,35 @@
 <template>
   <div class="tabs">
-    <div ref="navWrap" class="tabs-nav-wrap" :class="[scrollable ? 'tabs-nav-scrollable' : '']">
-      <span class="tabs-nav-prev" :class="[scrollable ? '' : 'tabs-nav-scroll-disabled']" @click="scrollPrev">
+    <div
+      ref="navWrap"
+      class="tabs-nav-wrap"
+      :class="[showToggle ? 'tabs-nav-scrollable' : '']"
+    >
+      <span
+        v-if="showToggle"
+        class="tabs-nav-prev"
+        :class="[showToggle ? '' : 'tabs-nav-scroll-disabled']"
+        @click="scrollPrev"
+      >
         &lt;
       </span>
-      <span class="tabs-nav-next" :class="[scrollable ? '' : 'tabs-nav-scroll-disabled']" @click="scrollNext">
+      <span
+        v-if="showToggle"
+        class="tabs-nav-next"
+        :class="[showToggle ? '' : 'tabs-nav-scroll-disabled']"
+        @click="scrollNext"
+      >
         &gt;
       </span>
       <div ref="navScroll" class="tabs-nav-scroll">
         <div ref="nav" class="tabs-nav" :style="navStyle">
           <div class="tabs-inv-bar" :style="barStyle"></div>
-          <div class="tabs-tab" v-for="(item, index) in navList" :key="index" @click="handleChange(index)">
+          <div
+            class="tabs-tab"
+            v-for="(item, index) in navList"
+            :key="index"
+            @click="handleChange(index)"
+          >
             {{ item.label }}
             <slot v-if="$slots.label"></slot>
           </div>
@@ -34,9 +53,8 @@ import {
   useSlots
 } from 'vue';
 const props = defineProps({
-  value: {
-    type: [String, Number]
-  }
+  value: { type: [String, Number] },
+  showToggle: { type: Boolean, default: false }
 });
 const slots = useSlots();
 const navList = ref([]);
@@ -44,7 +62,7 @@ const tabElement = ref([]);
 const activeKey = ref('');
 const barWidth = ref(0);
 const barOffset = ref(0);
-const scrollable = ref(true);
+// const scrollable = ref(true);
 const navWrap = ref(null);
 const navScroll = ref(null);
 const nav = ref(null);
@@ -100,16 +118,16 @@ const handleChange = index => {
   activeKey.value = nav.label;
   updataBar();
 };
-const handleResize = () => {
-  const navWidth = nav.value.offsetWidth;
-  const scrollWidth = navScroll.value.offsetWidth;
-  if (scrollWidth < navWidth) {
-    scrollable.value = true;
-  } else {
-    scrollable.value = false;
-  }
-  updateMove();
-};
+// const handleResize = () => {
+//   const navWidth = nav.value.offsetWidth;
+//   const scrollWidth = navScroll.value.offsetWidth;
+//   if (scrollWidth < navWidth) {
+//     scrollable.value = true;
+//   } else {
+//     scrollable.value = false;
+//   }
+//   updateMove();
+// };
 const updateMove = () => {
   const navWidth = nav.value.offsetWidth;
   const scrollWidth = navScroll.value.offsetWidth;
@@ -132,6 +150,10 @@ const setOffset = value => {
   navStyle.transform = `translateX(-${value}px)`;
 };
 const scrollPrev = () => {
+  let i = navList.value.findIndex(v => v.label == activeKey.value);
+  if (i > 0) {
+    handleChange(i - 1);
+  }
   const containerWidth = navScroll.value.offsetWidth;
   const currentOffset = getCurrentScrollOffset();
   if (!currentOffset) return;
@@ -142,6 +164,10 @@ const scrollPrev = () => {
   navStyle.transform = `translateX(-${newOffset}px)`;
 };
 const scrollNext = () => {
+  let i = navList.value.findIndex(v => v.label == activeKey.value);
+  if (i < navList.value.length - 1) {
+    handleChange(i + 1);
+  }
   const navWidth = nav.value.offsetWidth;
   const containerWidth = navScroll.value.offsetWidth;
   const currentOffset = getCurrentScrollOffset();
@@ -155,7 +181,7 @@ const scrollNext = () => {
   navStyle.transform = `translateX(-${newOffset}px)`;
 };
 
-watch(activeKey.value, () => {
+watch(activeKey, () => {
   updateStatus();
   updataBar();
 });
