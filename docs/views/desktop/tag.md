@@ -8,14 +8,9 @@ Used to mark.
 
 ```html
 <template>
-  <dp-tag >default</dp-tag>
-  <dp-tag :round="true">round</dp-tag>
-  <dp-tag type="suceess">suceess</dp-tag>
-  <dp-tag type="info">info</dp-tag>
-  <dp-tag type="warning">warning</dp-tag>
-  <dp-tag type="danger">danger</dp-tag>
-  <dp-tag size="big" type="danger">danger</dp-tag>
-  <dp-tag size="small" type="danger">danger</dp-tag>
+  <dp-tag >Badge</dp-tag>
+  <dp-tag borderColor="#26BC35" backgroundColor="#fff" color="#26BC35">Badge</dp-tag>
+  <dp-tag backgroundColor="#EFEFEF" color="#333">Badge</dp-tag>
 </template>
 <script>
 
@@ -28,11 +23,13 @@ Used to mark.
 
 | 参数    | 说明           | 类型    | 可选值                                              | 默认值 |
 | ------- | -------------- | ------- | ---------------------------------------------------- | --------- |
-| type    | 类型           | String  |   success / info / warning / danger               | `-` |
 | round   | 圆角           | Boolean  | true / false                                     |`false`|
-| size    | 尺寸           | String  | large / middle / small                            |`middle`|
+| size    | 尺寸           | String  | large / middle / small                            |`small`|
+| backgroundColor   | 背景颜色  | String  |                                              |  |
+| color   | 文字颜色  | String  |                                                        |  |
+| borderColor   | border颜色（默认和背景颜色相同）  | String  |                             |  |
 
 ### Event
 | 事件名    | 说明                                                       | 默认值 |
 | ------- | --------------------------------------------------------  | ----- |
-|click   |  点击 Tag 时触发的事件                                        |       |
+| click   |  点击 Tag 时触发的事件                                        |       |
