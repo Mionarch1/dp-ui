@@ -10,35 +10,29 @@ Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内
 
 ```html
 <template>
-  <dp-button @click="aaa">button{{a}}</dp-button>
+  <dp-button class="button-item" @click="aaa">button{{a}}</dp-button>
 </template>
 
-<script setup>
-  // export default {
-  //   data() {
-  //     return {
-  //       a: 1
-  //     };
-  //   },
-  //   methods: {
-  //     aaa() {
-  //       this.a++;
-  //     }
-  //   }
-  // };
-  import { ref } from 'vue';
-
-  const a = ref(1);
-
-  const aaa = () => {
-    a.value += 1;
+<script>
+  export default {
+    data() {
+      return {
+        a: 1
+      };
+    },
+    methods: {
+      aaa() {
+        this.a++;
+      }
+    }
   };
-
-  defineExpose({
-    a,
-    aaa
-  })
 </script>
+
+<style>
+  .button-item {
+    margin: 30px;
+  }
+</style>
 ```
 
 :::
