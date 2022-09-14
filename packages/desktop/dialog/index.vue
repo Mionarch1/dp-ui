@@ -14,7 +14,7 @@
           class="dp-dialog"
           :class="[
             `is-${props.theme}`,
-            { 'is-fullscreen': props.fullscreen },
+            { 'is-fullscreen': props.full },
             { 'is-header': props.showHeader }
           ]"
           :style="props.innerStyle"
@@ -52,7 +52,7 @@
 const props = defineProps({
   appendToBody: { type: Boolean, default: false },
   modelValue: { type: Boolean, default: false },
-  fullscreen: { type: Boolean, default: false },
+  full: { type: Boolean, default: false },
   showHeader: { type: Boolean, default: true },
   overlayCloseable: { type: Boolean, default: false },
   title: { type: String, default: '' },
@@ -77,6 +77,7 @@ const handleToggle = modalValue => {
 const afterEnter = () => {
   emit('onOpened');
 };
+
 const afterLeave = () => {
   emit('onClosed');
 };

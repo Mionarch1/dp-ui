@@ -4,9 +4,9 @@
 
 ## default
 
-Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内嵌入一个 `Icon`。
+Dialog 弹出一个对话框，适合需要定制性更大的场景。。
 
-:::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
+:::demo
 
 ```html
 <template>
@@ -17,10 +17,11 @@ Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内
     v-model="centerDialogVisible"
     title="Warning"
     :innerStyle="{ width: '312px' }"
+    @onOpened="onOpened"
+    @on-closed="onClosed"
   >
     <span>
-      It should be noted that the content will not be aligned in center by
-      default
+      It should be noted that the content will not be aligned in center
     </span>
     <template #footer>
       <dp-button @click="centerDialogVisible = false" style="margin-right:12px">
@@ -36,6 +37,14 @@ Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内
       return {
         centerDialogVisible: false
       };
+    },
+    methods: {
+      onOpened() {
+        console.log('打开了dialog');
+      },
+      onClosed() {
+        console.log('关闭了dialog');
+      }
     }
   };
 </script>
@@ -43,40 +52,19 @@ Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内
 
 :::
 
-## default
-
-Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内嵌入一个 `Icon`。
-
-:::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
-
-```html
-<template>
-  <dp-button>button</dp-button>
-</template>
-```
-
-:::
-
-## default
-
-Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内嵌入一个 `Icon`。
-
-:::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
-
-```html
-<template>
-  <dp-button>button</dp-button>
-</template>
-```
-
-:::
-
 ### Attributes
 
-| 参数    | 说明           | 类型    | 可选值                                               | 默认值    |
-| ------- | -------------- | ------- | ---------------------------------------------------- | --------- |
-| type    | 类型           | String  | default / primary / nomal / warm / danger / disabled | `default` |
-| shape   | 形状           | String  | square / round                                       | `square`  |
-| size    | 尺寸           | String  | large / medium / small / mini                        | `medium`  |
-| icon    | 图标名称       | String  | ——                                                   | `square`  |
-| loading | 是否加载中状态 | Boolean | ——                                                   | `false`   |
+| 参数             | 说明                                                                        | 类型    | 可选值   | 默认值 |
+| ---------------- | --------------------------------------------------------------------------- | ------- | -------- | ------ |
+| append-to-body   | Dialog 自身是否插入至 body 元素上,嵌套的 Dialog 必须指定该属性并赋值为 true | boolean | ------   | false  |
+| full             | 是否为全屏 Dialog                                                           | boolean | -----    | false  |
+| showHeader       | 是否有头部                                                                  | boolean | -------- | true   |
+| overlayCloseable | 是否可以通过点击 modal 关闭 Dialog                                          | string  | -----    | ------ |
+| innerStyle       | Dialog 对话框的自定义样式                                                   | object  | ——       | ------ |
+
+### Event
+
+| 事件名   | 说明              | 参数 |
+| -------- | ----------------- | ---- |
+| onOpened | Dialog 打开的回调 | ---- |
+| onClosed | Dialog 关闭的回调 | ---- |
