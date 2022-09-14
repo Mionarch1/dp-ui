@@ -1,32 +1,33 @@
-# Button
-
-To trigger an operation.
+# Date-Picker
 
 ## default
 
-Button 组件提供在按钮内增加图标，通过 `icon` 属性在 Button 内嵌入一个 `Icon`。
+Date-Picker 用于选择或输入日期
 
 :::demo `icon` 属性值通过 `Icon`组件中属性值进行支持
 
 ```html
-<!-- <template>
+<template>
   <dp-date-picker
-    v-model:modelValue="initial.startTime"
-    v-model:hint="initial.startHint"
+    v-model:modelValue="value1"
+    hint="选择时间"
     format="D MMM YYYY"
     :pickerOptions="{
-								association: initial.endTime,
+								association: endTime,
 								scope: '90',
 								isStart: true
 							}"
-  ></dp-date-picker> -->
+  >
+    1233333333333
+  </dp-date-picker>
 </template>
 
 <script>
   export default {
     data() {
       return {
-        a: 1
+        value1: '',
+        endTime: ''
       };
     },
     methods: {

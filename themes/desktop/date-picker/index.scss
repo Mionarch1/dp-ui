@@ -118,7 +118,7 @@
 
         .sec-days {
           .day-item {
-            border-radius: 50%;
+            border-radius: 8px;
             cursor: pointer;
             color: #595959;
             transition: all 0.2s ease-in-out;
@@ -136,9 +136,9 @@
             }
 
             &.active {
-              background: #449efb;
-              color: #ffffff;
-              font-weight: 600;
+              background: $color-yellow-500;
+              color: $color-black-500;
+              font-weight: 800;
               transition: all 0.2s ease-in-out;
             }
           }
