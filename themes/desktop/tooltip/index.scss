@@ -5,13 +5,15 @@
 
 
 	&:hover {
-		.tooltiptext {
+		.dp-tooltiptext {
 			visibility: visible;
 			opacity: 1;
+			background-color: $color-black-400;
+			color: $color-white-default;
 		}
 	}
 
-	.tooltiptext {
+	.dp-tooltiptext {
 		/* 隐藏该元素 */
 		visibility: hidden;
 		text-align: center;
@@ -36,7 +38,7 @@
 			margin-left: -5px;
 			border-width: 5px;
 			border-style: solid;
-			border-color: #555 transparent transparent transparent;
+			border-color: $color-black-400 transparent transparent transparent;
 		}
 
 		&:hover {

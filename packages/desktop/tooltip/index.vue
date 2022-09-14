@@ -1,7 +1,7 @@
 <template>
   <div class="dp-tooltip">
     <slot />
-    <div v-html="content" class="tooltiptext" :style="style"></div>
+    <div v-html="content" class="dp-tooltiptext" :style="style"></div>
   </div>
 </template>
 
@@ -18,11 +18,11 @@ const props = defineProps({
   },
   backgroundColor: {
     type: String,
-    default: '#555'
+    default: ''
   },
   color: {
     type: String,
-    default: '#fff'
+    default: ''
   }
 });
 const style = computed(() => {

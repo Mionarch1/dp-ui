@@ -1,4 +1,4 @@
-# Tag
+# Tooltip
 
 This command is used to display the prompt information when the mouse hover.
 
