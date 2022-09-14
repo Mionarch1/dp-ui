@@ -25,6 +25,5 @@
 | type        | Alert 类型         | String  | 'success' / 'warning' / 'info' / 'error' | `warning` |
 | description | 描述性文本         | String  | ——                                       | ``        |
 | closable    | 是否可关闭         | boolean | ——                                       | `true`    |
-| center      | 文字是否居中       | boolean |                                          | false     |
 | close-text  | 自定义关闭按钮文本 | string  |
 | show-icon   | 是否显示类型图标   | boolean |                                          | false     |

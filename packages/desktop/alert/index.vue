@@ -1,10 +1,7 @@
 <template>
   <transition>
     <div v-show="visible" :class="['dp-alert', alertType]" role="alert">
-      <el-icon v-if="showIcon && iconComponent" :class="iconClass">
-        <component :is="iconComponent" />
-      </el-icon>
-
+      <i v-if="showIcon" :class="['iconClass', alertType]"></i>
       <div class="dp-alert-content">
         <span
           v-if="title || $slots.title"
@@ -25,9 +22,7 @@
           >
             {{ closeText }}
           </div>
-          <el-icon v-else class="dp-alert-close-btn" @click="close">
-            <Close />
-          </el-icon>
+          <i v-else class="dp-alert-close" @click="close"></i>
         </template>
       </div>
     </div>
@@ -42,7 +37,6 @@ const props = defineProps({
   closable: { type: Boolean, default: true },
   closeText: { type: String, default: '' },
   showIcon: Boolean,
-  center: Boolean,
   effect: { type: String, default: 'light' }
 });
 
