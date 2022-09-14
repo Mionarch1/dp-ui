@@ -66,7 +66,7 @@ export default {
 | direction    | Drawer 打开的方向      | String  | right / left / top / bottom        | `right` |
 | width    | 尺寸                      | String  |                                    | `250px`  |
 | borderRadius    | 圆角属性            | String  |                                    | `-`  |
-| isNest    |是否为嵌套的Drawer，嵌套必须指定该属性并赋值为 true   |Boolean  |                                    | `-`  |
+| isNest    |是否为嵌套的Drawer，嵌套必须指定该属性并赋值为 true   | Boolean  |               | `-`  |
 
 ### Event
 | 事件名   | 说明            | 参数   |

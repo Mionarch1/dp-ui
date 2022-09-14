@@ -9,6 +9,7 @@
       v-show="modelValue"
       @click.self="handleClose"
     >
+      <div class="mask" v-show="modelValue && !isNest" @click.self="handleClose"></div>
       <div
         :class="[
           'dp-drawer',
