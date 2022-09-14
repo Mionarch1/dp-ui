@@ -1,4 +1,4 @@
-# Tag
+# Switch
 
 A switch between two opposing states, usually used to trigger an on/OFF switch.
 
@@ -8,7 +8,7 @@ A switch between two opposing states, usually used to trigger an on/OFF switch.
 
 ```html
 <template>
-  <dp-switch v-model="isOpen" @change="handleClick" activeColor="#ea2376"></dp-switch>
+  <dp-switch v-model="isOpen" @change="handleClick"></dp-switch>
 </template>
 <script>
 export default {
@@ -34,7 +34,7 @@ export default {
 | ------- | -------------- | ------- | ---------------------------------------------------- | --------- |
 | modelValue    | 绑定值           | String  |               | `-` |
 | name   | switch 对应的 name 属性         | String  |                                    |`-`|
-| activeColor    | 当在 on 状态时的背景颜色           | String  |                          |`#3d5cb8`|
+| activeColor    | 当在 on 状态时的背景颜色           | String  |                         |`#FFDD00`|
 | inactiveColor    | off 状态时的背景颜色           | String  |                           |`#E5E7EB`|
 | disabled    | 是否禁用           | Boolean  |                             |`#fff`|
 
