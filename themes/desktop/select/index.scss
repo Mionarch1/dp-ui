@@ -16,7 +16,7 @@
     transition: border .2s;
 }
 .dp-select-button:hover{
-    border: #E0C200 2px solid;
+    border: $color-yellow-600 2px solid;
 }
 .dp-select-button span{
     font-weight: 500;
@@ -41,12 +41,12 @@
 // 下拉框
 .dp-select-dropdown{
     position: fixed;
-    background-color: #FCFCFD;
+    background-color: $color-white-default;
 }
 .dp-select-dropdown ul{
     overflow: hidden;
     border-radius: 12px;
-    border: #E6E8EC 2px solid;
+    border: #c6c6c6 2px solid;
     box-shadow: 0 4px 12px rgba(35,38,47 ,0.1);
 }
 

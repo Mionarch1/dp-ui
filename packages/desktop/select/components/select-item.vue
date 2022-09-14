@@ -4,7 +4,7 @@
     :class="{ active: active }"
     @click="chooseSelectItem"
   >
-    <slot></slot>
+    <slot v-if="$slots.label"></slot>
   </li>
 </template>
 

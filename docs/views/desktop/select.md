@@ -5,7 +5,7 @@ To trigger an operation.
 ## default
 
 当选项过多时，使用下拉菜单展示并选择内容。
-:::demo 
+:::demo
 
 ```html
 <template>
@@ -36,7 +36,7 @@ To trigger an operation.
 
 dp-select 为 select 下选项父标签, 必须含有插槽 #selectDropDown 才能正常使用;
 
-dp-select-item 为 select 下选项子标签(选项标签), dp-select-item 内可以继续写入其他 HTML 内容, 每项的具体值由
+dp-select-item 为 select 下选项子标签(选项标签), dp-select-item 内可以继续写入其他 HTML 内容, 每项的具体值由 props value 决定
 
 | 参数     | 说明                                                                      | 类型   | 可选值 | 默认值    |
 | -------- | ------------------------------------------------------------------------- | ------ | ------ | --------- |
