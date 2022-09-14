@@ -9,7 +9,11 @@
       v-show="modelValue"
       @click.self="handleClose"
     >
-      <div class="mask" v-show="modelValue && !isNest" @click.self="handleClose"></div>
+      <div
+        class="mask"
+        v-show="modelValue && !isNest"
+        @click.self="handleClose"
+      ></div>
       <div
         :class="[
           'dp-drawer',
@@ -42,10 +46,21 @@ const props = defineProps({
   borderRadius: { type: String, default: '0px' },
   isNest: { type: Boolean, default: false }
 });
-
+const borderRadiusDeal = () => {
+  switch (props.direction) {
+    case 'left':
+      return `0 ${props.borderRadius} ${props.borderRadius} 0`;
+    case 'right':
+      return `${props.borderRadius} 0 0 ${props.borderRadius}`;
+    case 'top':
+      return `0 0 ${props.borderRadius} ${props.borderRadius}`;
+    case 'bottom':
+      return `${props.borderRadius} ${props.borderRadius} 0 0`;
+  }
+};
 const style = computed(() => {
   return {
-    'border-radius': props.borderRadius,
+    'border-radius': borderRadiusDeal(),
     width: ['right', 'left'].includes(props.direction) ? props.width : '100%',
     height: ['bottom', 'top'].includes(props.direction) ? props.width : '100%'
   };

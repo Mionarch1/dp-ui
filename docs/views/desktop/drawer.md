@@ -14,8 +14,8 @@ Exhale a temporary sidebar that supports up, down, left and right.
 	  @on-closed="onClosed"
 	  width="12.5%"
 	  @on-opened="onOpened"
-	  border-radius="24px 24px 0 0"
-	  direction="bottom"
+	  border-radius="24px"
+	  direction="right"
 	>
 	Hi,desty!
   <dp-button @click="handleClick1">open</dp-button>
@@ -25,7 +25,7 @@ Exhale a temporary sidebar that supports up, down, left and right.
 	  @on-closed="onClosed"
 	  width="12.5%"
 	  @on-opened="onOpened"
-	  border-radius="24px 24px 0 0"
+	  border-radius="24px"
 	  direction="bottom"
     :isNest="true"
 	>
