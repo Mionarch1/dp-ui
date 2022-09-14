@@ -15,7 +15,7 @@ Exhale a temporary sidebar that supports up, down, left and right.
 	  width="12.5%"
 	  @on-opened="onOpened"
 	  border-radius="24px"
-	  direction="right"
+	  direction="bottom"
 	>
 	Hi,desty!
   <dp-button @click="handleClick1">open</dp-button>
