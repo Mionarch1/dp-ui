@@ -77,14 +77,8 @@
 
 <script>
 import './style.scss';
-
-export default {
-	name: 'dp-date-picker',
-	directives: { clickOutside }
-};
 </script>
 <script setup>
-import { clickOutside } from '../utils/utils.js';
 import { watch, reactive, computed, toRefs } from 'vue';
 import dayjs from 'dayjs';
 

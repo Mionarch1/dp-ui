@@ -12,6 +12,7 @@
     "build:libs": "rm -rf libs && yarn build:desktop && yarn build:mobile && yarn build:material"
   },
   "dependencies": {
+    "dayjs": "^1.11.5",
     "vue": "3.2.31",
     "vue-router": "4.0.13"
   },
