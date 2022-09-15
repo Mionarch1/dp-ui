@@ -1,17 +1,17 @@
 .dp-tabs {
-  .tabs-nav-wrap {
+  .dp-tabs-nav-wrap {
     position: relative;
-    border-bottom: 1px solid $button-border-default;
+    border-bottom: 1px solid $color-black-100;
     margin-bottom: 16px;
   }
-  .tabs-tab {
+  .dp-tabs-tab {
     position: relative;
     display: inline-block;
     margin-right: 16px;
     padding: 16px;
     cursor: pointer;
   }
-  .tabs-inv-bar {
+  .dp-tabs-inv-bar {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -25,18 +25,18 @@
     -o-transition: transform 300ms ease-in-out;
   }
 
-  .tabs-nav-scroll {
+  .dp-tabs-nav-scroll {
     overflow: hidden;
     white-space: nowrap;
   }
-  .tabs-nav {
+  .dp-tabs-nav {
     position: relative;
     float: left;
     transition: transform 0.5s ease-in-out;
   }
 
-  .tabs-nav-prev,
-  .tabs-nav-next {
+  .dp-tabs-nav-prev,
+  .dp-tabs-nav-next {
     position: absolute;
     width: 36px;
     height: 100%;
@@ -47,16 +47,16 @@
     justify-content: center;
     align-items: center;
   }
-  .tabs-nav-prev {
+  .dp-tabs-nav-prev {
     left: 0;
   }
-  .tabs-nav-next {
+  .dp-tabs-nav-next {
     right: 0;
   }
-  .tabs-nav-scrollable {
+  .dp-tabs-nav-scrollable {
     padding: 0 32px;
   }
-  .tabs-nav-scroll-disabled {
+  .dp-tabs-nav-scroll-disabled {
     display: none;
   }
 }
