@@ -1,11 +1,12 @@
 <template>
-  <div class="dp-date-picker" >
-    <input
-      :value="modelValue ? dayjs(modelValue).format(props.format) : ''"
-      :placeholder="hint"
-      readonly
-      @focus="onOpen"
-    />
+  <div class="dp-date-picker" ref="date_picker">
+    <section class="dp-data-input" @click="onOpen">
+      <input
+        :value="modelValue ? dayjs(modelValue).format(props.format) : ''"
+        :placeholder="hint"
+        readonly
+      />
+    </section>
     <transition name="option-slide">
       <div
         class="dp-picker-inner"
@@ -71,7 +72,7 @@
   </div>
 </template>
 <script setup>
-import { watch, reactive, computed, toRefs } from 'vue';
+import { ref, reactive, onDeactivated } from 'vue';
 import dayjs from 'dayjs';
 
 /** pickerOptions为限制时间选择器范围
@@ -83,6 +84,8 @@ import dayjs from 'dayjs';
 /** format 为时间选择器时间格式    默认为 2022-02-11这种
  *  hint 为时间选择器的标题显示    默认为空
  */
+// 获取时间选择器
+const date_picker = ref(null);
 
 const emit = defineEmits(['update:modelValue']);
 const props = defineProps({
@@ -231,7 +234,7 @@ const onSelectDay = (item = {}) => {
       state.month = 12;
       state.year--;
     } else {
-      state.month = state.month - 1;
+      state.month = parseInt(state.month) - 1;
     }
     renderScreen();
     return;
@@ -240,7 +243,7 @@ const onSelectDay = (item = {}) => {
       state.month = 1;
       state.year++;
     } else {
-      state.month = state.month + 1;
+      state.month = parseInt(state.month) + 1;
     }
     renderScreen();
     return;
@@ -299,34 +302,20 @@ const renderScreen = () => {
 const isLeapYear = year => {
   return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 };
-</script>
-<style lang="scss" scoped>
-:deep(.DP-input-inner) {
-  text-align: center;
-  font-size: 14px;
-  color: #374151;
-}
-.isright {
-  right: 0;
-}
-.arrowRight {
-  left: 75% !important;
-}
-.dp-date-picker {
-  font-family: Plus Jakarta Sans;
-  background: #ffffff;
-}
-.rev {
-  transform: rotate(180deg); /* Equal to rotateZ(45deg) */
-}
-.icon {
-  margin-right: 12px;
-  margin-left: 0;
-}
 
-:deep(.DP-input) {
-  .DP-input-inner {
-    width: 100%;
+window.addEventListener('click', event => {
+  if (!date_picker.value.contains(event.target)) {
+    state.visibled = false;
   }
-}
-</style>
+});
+window.addEventListener('touchstart', event => {
+  if (!date_picker.value.contains(event.target)) {
+    state.visibled = false;
+  }
+});
+
+onDeactivated(() => {
+  window.removeEventListener('resize');
+  window.removeEventListener('scroll');
+});
+</script>

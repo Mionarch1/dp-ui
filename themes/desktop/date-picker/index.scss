@@ -44,6 +44,7 @@
       background: #ffffff;
       overflow-x: hidden;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      padding: 16px;
 
       .dp-picker-select {
         display: flex;
@@ -91,17 +92,27 @@
       }
 
       .day-screen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
         .screen-item {
-          width: 280px;
           display: flex;
-          justify-content: flex-start;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px;
+          width: 400px;
+          align-self: stretch;
           flex-wrap: wrap;
+          gap: 24.67px;
 
           .sec-week-item,
           .day-item {
-            width: 40px;
+            width: 36px;
             text-align: center;
-            line-height: 40px;
+            line-height: 36px;
           }
         }
 
@@ -117,6 +128,7 @@
         }
 
         .sec-days {
+          margin-top: 8px;
           .day-item {
             border-radius: 8px;
             cursor: pointer;
@@ -165,4 +177,46 @@
 .option-slide-leave-to {
   transform: translateY(-20px);
   opacity: 0;
+}
+.dp-data-input {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+  width: 264px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid $color-yellow-500;
+  border-radius: 8px;
+  input {
+    border: 0;
+    font-family: 'Plus Jakarta Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  input:focus {
+    outline: none;
+  }
+}
+.isright {
+  right: 0;
+}
+.arrowRight {
+  left: 75% !important;
+}
+.dp-date-picker {
+  font-family: Plus Jakarta Sans;
+  background: #ffffff;
+}
+.rev {
+  transform: rotate(180deg); /* Equal to rotateZ(45deg) */
+}
+.icon {
+  margin-right: 12px;
+  margin-left: 0;
 }
