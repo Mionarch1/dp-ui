@@ -1,5 +1,5 @@
 <template>
-  <div class="dp-month-picker" v-click-outside="onClose">
+  <div class="dpm-month-picker" v-click-outside="onClose">
     <dp-input
       readonly
       @focus="onOpen"
@@ -8,8 +8,10 @@
     ></dp-input>
     <transition name="option-slide">
       <div class="dp-picker-inner" v-if="state.visible">
-        <!-- <div class="picker-arrow"></div> -->
         <div class="dp-picker-box">
+          <div class="dp-pick-close" @click="onClose">
+            X
+          </div>
           <div class="dp-picker-select">
             <div class="picker-select-left">
               <i @click="onYearChange('reduce')">-</i>
