@@ -1,8 +1,13 @@
 export { default as DpShare} from './share';
 export { default as DpButton } from './button';
+export { default as DpTag } from './tag';
 export { default as DpTabs } from './tabs';
 export { default as TabPane } from './tabs/components/pane.vue';
 export { default as DpDialog } from './dialog';
+export { default as DpSwitch } from './switch';
 export { default as DpSelect } from './select';
 export { default as DpSelectItem } from './select/components/select-item.vue';
 export { default as DpAlert } from './alert';
+export { default as DpTooltip } from './tooltip';
+export { default as DpDrawer } from './drawer';
+export { default as DpMonthPicker } from './month-picker';
