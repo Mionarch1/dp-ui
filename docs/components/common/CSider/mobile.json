@@ -9,6 +9,11 @@
             "nameZh": "",
             "nameEn": "Quickly",
             "path": "/mobile/quickly"
+          },
+          {
+            "nameZh": "月份选择器",
+            "nameEn": "Month Picker",
+            "path": "/mobile/month-picker"
           }
         ]
       }
