@@ -50,13 +50,13 @@ const getRealComponentCode = (template, script) => {
       render,
       ...demoComponentExport
     }
-  })()`;
-  return code;
-};
+  })()`
+  return code
+}
 
 module.exports = {
   stripStyle,
   stripScript,
   stripTemplate,
-  getRealComponentCode
-};
+  getRealComponentCode,
+}
