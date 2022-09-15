@@ -6,7 +6,7 @@ import '@docs/styles';
 import DPUI from '@packages/desktop';
 import '@themes/desktop';
 import DPMUI from '@packages/mobile';
-import '@themes/desktop';
+import '@themes/mobile';
 import MaterialUI from '@packages/material';
 import '@themes/material';
 
