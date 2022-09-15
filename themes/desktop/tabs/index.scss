@@ -1,0 +1,62 @@
+.dp-tabs {
+  .tabs-nav-wrap {
+    position: relative;
+    border-bottom: 1px solid $button-border-default;
+    margin-bottom: 16px;
+  }
+  .tabs-tab {
+    position: relative;
+    display: inline-block;
+    margin-right: 16px;
+    padding: 16px;
+    cursor: pointer;
+  }
+  .tabs-inv-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: $color-yellow-500;
+    border-radius: 2px;
+    height: 4px;
+    transition: transform 300ms ease-in-out;
+    -webkit-transition: transform 300ms ease-in-out;
+    -moz-transition: transform 300ms ease-in-out;
+    -ms-transition: transform 300ms ease-in-out;
+    -o-transition: transform 300ms ease-in-out;
+  }
+
+  .tabs-nav-scroll {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .tabs-nav {
+    position: relative;
+    float: left;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .tabs-nav-prev,
+  .tabs-nav-next {
+    position: absolute;
+    width: 36px;
+    height: 100%;
+    // line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tabs-nav-prev {
+    left: 0;
+  }
+  .tabs-nav-next {
+    right: 0;
+  }
+  .tabs-nav-scrollable {
+    padding: 0 32px;
+  }
+  .tabs-nav-scroll-disabled {
+    display: none;
+  }
+}
