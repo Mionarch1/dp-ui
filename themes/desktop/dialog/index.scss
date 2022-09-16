@@ -104,16 +104,8 @@
 }
 
 .dialog-opacity-enter-active {
-  animation: fade-opacity 0.1s ease;
+  @include transition-animation-in(opacity);
 }
 .dialog-opacity-leave-active {
-  animation: fade-opacity 0.1s reverse ease;
-}
-@keyframes fade-opacity {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  @include transition-animation-out(opacity);
 }

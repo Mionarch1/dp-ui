@@ -1,5 +1,4 @@
 // var start
-
 $color-white: #ffffff !default;
 $color-black: #000000 !default;
 
@@ -49,9 +48,3 @@ $color-green-700: mix($color-black, $color-green-default, 24%) !default;
 $color-green-800: mix($color-black, $color-green-default, 36%) !default;
 $color-green-900: mix($color-black, $color-green-default, 52%) !default;
 // var end
-
-// button start
-$button-background-default: $color-yellow-200;
-$button-border-default: $color-yellow-500;
-$button-font-default: $color-black-500;
-// button end

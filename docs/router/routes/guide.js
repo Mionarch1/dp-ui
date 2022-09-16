@@ -4,9 +4,9 @@ export default [
     path: '/guide',
     component: () => import('@docs/views/guide/index')
   },
-  // {
-  //   name: 'guide-icon',
-  //   path: '/guide/icon',
-  //   component: () => import('@docs/views/guide/icon')
-  // }
+  {
+    name: 'guide-icon',
+    path: '/guide/icon',
+    component: () => import('@docs/views/guide/icon')
+  }
 ];

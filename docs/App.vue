@@ -26,7 +26,7 @@ import CSider from '@docs/components/common/CSider';
   }
   &-view {
     width: 100%;
-    height: calc(100% - 54px);
+    height: 100%;
     padding: 30px 48px 0;
     overflow: hidden auto;
   }

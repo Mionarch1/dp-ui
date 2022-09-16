@@ -1,19 +1,9 @@
 .drawer-fade-enter-active {
-	animation: fade 0.3s;
+	@include transition-animation-in(opacity);
 }
 
 .drawer-fade-leave-active {
-	animation: fade 0.3s reverse;
-}
-
-@keyframes fade {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
+	@include transition-animation-in(opacity);
 }
 
 @mixin drawer-animation($direction) {
