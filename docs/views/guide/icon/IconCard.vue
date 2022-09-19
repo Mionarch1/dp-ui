@@ -1,14 +1,22 @@
 <template>
   <div class="icon-card">
-    <dp-icon :name="`dpui-${props.name}`" type="normal"></dp-icon>
+    <dp-icon :name="`dpui-${props.name}`" :type="type"></dp-icon>
     <span>{{ props.name }}</span>
   </div>
 </template>
 
 <script setup>
+import { computed } from 'vue';
+
 const props = defineProps({
-  name: { type: String, default: '' },
-  icon: { type: String, default: '' }
+  name: { type: String, default: '' }
+});
+
+const type = computed(() => {
+  if (props.name.indexOf('color-') >= 0) {
+    return 'color';
+  }
+  return 'normal';
 });
 </script>
 
@@ -23,7 +31,7 @@ const props = defineProps({
   border-left: 1px solid #efefef;
   border-bottom: 1px solid #efefef;
   cursor: pointer;
-  transition: all .2s;
+  transition: all 0.2s;
   padding: 24px;
   flex: 1;
   &:hover {

@@ -21,11 +21,6 @@
         "type": "Basic",
         "children": [
           {
-            "nameZh": "图标",
-            "nameEn": "Icon",
-            "path": "/desktop/icon"
-          },
-          {
             "nameZh": "按钮",
             "nameEn": "Button",
             "path": "/desktop/button"
