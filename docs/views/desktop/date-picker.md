@@ -12,11 +12,7 @@ Date-Picker 用于选择或输入日期
     v-model:modelValue="value1"
     hint="选择时间"
     format="D MMM YYYY"
-    :pickerOptions="{
-								association: endTime,
-								scope: '90',
-								isStart: true
-							}"
+    :isStart="true"
   >
     1233333333333
   </dp-date-picker>
@@ -38,10 +34,11 @@ Date-Picker 用于选择或输入日期
 
 ### Attributes
 
-| 参数    | 说明           | 类型    | 可选值                                               | 默认值    |
-| ------- | -------------- | ------- | ---------------------------------------------------- | --------- |
-| type    | 类型           | String  | default / primary / nomal / warm / danger / disabled | `default` |
-| shape   | 形状           | String  | square / round                                       | `square`  |
-| size    | 尺寸           | String  | large / medium / small / mini                        | `medium`  |
-| icon    | 图标名称       | String  | ——                                                   | `square`  |
-| loading | 是否加载中状态 | Boolean | ——                                                   | `false`   |
+| 参数        | 说明                                                              | 类型    | 可选值         | 默认值                |
+| ----------- | ----------------------------------------------------------------- | ------- | -------------- | --------------------- |
+| modelValue  | 绑定的值                                                          | String  | -------------- | ''                    |
+| hint        | input 提示文本                                                    | String  | -------------- | ''                    |
+| format      | 时间选择器显示时间的格式，默认为 2022-02-11 这种                  | String  | -----------    | `YYYY-MM-DD`          |
+| isStart     | 是否为范围开始的时间选择器                                        | Boolean | ——             | `false`               |
+| scope       | 限制时间范围天数                                                  | Number  | ——             | '90'                  |
+| association | 限制范围时间可选的最后一天,默认为当天,即可选为当前时间的前 3 个月 | String  | ——             | '当前时间 new Date()' |

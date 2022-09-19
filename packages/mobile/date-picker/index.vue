@@ -1,6 +1,6 @@
 <template>
-  <div class="dp-date-picker" ref="date_picker">
-    <section class="dp-data-input" @click="onOpen">
+  <div class="dpm-date-picker" ref="date_picker">
+    <section class="dpm-data-input" @click="onOpen">
       <input
         :value="modelValue ? dayjs(modelValue).format(props.format) : ''"
         :placeholder="hint"
@@ -8,15 +8,12 @@
       />
     </section>
     <transition name="option-slide">
-      <div
-        class="dp-picker-inner"
-        v-if="state.visibled"
-        :class="[{ isright: isRight }]"
-      >
-        <div class="picker-arrow" :class="[{ arrowRight: isRight }]"></div>
-
-        <div class="dp-picker-box">
-          <div class="dp-picker-select">
+      <div class="dpm-picker-inner" v-if="state.visibled">
+        <div class="dpm-picker-box">
+          <div class="dpm-pick-close" @click="onClose">
+            <span>X</span>
+          </div>
+          <div class="dpm-picker-select">
             <div class="picker-select-left">
               <i
                 class="meta-iconfont meta-Back"
@@ -47,7 +44,6 @@
                 {{ item['en'] }}
               </span>
             </div>
-
             <div class="screen-item sec-days">
               <template
                 v-for="(item, index) in state.days"
@@ -75,7 +71,7 @@
 import { ref, reactive, onDeactivated } from 'vue';
 import dayjs from 'dayjs';
 
-/**
+/** 
  * association为范围关联时间
  * scope为时间范围天数
  * isStart为是否为范围开始的时间选择器
@@ -84,7 +80,7 @@ import dayjs from 'dayjs';
  *  hint 为时间选择器的标题显示    默认为空
  */
 // 获取时间选择器
-const date_picker = ref(null);
+// const date_picker = ref(null);
 
 const emit = defineEmits(['update:modelValue']);
 const props = defineProps({
@@ -96,7 +92,7 @@ const props = defineProps({
   scope: { type: Number, default: 90 },
   association: { type: String, default: `${new Date()}` }
 });
-// console.log(props.pickerOptions);
+
 const state = reactive({
   visibled: false,
   year: 2001,
@@ -304,19 +300,19 @@ const isLeapYear = year => {
   return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 };
 
-window.addEventListener('click', event => {
-  if (!date_picker.value.contains(event.target)) {
-    state.visibled = false;
-  }
-});
-window.addEventListener('touchstart', event => {
-  if (!date_picker.value.contains(event.target)) {
-    state.visibled = false;
-  }
-});
+// window.addEventListener('click', event => {
+//   if (!date_picker.value.contains(event.target)) {
+//     state.visibled = false;
+//   }
+// });
+// window.addEventListener('touchstart', event => {
+//   if (!date_picker.value.contains(event.target)) {
+//     state.visibled = false;
+//   }
+// });
 
-onDeactivated(() => {
-  window.removeEventListener('resize');
-  window.removeEventListener('scroll');
-});
+// onDeactivated(() => {
+//   window.removeEventListener('resize');
+//   window.removeEventListener('scroll');
+// });
 </script>
