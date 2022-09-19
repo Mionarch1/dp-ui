@@ -1,16 +1,17 @@
+$button-background-default: $color-yellow-200;
+$button-border-default: $color-yellow-500;
+$button-font-default: $color-black-500;
+
 .dp-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-family: Plus Jakarta Sans;
   padding: 12px 24px;
   height: 48px;
   background: $button-background-default;
   border: 1px solid $button-border-default;
-  font-weight: 800;
-  font-size: 18px;
-  color: $button-font-default;
   border-radius: 24px;
   outline: none;
+  @include body-bold();
 }
