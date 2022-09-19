@@ -5,7 +5,7 @@
       <div class="dp-alert-content">
         <span
           v-if="title || $slots.title"
-          :class="['dp-alert-title', isBoldTitle]"
+          class="dp-alert-title"
         >
           <slot name="title">{{ title }}</slot>
         </span>

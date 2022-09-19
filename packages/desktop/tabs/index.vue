@@ -2,30 +2,33 @@
   <div class="dp-tabs">
     <div
       ref="navWrap"
-      class="tabs-nav-wrap"
-      :class="[showToggle ? 'tabs-nav-scrollable' : '']"
+      :class="['dp-tabs-nav-wrap', showToggle ? 'dp-tabs-nav-scrollable' : '']"
     >
       <span
         v-if="showToggle"
-        class="tabs-nav-prev"
-        :class="[showToggle ? '' : 'tabs-nav-scroll-disabled']"
+        :class="[
+          'dp-tabs-nav-prev',
+          showToggle ? '' : 'dp-tabs-nav-scroll-disabled'
+        ]"
         @click="scrollPrev"
       >
         &lt;
       </span>
       <span
         v-if="showToggle"
-        class="tabs-nav-next"
-        :class="[showToggle ? '' : 'tabs-nav-scroll-disabled']"
+        :class="[
+          'dp-tabs-nav-next',
+          showToggle ? '' : 'dp-tabs-nav-scroll-disabled'
+        ]"
         @click="scrollNext"
       >
         &gt;
       </span>
-      <div ref="navScroll" class="tabs-nav-scroll">
-        <div ref="nav" class="tabs-nav" :style="navStyle">
-          <div class="tabs-inv-bar" :style="barStyle"></div>
+      <div ref="navScroll" class="dp-tabs-nav-scroll">
+        <div ref="nav" class="dp-tabs-nav" :style="navStyle">
+          <div class="dp-tabs-inv-bar" :style="barStyle"></div>
           <div
-            class="tabs-tab"
+            class="dp-tabs-tab"
             v-for="(item, index) in navList"
             :key="index"
             @click="handleChange(index)"
@@ -56,6 +59,8 @@ const props = defineProps({
   value: { type: [String, Number] },
   showToggle: { type: Boolean, default: false }
 });
+
+const emit = defineEmits(['tabChange']);
 const slots = useSlots();
 const navList = ref([]);
 const tabElement = ref([]);
@@ -95,7 +100,7 @@ const initTabs = () => {
 const updataBar = () => {
   nextTick(() => {
     const index = navList.value.findIndex(nav => nav.label === activeKey.value);
-    const elemTabs = navWrap.value.querySelectorAll('.tabs-tab');
+    const elemTabs = navWrap.value.querySelectorAll('.dp-tabs-tab');
     const elemTab = elemTabs[index];
     barWidth.value = elemTab ? elemTab.offsetWidth : 0;
     if (index > 0) {
@@ -116,6 +121,7 @@ const handleChange = index => {
   const nav = navList.value[index];
   activeKey.value = nav.label;
   updataBar();
+  emit('tabChange', activeKey.value);
 };
 const updateMove = () => {
   const navWidth = nav.value.offsetWidth;
