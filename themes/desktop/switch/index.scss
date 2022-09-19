@@ -1,0 +1,65 @@
+.dp-switch {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	font-size: 14px;
+	line-height: 20px;
+	height: 24px;
+	vertical-align: middle;
+  
+	&-input {
+	  position: absolute;
+	  width: 0;
+	  height: 0;
+	  opacity: 0;
+	  margin: 0;
+	}
+  
+	&-core {
+	  margin: 0;
+	  display: inline-block;
+	  position: relative;
+	  width: 44px;
+	  height: 24px;
+	  outline: none;
+	  border-radius: 12px;
+	  box-sizing: border-box;
+	  background: $color-black-200;
+	  cursor: pointer;
+	  transition: border-color 0.3s, background-color 0.3s;
+	  vertical-align: middle;
+  
+	  .dp-switch-button {
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		border-radius: 50%;
+		transition: all 0.3s;
+		width: 20px;
+		height: 20px;
+		background-color: $color-white-default;
+	  }
+  
+	}
+  
+	&-disabled {
+	  .dp-switch-core {
+		cursor: not-allowed;
+		opacity: .6;
+		.dp-switch-button {
+		  background-color: $color-black-100;
+		}
+	  }
+	}
+  }
+  
+  .dp-switch.is-checked {
+	.dp-switch-core {
+	  background-color: $color-yellow-500;
+  
+	  .dp-switch-button {
+		transform: translateX(20px);
+	  }
+	}
+  }
+  

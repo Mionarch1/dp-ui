@@ -1,4 +1,5 @@
 import '@themes/desktop'
+import '@themes/common/iconfont/iconfont.js'
 import * as components from './components';
 
 export default {

@@ -1,63 +1,50 @@
 // var start
-$color-black-100: #f5f5f5 !default;
-$color-black-200: #c8c8c8 !default;
-$color-black-300: #999999 !default;
-$color-black-400: #525252 !default;
-$color-black-500: #333333 !default;
-$color-black-600: #2a2a2a !default;
-$color-black-700: #242424 !default;
-$color-black-800: #171717 !default;
-$color-black-900: #000000 !default;
+$color-white: #ffffff !default;
+$color-black: #000000 !default;
 
-$color-green-100: #e4f3e5 !default;
-$color-green-200: #c6e6c8 !default;
-$color-green-300: #a3d9a6 !default;
-$color-green-400: #76cb7b !default;
-$color-green-500: #26bc35 !default;
-$color-green-600: #21a82f !default;
-$color-green-700: #1d9129 !default;
-$color-green-800: #187621 !default;
-$color-green-900: #105417 !default;
+$color-white-default: $color-white !default;
 
-$color-yellow-100: #fff9e4 !default;
-$color-yellow-200: #fff2c6 !default;
-$color-yellow-300: #ffeba1 !default;
-$color-yellow-400: #ffe472 !default;
-$color-yellow-500: #ffdd00 !default;
-$color-yellow-600: #e4c600 !default;
-$color-yellow-700: #c6ab00 !default;
-$color-yellow-800: #a18c00 !default;
-$color-yellow-900: #726300 !default;
+$color-black-default: #333333 !default;
+$color-black-100: mix($color-white, $color-black-default, 92%) !default;
+$color-black-200: mix($color-white, $color-black-default, 72%) !default;
+$color-black-300: mix($color-white, $color-black-default, 48%) !default;
+$color-black-400: mix($color-white, $color-black-default, 16%) !default;
+$color-black-500: $color-black-default !default;
+$color-black-600: mix($color-black, $color-black-default, 20%) !default;
+$color-black-700: mix($color-black, $color-black-default, 36%) !default;
+$color-black-800: mix($color-black, $color-black-default, 60%) !default;
+$color-black-900: mix($color-black, $color-black-default, 100%) !default;
 
-$color-red-100: #ffe5e5 !default;
-$color-red-200: #ffc8c7 !default;
-$color-red-300: #ffa7a5 !default;
-$color-red-400: #ff7d79 !default;
-$color-red-500: #ff3a2e !default;
-$color-red-600: #e43329 !default;
-$color-red-700: #c52c23 !default;
-$color-red-800: #a1241d !default;
-$color-red-900: #721914 !default;
+$color-yellow-default: #ffdd00 !default;
+$color-yellow-100: mix($color-white, $color-yellow-default, 88%) !default;
+$color-yellow-200: mix($color-white, $color-yellow-default, 72%) !default;
+$color-yellow-300: mix($color-white, $color-yellow-default, 56%) !default;
+$color-yellow-400: mix($color-white, $color-yellow-default, 32%) !default;
+$color-yellow-500: $color-yellow-default !default;
+$color-yellow-600: mix($color-black, $color-yellow-default, 12%) !default;
+$color-yellow-700: mix($color-black, $color-yellow-default, 24%) !default;
+$color-yellow-800: mix($color-black, $color-yellow-default, 40%) !default;
+$color-yellow-900: mix($color-black, $color-yellow-default, 54%) !default;
 
-$color-white-default: #ffffff !default;
-$color-grey-default: $color-black-400 !default;
-$color-black-default: $color-black-500 !default;
-$color-yellow-default: $color-yellow-500 !default;
-$color-green-default: $color-green-500 !default;
-$color-red-default: $color-red-500 !default;
+$color-red-default: #ff3a2e !default;
+$color-red-100: mix($color-white, $color-red-default, 88%) !default;
+$color-red-200: mix($color-white, $color-red-default, 72%) !default;
+$color-red-300: mix($color-white, $color-red-default, 56%) !default;
+$color-red-400: mix($color-white, $color-red-default, 32%) !default;
+$color-red-500: $color-red-default !default;
+$color-red-600: mix($color-black, $color-red-default, 12%) !default;
+$color-red-700: mix($color-black, $color-red-default, 24%) !default;
+$color-red-800: mix($color-black, $color-red-default, 36%) !default;
+$color-red-900: mix($color-black, $color-red-default, 56%) !default;
 
-$color-grey-light: $color-black-300 !default;
-
-$color-white-light: #f3f4f5 !default;
-$color-white-lighter: #fafafa !default;
-
-$color-yellow-light: #ffff54 !default;
-$color-yellow-dark: #b79a00 !default;
-
+$color-green-default: #26bc35 !default;
+$color-green-100: mix($color-white, $color-green-default, 88%) !default;
+$color-green-200: mix($color-white, $color-green-default, 72%) !default;
+$color-green-300: mix($color-white, $color-green-default, 52%) !default;
+$color-green-400: mix($color-white, $color-green-default, 32%) !default;
+$color-green-500: $color-green-default !default;
+$color-green-600: mix($color-black, $color-green-default, 8%) !default;
+$color-green-700: mix($color-black, $color-green-default, 24%) !default;
+$color-green-800: mix($color-black, $color-green-default, 36%) !default;
+$color-green-900: mix($color-black, $color-green-default, 52%) !default;
 // var end
-
-// button start
-$button-background-default: $color-yellow-200;
-$button-border-default: $color-yellow-500;
-$button-font-default: $color-black-500;
-// button end
