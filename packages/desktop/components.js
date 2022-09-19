@@ -1,5 +1,6 @@
 export { default as DpShare} from './share';
 export { default as DpButton } from './button';
+export { default as DpDatePicker } from './date-picker';
 export { default as DpTag } from './tag';
 export { default as DpTabs } from './tabs';
 export { default as TabPane } from './tabs/components/pane.vue';
