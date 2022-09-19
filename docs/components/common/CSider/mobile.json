@@ -14,6 +14,11 @@
             "nameZh": "月份选择器",
             "nameEn": "Month Picker",
             "path": "/mobile/month-picker"
+          },
+          {
+            "nameZh": "时间选择器",
+            "nameEn": "Date Picker",
+            "path": "/mobile/date-picker"
           }
         ]
       }

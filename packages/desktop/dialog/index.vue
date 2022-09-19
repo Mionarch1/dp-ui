@@ -21,20 +21,9 @@
         >
           <header class="dp-dialog-header" v-if="props.showHeader">
             <div class="dp-dialog-header-item">
-              <i
-                v-if="props.closeType === 'back'"
-                @click="handleToggle()"
-                class="meta-iconfont meta-Back"
-              ></i>
-              <span v-if="title">{{ title }}</span>
+              <i class="meta-iconfont meta-Close" @click="handleToggle()">X</i>
             </div>
-            <div
-              class="dp-dialog-header-item is-close"
-              v-if="props.closeType === 'close'"
-            >
-              <i></i>
-              <i class="meta-iconfont meta-Close" @click="handleToggle()"></i>
-            </div>
+            <span v-if="title">{{ title }}</span>
           </header>
           <section class="dp-dialog-body">
             <slot />
@@ -57,8 +46,7 @@ const props = defineProps({
   overlayCloseable: { type: Boolean, default: false },
   title: { type: String, default: '' },
   theme: { type: String, default: 'white' }, // white | black
-  closeType: { type: String, default: 'close' }, // close | back
-  innerStyle: { type: Object, default: () => {} },
+  innerStyle: { type: Object, default: () => {} }
 });
 
 const emit = defineEmits([

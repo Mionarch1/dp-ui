@@ -1,64 +1,41 @@
-.dp-date-picker {
+.dpm-date-picker {
   position: relative;
   width: 280px;
 
-  .dp-picker-inner {
-    position: absolute;
+  .dpm-picker-inner {
     z-index: 500;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    margin: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
 
-    .picker-arrow {
-      position: relative;
-      left: 20%;
-      bottom: -7px;
-      width: 0;
-      height: 0;
-      margin-top: -4px;
-      margin-left: -8px;
-      border-width: 0 8px 8px;
-      border-style: solid;
-      border-color: transparent transparent $color-black-200;
-      z-index: 501;
-
-      &::after {
-        content: '';
-        width: 0;
-        height: 0;
-        position: absolute;
-        bottom: -8px;
-        left: -6px;
-        border-width: 0 6px 6px;
-        border-style: solid;
-        border-color: transparent transparent #ffffff;
-      }
-    }
-
-    .dp-picker-box {
-      position: relative;
-      top: 6px;
-      left: 0;
-      right: 0;
-      width: 100%;
-      border: 1px solid #f0f0f0;
-      border-radius: 5px;
+    .dpm-picker-box {
+      width: 100vw;
+      position: fixed;
       z-index: 500;
-      background: #ffffff;
+      background: $color-white-default;
+      border-radius: 24px 24px 0px 0px;
+      bottom: 0;
       overflow-x: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      padding: 16px;
-      border: 1px solid $color-black-200;
 
-      .dp-picker-select {
+      .dpm-picker-select {
         display: flex;
         padding: 6px 0;
-        height: 34px;
-        line-height: 34px;
+        height: 36px;
+        line-height: 36px;
         color: #595959;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid $color-black-100;
+        border-top: 1px solid $color-black-100;
         justify-content: space-around;
         align-content: center;
         align-items: center;
 
-        .dp-button {
+        .dpm-button {
           button {
             border: none;
             .dp-icon {
@@ -101,13 +78,13 @@
         .screen-item {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
+          justify-content: flex-start;
           align-items: center;
           padding: 0px;
           width: 400px;
           align-self: stretch;
           flex-wrap: wrap;
-          gap: 24.67px;
+          // gap: 24.67px;
 
           .sec-week-item,
           .day-item {
@@ -118,23 +95,37 @@
         }
 
         .sec-week {
-          background: #ffffff;
-          border-bottom: 1px solid #f0f0f0;
-
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 0px 8px;
+          // gap: 12px;
+          width: 100%;
+          height: 36px;
           .sec-week-item {
             color: $color-black-500;
             font-size: 12px;
             font-weight: 400;
+            flex: 0 0 14.2%;
           }
         }
 
         .sec-days {
-          margin-top: 8px;
+          padding: 8px;
+          gap: 4px 0;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          flex-flow: row wrap;
           .day-item {
             border-radius: 8px;
             cursor: pointer;
             color: $color-black-500;
             transition: all 0.2s ease-in-out;
+            flex: 0 0 14.2%;
 
             &:hover {
               background: $color-black-100;
@@ -161,6 +152,17 @@
           }
         }
       }
+      .dpm-pick-close {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 16px;
+        gap: 10px;
+        width: 100%;
+        height: 52px;
+        background: #ffffff;
+      }
     }
   }
 }
@@ -178,7 +180,7 @@
   transform: translateY(-20px);
   opacity: 0;
 }
-.dp-data-input {
+.dpm-data-input {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -203,13 +205,10 @@
     outline: none;
   }
 }
-.isright {
-  right: 0;
-}
 .arrowRight {
   left: 75% !important;
 }
-.dp-date-picker {
+.dpm-date-picker {
   font-family: Plus Jakarta Sans;
   background: #ffffff;
 }
