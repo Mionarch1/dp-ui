@@ -1,7 +1,7 @@
 <template>
   <div class="icon-card">
     <dp-icon :name="`dpui-${props.name}`" :type="type"></dp-icon>
-    <span>{{ props.name }}</span>
+    <span>dpui-{{ props.name }}</span>
   </div>
 </template>
 

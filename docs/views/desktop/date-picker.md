@@ -29,20 +29,9 @@ Date-Picker 用于选择或输入日期
         value1: '',
         endTime: ''
       };
-    },
-    methods: {
-      aaa() {
-        this.a++;
-      }
     }
   };
 </script>
-
-<style>
-  .button-item {
-    margin: 30px;
-  }
-</style>
 ```
 
 :::
