@@ -14,3 +14,4 @@ export { default as DpDrawer } from './drawer';
 export { default as DpMonthPicker } from './month-picker';
 export { default as DpIcon } from './icon';
 export { default as DpInput } from './input';
+export { default as DpMessage } from './message';
