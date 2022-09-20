@@ -20,7 +20,7 @@
       </p>
       <i
         class="meta-iconfont meta-Close dp-input-icon-close"
-        @touchstart="onClear"
+        @touchstart.passive="onClear"
         v-show="clear && !!value"
       ></i>
     </div>
@@ -71,6 +71,7 @@ const inputListeners = computed(() => {
 });
 
 const onClear = () => {
+  
   emit('input', '');
   emit('clear');
 };

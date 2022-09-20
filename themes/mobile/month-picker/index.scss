@@ -16,7 +16,7 @@ i {
 		overflow: hidden;
 		margin: 0;
 		z-index: 1000;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: $color-black-overlay;
 
 		.dp-picker-box {
 			width: 100vw;

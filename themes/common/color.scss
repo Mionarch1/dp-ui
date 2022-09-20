@@ -5,6 +5,7 @@ $color-black: #000000 !default;
 $color-white-default: $color-white !default;
 
 $color-black-default: #333333 !default;
+$color-black-overlay: rgba(0, 0, 0, 0.5) !default;
 $color-black-100: mix($color-white, $color-black-default, 92%) !default;
 $color-black-200: mix($color-white, $color-black-default, 72%) !default;
 $color-black-300: mix($color-white, $color-black-default, 48%) !default;

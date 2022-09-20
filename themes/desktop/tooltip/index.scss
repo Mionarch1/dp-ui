@@ -22,28 +22,80 @@
 		position: absolute;
 		z-index: 1;
 		/* 超过了100%就是反向距离 */
-		bottom: 125%;
-		left: 50%;
-		transform: translate(-50%, 0);
 		opacity: 0;
 		/* 延迟一秒再变为清晰度是1 */
 		transition: all 1s;
 
 		/* 设置提示框的after属性，并添加一个尖角 */
+		&:hover {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	.bottom {
+		bottom: -150%;
+		left: 50%;
+		transform: translate(-50%, 0);
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: -33%;
+			left: 50%;
+			border-width: 10px;
+			transform: translate(-50%, 0);
+			border-style: solid;
+			border-color: transparent transparent $color-black-400 transparent;
+		}
+	}
+
+	.top {
+		bottom: 125%;
+		left: 50%;
+		transform: translate(-50%, 0);
+
 		&::after {
 			content: "";
 			position: absolute;
 			top: 100%;
 			left: 50%;
-			margin-left: -5px;
-			border-width: 5px;
+			transform: translate(-50%, 0);
+			border-width: 10px;
 			border-style: solid;
 			border-color: $color-black-400 transparent transparent transparent;
 		}
+	}
 
-		&:hover {
-			visibility: visible;
-			opacity: 1;
+	.left {
+		top: -10%;
+		left: -195%;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: -10%;
+			border-width: 10px;
+			border-style: solid;
+			transform: translate(0, -50%);
+			border-color: transparent transparent transparent $color-black-400 ;
+		}
+	}
+
+	.right {
+		top: -10%;
+		right: -195%;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: -10%;
+			border-width: 10px;
+			border-style: solid;
+			transform: translate(0, -50%);
+			border-color: transparent $color-black-400 transparent transparent;
 		}
 	}
 }
