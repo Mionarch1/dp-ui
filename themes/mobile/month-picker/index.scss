@@ -43,6 +43,11 @@ i {
 				justify-content: space-around;
 				align-content: center;
 				align-items: center;
+				.picker-select-left,
+				.picker-select-right {
+					display: flex;
+					align-items: center;
+				}
 
 				.dp-button {
 					button {
@@ -133,18 +138,13 @@ i {
 }
 
 .openPicker {
-	border: 1px solid blue !important;
+	border: 1px solid #ffdd00 !important;
 }
 
 :deep(.dp-input-inner) {
 	text-align: center;
 	font-size: 14px;
 	color: $color-black-500;
-}
-
-.rev {
-	transform: rotate(180deg);
-	/* Equal to rotateZ(45deg) */
 }
 
 .icon {

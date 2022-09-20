@@ -23,7 +23,10 @@
         ]"
         :style="style"
       >
-        <i v-if="isNest" @click="handleClose">{{ '<' }}</i>
+        <div class="iconList">
+          <dp-icon class="icon-back" v-if="isNest" @click="handleClose" name="dpui-line-chevron-left" type="line" />
+          <dp-icon class="icon-close" name="dpui-line-x" type="line"  @click.self="handleClose"/>
+        </div>
         <div class="dp-drawer-body">
           <slot></slot>
         </div>

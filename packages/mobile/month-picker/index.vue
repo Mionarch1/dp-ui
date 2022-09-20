@@ -10,17 +10,29 @@
       <div class="dp-picker-inner" v-if="state.visible">
         <div class="dp-picker-box">
           <div class="dp-pick-close" @click="onClose">
-            X
+            <dp-icon
+              style="width: 16px; height: 16px"
+              name="dpui-line-x"
+              type="line"
+            />
           </div>
           <div class="dp-picker-select">
             <div class="picker-select-left">
-              <i @click="onYearChange('reduce')">-</i>
+              <dp-icon
+                @click="onYearChange('reduce')"
+                name="dpui-line-chevron-left"
+                type="line"
+              />
             </div>
             <div class="picker-select-middle">
               <p class="picker-select-year">{{ state.year }}</p>
             </div>
-            <div class="picker-select-right rev">
-              <i @click="onYearChange('add')">+</i>
+            <div class="picker-select-right">
+              <dp-icon
+                @click="onYearChange('add')"
+                name="dpui-line-chevron-right"
+                type="line"
+              />
             </div>
           </div>
           <div class="dp-picker-content">
