@@ -18,10 +18,12 @@
         <div class="dp-picker-box">
           <div class="dp-picker-select">
             <div class="picker-select-left">
-              <i
-                class="meta-iconfont meta-Back"
+              <dp-icon
+                name="dpui-line-chevron-left"
+                type="line"
                 @click="onMonthChange('reduce')"
-              ></i>
+                size="16px"
+              />
             </div>
             <div class="picker-select-middle">
               <p class="picker-select-month">
@@ -29,11 +31,13 @@
               </p>
               <p class="picker-select-year">{{ state.year }}</p>
             </div>
-            <div class="picker-select-right rev">
-              <i
-                class="meta-iconfont meta-Back"
+            <div class="picker-select-right">
+              <dp-icon
+                name="dpui-line-chevron-right"
+                type="line"
                 @click="onMonthChange('add')"
-              ></i>
+                size="16px"
+              />
             </div>
           </div>
 
