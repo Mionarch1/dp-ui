@@ -9,7 +9,7 @@
       <!-- 选中内容 -->
       <span>{{ selctValue }}</span>
       <div class="select-icon" :class="{ selectOpen: selectOpen }">
-        <i class="fi fi-rr-angle-small-down"></i>
+        <dp-icon name="dpui-line-chevron-down" type="line"  size='12px'/>
       </div>
     </div>
     <!-- 下拉框 -->

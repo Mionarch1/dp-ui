@@ -25,14 +25,16 @@
 
 // icon
 .select-icon{
-    width: 32px;
-    height: 32px;
+    width: 12px;
+    height: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    border: #E6E8EC 2px solid;
     transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
 }
 .select-icon.selectOpen{
     transform: rotate(180deg);
