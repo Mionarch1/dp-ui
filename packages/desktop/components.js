@@ -1,5 +1,6 @@
 export { default as DpShare} from './share';
 export { default as DpButton } from './button';
+export { default as DpDatePicker } from './date-picker';
 export { default as DpTag } from './tag';
 export { default as DpTabs } from './tabs';
 export { default as TabPane } from './tabs/components/pane.vue';
@@ -11,3 +12,5 @@ export { default as DpAlert } from './alert';
 export { default as DpTooltip } from './tooltip';
 export { default as DpDrawer } from './drawer';
 export { default as DpMonthPicker } from './month-picker';
+export { default as DpIcon } from './icon';
+export { default as DpInput } from './input';

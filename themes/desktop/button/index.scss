@@ -1,16 +1,296 @@
+@mixin button-size() {
+  &.is-large {
+    height: 48px;
+    padding: 0 24px;
+    border-radius: $radius-large;
+    &.is-icon {
+      padding: 12px !important;
+      width: 48px;
+      border-radius: $radius-circle !important;
+      i {
+        font-size: 20px !important;
+      }
+    }
+    @include body-bold();
+  }
+  &.is-middle {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: $radius-button-middle;
+    &.is-icon {
+      padding: 10px !important;
+      width: 40px;
+      border-radius: $radius-circle !important;
+      i {
+        font-size: 20px !important;
+      }
+    }
+    @include small-body-bold();
+  }
+}
+
 .dp-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  font-family: Plus Jakarta Sans;
-  padding: 12px 24px;
-  height: 48px;
-  background: $button-background-default;
-  border: 1px solid $button-border-default;
-  font-weight: 800;
-  font-size: 18px;
-  color: $button-font-default;
-  border-radius: 24px;
+  border: none;
   outline: none;
+  background: transparent;
+  @include transition-default();
+  i {
+    vertical-align: bottom;
+    @include transition-default();
+  }
+  &.is-loading {
+    i {
+      display: inline-block;
+      font-size: 16px !important;
+      animation: dp-animation-rotate 2s linear infinite;
+    }
+  }
+  &.is-default {
+    background: $color-yellow-500;
+    border: none;
+    @include button-size();
+    &.is-small {
+      height: 28px;
+      padding: 0 12px;
+      border-radius: $radius-button-small;
+      i {
+        font-size: 16px !important;
+      }
+      &.is-icon {
+        padding: 6px !important;
+        width: 28px;
+        border-radius: $radius-circle !important;
+      }
+      @include caption-bold();
+    }
+    &:hover {
+      background: $color-yellow-600;
+    }
+    &:active {
+      background: $color-yellow-700;
+    }
+    &.is-disabled {
+      background: $color-black-200;
+      color: $color-black-300;
+      cursor: not-allowed;
+      i {
+        color: $color-black-300 !important;
+        cursor: not-allowed;
+      }
+    }
+    &.is-loading {
+      color: $color-yellow-700;
+      i {
+        color: $color-yellow-700 !important;
+      }
+      &:hover {
+        background: $color-yellow-500;
+      }
+    }
+  }
+  &.is-primary {
+    background: $color-white-default;
+    border: 1px solid $color-yellow-500;
+    @include button-size();
+    &.is-small {
+      height: 28px;
+      padding: 0 12px;
+      border-radius: $radius-button-small;
+      i {
+        font-size: 16px !important;
+      }
+      &.is-icon {
+        padding: 6px !important;
+        width: 28px;
+        border-radius: $radius-circle !important;
+      }
+      @include caption();
+    }
+    &:hover {
+      background: $color-yellow-100;
+    }
+    &:active {
+      background: $color-yellow-300;
+    }
+    &.is-disabled {
+      background: $color-white-default;
+      border: 1px solid $color-black-200;
+      color: $color-black-200;
+      cursor: not-allowed;
+      i {
+        color: $color-black-200 !important;
+        cursor: not-allowed;
+      }
+    }
+    &.is-loading {
+      color: $color-black-200;
+      i {
+        color: $color-black-200 !important;
+      }
+      &:hover {
+        background: $color-white-default;
+      }
+    }
+  }
+  &.is-danger {
+    background: $color-red-default;
+    border: none;
+    color: $color-white-default !important;
+    i {
+      color: $color-white-default !important;
+    }
+    @include button-size();
+    &.is-small {
+      height: 28px;
+      padding: 0 12px;
+      border-radius: $radius-button-small;
+      i {
+        font-size: 16px !important;
+      }
+      &.is-icon {
+        padding: 6px !important;
+        width: 28px;
+        border-radius: $radius-circle !important;
+      }
+      @include caption();
+    }
+    &:hover {
+      background: $color-red-600;
+    }
+    &:active {
+      background: $color-red-700;
+    }
+    &.is-disabled {
+      background: $color-red-200;
+      color: $color-white-default;
+      cursor: not-allowed;
+      i {
+        cursor: not-allowed;
+      }
+    }
+    &.is-loading {
+      color: $color-red-300;
+      i {
+        color: $color-red-300 !important;
+      }
+      &:hover {
+        background: $color-red-default;
+      }
+    }
+  }
+  &.is-link {
+    color: $color-yellow-700 !important;
+    padding: 0;
+    height: auto;
+    i {
+      color: $color-yellow-700 !important;
+    }
+    @include button-size();
+    &.is-small {
+      height: 28px;
+      padding: 0 12px;
+      border-radius: $radius-button-small;
+      i {
+        font-size: 16px !important;
+      }
+      &.is-icon {
+        padding: 6px !important;
+        width: 28px;
+        border-radius: $radius-circle !important;
+      }
+      @include caption();
+    }
+    &:hover {
+      color: $color-yellow-800;
+      i {
+        color: $color-yellow-800 !important;
+      }
+    }
+    &:active {
+      color: $color-yellow-900;
+      i {
+        color: $color-yellow-900 !important;
+      }
+    }
+    &.is-disabled {
+      color: $color-black-200 !important;
+      cursor: not-allowed;
+      i {
+        color: $color-black-200 !important;
+        cursor: not-allowed;
+      }
+    }
+    &.is-loading {
+      &:hover {
+        color: $color-yellow-700;
+      }
+    }
+  }
+
+  &.is-dark {
+    &.is-primary {
+      color: $color-white-default;
+      background: $color-black-500;
+      border: 1px solid $color-black-400;
+      i {
+        color: $color-white-default !important;
+      }
+      &:hover {
+        background: $color-black-600;
+      }
+      &:active {
+        background: $color-black-700;
+      }
+      &.is-disabled {
+        color: $color-black-400;
+        cursor: not-allowed;
+        i {
+          color: $color-black-400 !important;
+          cursor: not-allowed;
+        }
+      }
+      &.is-loading {
+        color: $color-black-400;
+        i {
+          color: $color-black-400 !important;
+        }
+        &:hover {
+          background: $color-black-600;
+        }
+      }
+    }
+
+    &.is-link {
+      color: $color-yellow-500 !important;
+      i {
+        color: $color-yellow-500 !important;
+      }
+      &:hover {
+        color: $color-yellow-600 !important;
+        i {
+          color: $color-yellow-600 !important;
+        }
+      }
+      &:active {
+        color: $color-yellow-700 !important;
+        i {
+          color: $color-yellow-700 !important;
+        }
+      }
+      &.is-disabled {
+        color: $color-black-300 !important;
+        cursor: not-allowed;
+        i {
+          color: $color-black-300 !important;
+          cursor: not-allowed;
+        }
+      }
+      &.is-loading {
+        &:hover {
+          color: $color-yellow-600 !important;
+        }
+      }
+    }
+  }
 }

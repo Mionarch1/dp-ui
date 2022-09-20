@@ -1,0 +1,66 @@
+@mixin font-size-base($weight) {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: $weight;
+  color: $color-black-default;
+}
+
+@mixin title-h1-bold() {
+  font-size: 60px;
+  line-height: 72px;
+  @include font-size-base(800);
+}
+
+@mixin title-h2-bold() {
+  font-size: 48px;
+  line-height: 60px;
+  @include font-size-base(800);
+}
+
+@mixin title-h3-bold() {
+  font-size: 32px;
+  line-height: 48px;
+  @include font-size-base(800);
+}
+
+@mixin title-h4-bold() {
+  font-size: 24px;
+  line-height: 32px;
+  @include font-size-base(800);
+}
+
+@mixin body-bold() {
+  font-size: 18px;
+  line-height: 24px;
+  @include font-size-base(800);
+}
+
+@mixin body() {
+  font-size: 18px;
+  line-height: 24px;
+  @include font-size-base(800);
+}
+
+@mixin small-body-bold() {
+  font-size: 14px;
+  line-height: 20px;
+  @include font-size-base(800);
+}
+
+@mixin small-body() {
+  font-size: 14px;
+  line-height: 20px;
+  @include font-size-base(400);
+}
+
+@mixin caption-bold() {
+  font-size: 12px;
+  line-height: 16px;
+  @include font-size-base(800);
+}
+
+@mixin caption() {
+  font-size: 12px;
+  line-height: 16px;
+  @include font-size-base(400);
+}

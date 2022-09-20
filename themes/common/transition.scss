@@ -1,0 +1,11 @@
+@mixin transition-default() {
+  transition: all 0.2s;
+}
+
+@mixin transition-animation-in($type) {
+  animation: dp-animation-#{$type} 0.2s ease;
+}
+
+@mixin transition-animation-out($type) {
+  animation: dp-animation-#{$type} 0.2s reverse ease;
+}

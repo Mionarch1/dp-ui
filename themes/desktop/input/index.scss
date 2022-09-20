@@ -1,0 +1,115 @@
+.dp-input-wrapper {
+  display: inline-block;
+  &.is-error {
+    .dp-input {
+      border-color: $color-red-500;
+      &-inner {
+        &:hover,
+        &:focus {
+          caret-color: $color-red-500;
+        }
+      }
+    }
+    .dp-input-validate {
+      margin-top: 4px;
+      padding-left: 12px;
+      color: $color-red-500 !important;
+      @include caption();
+    }
+  }
+  &.is-disabled {
+    .dp-input {
+      background: $color-black-100;
+      border: 1px solid $color-black-200;
+      &,
+      &-inner,
+      &-prefix,
+      &-suffix,
+      &-prefix i,
+      &-suffix i {
+        cursor: not-allowed;
+      }
+    }
+  }
+  &.is-dark {
+    .dp-input {
+      border-radius: unset;
+      border: none;
+      border-bottom: 1px solid $color-black-200;
+      height: 52px;
+      &-inner {
+        color: $color-white-default;
+        &::placeholder {
+          color: $color-black-400;
+        }
+      }
+      &-prefix,
+      &-suffix {
+        color: $color-black-400;
+        i {
+          color: $color-black-400 !important;
+        }
+      }
+    }
+    &.is-disabled {
+      .dp-input {
+        border-radius: $radius-small;
+        &,
+        &-inner {
+          background: $color-black-600;
+        }
+      }
+    }
+  }
+
+  .dp-input {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background: $color-white-default;
+    border: 1px solid $color-black-200;
+    border-radius: $radius-default;
+    overflow: hidden;
+    padding: 0 12px;
+    @include transition-default();
+    &-inner {
+      padding: 10px 0;
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      @include small-body();
+      &::placeholder {
+        color: $color-black-200;
+      }
+      &:hover,
+      &:focus {
+        caret-color: $color-yellow-500;
+      }
+    }
+    &-prefix,
+    &-suffix {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      @include caption();
+      line-height: unset;
+      color: $color-black-200;
+      i {
+        color: $color-black-200 !important;
+      }
+      &.is-clearable {
+        i {
+          height: 16px;
+        }
+      }
+      &.is-show-count {
+        span {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+}
