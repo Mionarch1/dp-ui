@@ -360,12 +360,12 @@ Button 组件提供暗黑模式.
 
 ### Attributes
 
-| 参数       | 说明     | 类型    | 可选值                            | 默认值    |
-| ---------- | -------- | ------- | --------------------------------- | --------- |
-| type       | 类型     | String  | default / primary / danger / link | `default` |
-| size       | 尺寸     | String  | large / medium / small            | `large`   |
-| disabled   | 禁用     | Boolean | true / false                      | `false`   |
-| loading    | 加载状态 | Boolean | true / false                      | `false`   |
-| dark       | 暗黑状态 | Boolean | true / false                      | `false`   |
-| prefixIcon | 前缀图标 | String  | ——                                | ——        |
-| suffixIcon | 后缀图标 | String  | ——                                | ——        |
+| 参数        | 说明     | 类型    | 可选值                            | 默认值    |
+| ----------- | -------- | ------- | --------------------------------- | --------- |
+| type        | 类型     | String  | default / primary / danger / link | `default` |
+| size        | 尺寸     | String  | large / medium / small            | `large`   |
+| disabled    | 禁用     | Boolean | true / false                      | `false`   |
+| loading     | 加载状态 | Boolean | true / false                      | `false`   |
+| dark        | 暗黑模式 | Boolean | true / false                      | `false`   |
+| prefix-icon | 前缀图标 | String  | ——                                | ——        |
+| suffix-icon | 后缀图标 | String  | ——                                | ——        |
