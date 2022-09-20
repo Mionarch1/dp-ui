@@ -5,7 +5,8 @@
       <icon-card
         v-for="icon in filterIcons(icons.glyphs, 'color')"
         :key="icon.unicode_decimal"
-        :name="icon.name"
+        :name="icon.font_class"
+        @click="handleCopy(icon.font_class, 'color')"
       ></icon-card>
     </div>
     <div class="icons-title">Line Icons</div>
@@ -13,7 +14,8 @@
       <icon-card
         v-for="icon in filterIcons(icons.glyphs, 'line')"
         :key="icon.unicode_decimal"
-        :name="icon.name"
+        :name="icon.font_class"
+        @click="handleCopy(icon.font_class, 'line')"
       ></icon-card>
     </div>
     <div class="icons-title">Fill Icons</div>
@@ -21,18 +23,24 @@
       <icon-card
         v-for="icon in filterIcons(icons.glyphs, 'fill')"
         :key="icon.unicode_decimal"
-        :name="icon.name"
+        :name="icon.font_class"
+        @click="handleCopy(icon.font_class, 'fill')"
       ></icon-card>
     </div>
   </div>
 </template>
 
 <script setup>
+import copy from 'copy-to-clipboard';
 import IconCard from './IconCard.vue';
 import icons from '@themes/common/iconfont/iconfont.json';
 
 const filterIcons = (icons, type) => {
-  return icons.filter(icon => icon.name.indexOf(`${type}-`) >= 0);
+  return icons.filter(icon => icon.font_class.indexOf(`${type}-`) >= 0);
+};
+
+const handleCopy = (name, type) => {
+  copy(`<dp-icon name="dpui-${name}" type="${type}" />`);
 };
 </script>
 

@@ -75,41 +75,41 @@ Button 组件支持 icon.
 ```html
 <template>
   <div>
-    <dp-button class="btn-item" prefix-icon="dpui-fill-mail">
+    <dp-button class="btn-item" prefix-icon="dpui-fill-pagesettings-ds">
       icon btn
     </dp-button>
-    <dp-button class="btn-item" prefix-icon="dpui-line-duplicate">
+    <dp-button class="btn-item" prefix-icon="dpui-fill-affiliate1">
       icon btn
     </dp-button>
-    <dp-button class="btn-item" suffix-icon="dpui-fill-mail">
+    <dp-button class="btn-item" suffix-icon="dpui-fill-pagesettings-ds">
       icon btn
     </dp-button>
-    <dp-button class="btn-item" suffix-icon="dpui-color-google">
-      icon btn
-    </dp-button>
-  </div>
-  <div>
-    <dp-button class="btn-item" prefix-icon="dpui-fill-mail">
-      icon btn
-    </dp-button>
-    <dp-button class="btn-item" type="primary" prefix-icon="dpui-fill-mail">
-      icon btn
-    </dp-button>
-    <dp-button class="btn-item" type="danger" suffix-icon="dpui-fill-mail">
-      icon btn
-    </dp-button>
-    <dp-button class="btn-item" type="link" suffix-icon="dpui-fill-mail">
+    <dp-button class="btn-item" suffix-icon="dpui-color-link-selected">
       icon btn
     </dp-button>
   </div>
   <div>
-    <dp-button class="btn-item" prefix-icon="dpui-fill-mail" disabled>
+    <dp-button class="btn-item" prefix-icon="dpui-fill-pagesettings-ds">
+      icon btn
+    </dp-button>
+    <dp-button class="btn-item" type="primary" prefix-icon="dpui-fill-pagesettings-ds">
+      icon btn
+    </dp-button>
+    <dp-button class="btn-item" type="danger" suffix-icon="dpui-fill-pagesettings-ds">
+      icon btn
+    </dp-button>
+    <dp-button class="btn-item" type="link" suffix-icon="dpui-fill-pagesettings-ds">
+      icon btn
+    </dp-button>
+  </div>
+  <div>
+    <dp-button class="btn-item" prefix-icon="dpui-fill-pagesettings-ds" disabled>
       icon btn
     </dp-button>
     <dp-button
       class="btn-item"
       type="primary"
-      prefix-icon="dpui-fill-mail"
+      prefix-icon="dpui-fill-pagesettings-ds"
       disabled
     >
       icon btn
@@ -117,7 +117,7 @@ Button 组件支持 icon.
     <dp-button
       class="btn-item"
       type="danger"
-      suffix-icon="dpui-fill-mail"
+      suffix-icon="dpui-fill-pagesettings-ds"
       disabled
     >
       icon btn
@@ -125,21 +125,21 @@ Button 组件支持 icon.
     <dp-button
       class="btn-item"
       type="link"
-      suffix-icon="dpui-fill-mail"
+      suffix-icon="dpui-fill-pagesettings-ds"
       disabled
     >
       icon btn
     </dp-button>
   </div>
   <div>
-    <dp-button class="btn-item" icon="dpui-fill-mail" />
-    <dp-button class="btn-item" type="primary" icon="dpui-fill-mail" />
-    <dp-button class="btn-item" type="danger" icon="dpui-fill-mail" />
+    <dp-button class="btn-item" icon="dpui-fill-pagesettings-ds" />
+    <dp-button class="btn-item" type="primary" icon="dpui-fill-pagesettings-ds" />
+    <dp-button class="btn-item" type="danger" icon="dpui-fill-pagesettings-ds" />
   </div>
   <div>
-    <dp-button class="btn-item" icon="dpui-fill-mail" disabled />
-    <dp-button class="btn-item" type="primary" icon="dpui-fill-mail" disabled />
-    <dp-button class="btn-item" type="danger" icon="dpui-fill-mail" disabled />
+    <dp-button class="btn-item" icon="dpui-fill-pagesettings-ds" disabled />
+    <dp-button class="btn-item" type="primary" icon="dpui-fill-pagesettings-ds" disabled />
+    <dp-button class="btn-item" type="danger" icon="dpui-fill-pagesettings-ds" disabled />
   </div>
 </template>
 
@@ -160,13 +160,13 @@ Button 组件提供加载状态.
 
 ```html
 <template>
-  <dp-button class="btn-item" prefix-icon="dpui-line-load" loading>
+  <dp-button class="btn-item" prefix-icon="dpui-line-loading" loading>
     loading btn
   </dp-button>
   <dp-button
     class="btn-item"
     type="primary"
-    prefix-icon="dpui-line-load"
+    prefix-icon="dpui-line-loading"
     loading
   >
     loading btn
@@ -175,7 +175,7 @@ Button 组件提供加载状态.
     class="btn-item"
     type="danger"
     prefix-icon="dpui-line-windmill"
-    suffix-icon="dpui-line-load"
+    suffix-icon="dpui-line-loading"
     loading
   >
     loading btn
@@ -183,7 +183,7 @@ Button 组件提供加载状态.
   <dp-button
     class="butbtnton-item"
     type="link"
-    suffix-icon="dpui-line-load"
+    suffix-icon="dpui-line-loading"
     loading
   >
     loading btn
@@ -212,16 +212,16 @@ Button 组件提供在不同尺寸的按钮.
     <dp-button class="btn-item" type="primary" size="large">large</dp-button>
     <dp-button class="btn-item" type="danger" size="large">large</dp-button>
     <dp-button class="butbtnton-item" type="link" size="large">large</dp-button>
-    <dp-button class="btn-item" icon="dpui-fill-mail" />
+    <dp-button class="btn-item" icon="dpui-fill-pagesettings-ds" />
   </div>
   <div>
-    <dp-button class="btn-item" prefix-icon="dpui-fill-mail" size="middle">
+    <dp-button class="btn-item" prefix-icon="dpui-fill-pagesettings-ds" size="middle">
       middle
     </dp-button>
     <dp-button
       class="btn-item"
       type="primary"
-      prefix-icon="dpui-fill-mail"
+      prefix-icon="dpui-fill-pagesettings-ds"
       size="middle"
     >
       middle
@@ -229,7 +229,7 @@ Button 组件提供在不同尺寸的按钮.
     <dp-button
       class="btn-item"
       type="danger"
-      suffix-icon="dpui-fill-mail"
+      suffix-icon="dpui-fill-pagesettings-ds"
       size="middle"
     >
       middle
@@ -237,21 +237,21 @@ Button 组件提供在不同尺寸的按钮.
     <dp-button
       class="btn-item"
       type="link"
-      suffix-icon="dpui-fill-mail"
+      suffix-icon="dpui-fill-pagesettings-ds"
       size="middle"
     >
       middle
     </dp-button>
-    <dp-button class="btn-item" icon="dpui-fill-mail" size="middle" />
+    <dp-button class="btn-item" icon="dpui-fill-pagesettings-ds" size="middle" />
   </div>
   <div>
-    <dp-button class="btn-item" prefix-icon="dpui-fill-mail" size="small">
+    <dp-button class="btn-item" prefix-icon="dpui-fill-pagesettings-ds" size="small">
       small
     </dp-button>
     <dp-button
       class="btn-item"
       type="primary"
-      prefix-icon="dpui-fill-mail"
+      prefix-icon="dpui-fill-pagesettings-ds"
       size="small"
     >
       small
@@ -259,7 +259,7 @@ Button 组件提供在不同尺寸的按钮.
     <dp-button
       class="btn-item"
       type="danger"
-      suffix-icon="dpui-fill-mail"
+      suffix-icon="dpui-fill-pagesettings-ds"
       size="small"
     >
       small
@@ -267,17 +267,17 @@ Button 组件提供在不同尺寸的按钮.
     <dp-button
       class="btn-item"
       type="link"
-      suffix-icon="dpui-fill-mail"
+      suffix-icon="dpui-fill-pagesettings-ds"
       size="small"
     >
       small
     </dp-button>
-    <dp-button class="btn-item" icon="dpui-fill-mail" size="small" />
+    <dp-button class="btn-item" icon="dpui-fill-pagesettings-ds" size="small" />
   </div>
   <div>
     <dp-button
       class="btn-item"
-      prefix-icon="dpui-line-load"
+      prefix-icon="dpui-line-loading"
       loading
       size="small"
     >
@@ -286,7 +286,7 @@ Button 组件提供在不同尺寸的按钮.
     <dp-button
       class="btn-item"
       type="primary"
-      prefix-icon="dpui-line-load"
+      prefix-icon="dpui-line-loading"
       loading
       size="small"
     >
@@ -296,7 +296,7 @@ Button 组件提供在不同尺寸的按钮.
       class="btn-item"
       type="danger"
       prefix-icon="dpui-line-windmill"
-      suffix-icon="dpui-line-load"
+      suffix-icon="dpui-line-loading"
       loading
       size="small"
     >
@@ -305,7 +305,7 @@ Button 组件提供在不同尺寸的按钮.
     <dp-button
       class="butbtnton-item"
       type="link"
-      suffix-icon="dpui-line-load"
+      suffix-icon="dpui-line-loading"
       loading
       size="small"
     >

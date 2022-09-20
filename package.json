@@ -12,8 +12,8 @@
     "build:libs": "rm -rf libs && yarn build:desktop && yarn build:mobile && yarn build:material"
   },
   "dependencies": {
-    "dayjs": "^1.11.5",
     "amplitude-js": "^8.21.0",
+    "dayjs": "^1.11.5",
     "tiny-emitter": "^2.1.0",
     "vue": "3.2.31",
     "vue-router": "4.0.13"
@@ -21,6 +21,7 @@
   "devDependencies": {
     "@vue/compiler-dom": "^3.2.38",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-to-clipboard": "^3.3.2",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "dotenv": "^16.0.1",
