@@ -5,6 +5,7 @@
       @focus="onOpen"
       :value="incomingTime"
       :class="[{ openPicker: state.visible }]"
+      :icon="icon"
     ></dp-input>
     <transition name="option-slide">
       <div class="dp-picker-inner" v-if="state.visible">
@@ -68,7 +69,8 @@ const vClickOutside = { clickOutside };
 const emit = defineEmits(['update:modelValue', 'change']);
 const props = defineProps({
   modelValue: { type: String, default: '' },
-  format: { type: String, default: 'MMM YYYY' }
+  format: { type: String, default: 'MMM YYYY' },
+  icon: { type: String, default: 'dpui-line-chevron-down' }
 });
 
 const incomingTime = computed(() => {
