@@ -1,0 +1,15 @@
+@mixin skeleton-active() {
+  background: $color-white-default $color-skeleton-linear;
+  background-size: 400% 100%;
+  animation: dp-animation-loading 1.2s ease infinite;
+}
+
+.dp-skeleton {
+  &.is-active {
+    .dp-skeleton-slot {
+      .skeleton-section {
+        @include skeleton-active();
+      }
+    }
+  }
+}

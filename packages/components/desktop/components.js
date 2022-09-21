@@ -16,3 +16,4 @@ export { default as DpIcon } from './icon';
 export { default as DpInput } from './input';
 export { default as DpMessage } from './message';
 export { default as DpLoading } from './loading';
+export { default as DpSkeleton } from './skeleton';

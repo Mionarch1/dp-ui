@@ -1,4 +1,3 @@
-// var start
 $color-white: #ffffff !default;
 $color-black: #000000 !default;
 
@@ -48,4 +47,10 @@ $color-green-600: mix($color-black, $color-green-default, 8%) !default;
 $color-green-700: mix($color-black, $color-green-default, 24%) !default;
 $color-green-800: mix($color-black, $color-green-default, 36%) !default;
 $color-green-900: mix($color-black, $color-green-default, 52%) !default;
-// var end
+
+$color-skeleton-linear: linear-gradient(
+  90deg,
+  #f2f2f272 25%,
+  #e0e0e0c8 37%,
+  #f2f2f272 63%
+);
