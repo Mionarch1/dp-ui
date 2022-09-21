@@ -123,19 +123,20 @@
 		border-radius: 3px 0 0 3px;
 		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 		box-sizing: border-box;
-		// 内边距
-		padding: 14px 0 ;
 
 		.iconList {
 			position: relative;
-			height: 38px;
+			padding: 16px 0;
+			height: 52px;
 			border-bottom: 1px solid $color-black-100;
+
 			.icon-close {
 				position: absolute;
 				right: 14px;
 				width: 16px !important;
 				height: 16px !important;
 			}
+
 			.icon-back {
 				position: absolute;
 				left: 14px;
