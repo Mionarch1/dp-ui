@@ -15,7 +15,7 @@
         v-for="icon in filterIcons(icons.glyphs, 'line')"
         :key="icon.unicode_decimal"
         :name="icon.font_class"
-        @click="handleCopy(icon.font_class, 'line')"
+        @click="handleCopy(icon.font_class, 'normal')"
       ></icon-card>
     </div>
     <div class="icons-title">Fill Icons</div>
@@ -24,7 +24,7 @@
         v-for="icon in filterIcons(icons.glyphs, 'fill')"
         :key="icon.unicode_decimal"
         :name="icon.font_class"
-        @click="handleCopy(icon.font_class, 'fill')"
+        @click="handleCopy(icon.font_class, 'normal')"
       ></icon-card>
     </div>
   </div>

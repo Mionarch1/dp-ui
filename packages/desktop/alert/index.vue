@@ -1,58 +1,46 @@
 <template>
-  <transition>
-    <div v-show="visible" :class="['dp-alert', alertType]" role="alert">
-      <i v-if="showIcon" :class="['iconClass', alertType]"></i>
-      <div class="dp-alert-content">
-        <span
-          v-if="title || $slots.title"
-          class="dp-alert-title"
-        >
-          <slot name="title">{{ title }}</slot>
-        </span>
-        <p v-if="$slots.default || description" class="dp-alert-description">
-          <slot>
-            {{ description }}
-          </slot>
-        </p>
-        <template v-if="closable">
-          <div
-            v-if="closeText"
-            :class="['dp-alert-close-btn', 'dp-alert-customed']"
-            @click="close"
-          >
-            {{ closeText }}
-          </div>
-          <i v-else class="dp-alert-close" @click="close"></i>
-        </template>
-      </div>
+  <div v-show="visible" :class="containerClasses">
+    <div class="dp-alert-content">
+      <dp-icon v-if="icon" :class="iconClasses" :name="iconName" size="16px" />
+      <slot />
     </div>
-  </transition>
+    <dp-icon
+      v-show="closable"
+      class="dp-alert-icon"
+      name="dpui-line-x"
+      size="16px"
+      @click="handleClose()"
+    />
+  </div>
 </template>
 <script setup>
-import { computed, ref, useSlots } from 'vue';
-const props = defineProps({
-  title: { type: String, default: '' },
-  description: { type: String, default: '' },
-  type: { type: String, default: 'info' },
-  closable: { type: Boolean, default: true },
-  closeText: { type: String, default: '' },
-  showIcon: Boolean,
-  effect: { type: String, default: 'light' }
-});
+import { computed, ref } from 'vue';
 
+const props = defineProps({
+  type: { type: String, default: 'info' },
+  icon: { type: Boolean, default: false },
+  closable: { type: Boolean, default: false }
+});
 const visible = ref(true);
 
-const alertType = computed(() => {
-  const iconMap = new Map([
-    ['success', 'dp-alert-success'],
-    ['warning', 'dp-alert-warning'],
-    ['info', 'dp-alert-info'],
-    ['error', 'dp-alert-error']
-  ]);
-  return iconMap.get(props.type);
+const containerClasses = computed(() => {
+  return ['dp-alert', `is-${props.type}`];
 });
 
-const close = () => {
+const iconClasses = computed(() => {
+  return ['dp-alert-icon', `is-${props.type}`];
+});
+
+const iconName = computed(() => {
+  const icons = {
+    warning: 'dpui-a-fill-',
+    error: 'dpui-fill-x',
+    success: 'dpui-fill-check'
+  };
+  return icons[props.type];
+});
+
+const handleClose = () => {
   visible.value = false;
 };
 </script>
