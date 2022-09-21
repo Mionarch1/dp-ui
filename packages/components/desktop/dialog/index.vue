@@ -15,13 +15,19 @@
           :class="[
             `is-${props.theme}`,
             { 'is-fullscreen': props.full },
-            { 'is-header': props.showHeader }
+            { 'is-header': props.showHeader },
+            { 'is-dark': props.dark }
           ]"
           :style="props.innerStyle"
         >
           <header class="dp-dialog-header" v-if="props.showHeader">
             <div class="dp-dialog-header-item">
-              <i class="meta-iconfont meta-Close" @click="handleToggle()">X</i>
+              <dp-icon
+                name="dpui-line-x"
+                type="line"
+                @click="handleToggle()"
+                size="16px"
+              />
             </div>
             <span v-if="title">{{ title }}</span>
           </header>
@@ -46,7 +52,8 @@ const props = defineProps({
   overlayCloseable: { type: Boolean, default: false },
   title: { type: String, default: '' },
   theme: { type: String, default: 'white' }, // white | black
-  innerStyle: { type: Object, default: () => {} }
+  innerStyle: { type: Object, default: () => {} },
+  dark: { type: Boolean, default: false }
 });
 
 const emit = defineEmits([

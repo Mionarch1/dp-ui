@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import availableNetworks from '../../../utils/packages/network';
+import availableNetworks from '@packages/utils/network';
 import { ref, reactive, computed, getCurrentInstance } from 'vue';
 
 let $window = typeof window !== 'undefined' ? window : null;

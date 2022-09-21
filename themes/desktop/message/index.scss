@@ -1,0 +1,13 @@
+.dp-message {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 430px;
+}
+
+.message-slideY-enter-active {
+  @include transition-animation-in(slideY);
+}
+.message-slideY-leave-active {
+  @include transition-animation-out(slideY);
+}

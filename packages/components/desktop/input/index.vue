@@ -46,7 +46,7 @@ import { computed, toRefs, ref, reactive, useSlots } from 'vue';
 const props = defineProps({
   showCount: { type: Boolean, default: false },
   clearable: { type: Boolean, default: false },
-  dark: { type: Boolean, default: true },
+  dark: { type: Boolean, default: false },
   maxLength: { type: [String, Number], default: '' },
   modelValue: { type: [String, Number], default: '' },
   placeholder: { type: String, default: 'Content' },

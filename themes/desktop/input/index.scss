@@ -57,6 +57,7 @@
     }
     &.is-disabled {
       .dp-input {
+        padding: 0 12px;
         border-radius: $radius-small;
         &,
         &-inner {

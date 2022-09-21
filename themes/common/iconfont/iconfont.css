@@ -1,8 +1,8 @@
 @font-face {
   font-family: "dpui-iconfont"; /* Project id 3658413 */
-  src: url('iconfont.woff2?t=1663662861529') format('woff2'),
-       url('iconfont.woff?t=1663662861529') format('woff'),
-       url('iconfont.ttf?t=1663662861529') format('truetype');
+  src: url('iconfont.woff2?t=1663740452722') format('woff2'),
+       url('iconfont.woff?t=1663740452722') format('woff'),
+       url('iconfont.ttf?t=1663740452722') format('truetype');
 }
 
 .dpui-iconfont {
@@ -11,6 +11,18 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dpui-line-more:before {
+  content: "\e7d5";
+}
+
+.dpui-color-circle-down:before {
+  content: "\e7d3";
+}
+
+.dpui-color-circle-up:before {
+  content: "\e7d4";
 }
 
 .dpui-color-images-selected:before {

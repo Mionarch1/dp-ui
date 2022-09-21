@@ -15,7 +15,7 @@
         v-for="icon in filterIcons(icons.glyphs, 'line')"
         :key="icon.unicode_decimal"
         :name="icon.font_class"
-        @click="handleCopy(icon.font_class, 'line')"
+        @click="handleCopy(icon.font_class, 'normal')"
       ></icon-card>
     </div>
     <div class="icons-title">Fill Icons</div>
@@ -24,22 +24,26 @@
         v-for="icon in filterIcons(icons.glyphs, 'fill')"
         :key="icon.unicode_decimal"
         :name="icon.font_class"
-        @click="handleCopy(icon.font_class, 'fill')"
+        @click="handleCopy(icon.font_class, 'normal')"
       ></icon-card>
     </div>
   </div>
 </template>
 
 <script setup>
+import { getCurrentInstance } from 'vue';
 import copy from 'copy-to-clipboard';
 import IconCard from './IconCard.vue';
 import icons from '@themes/common/iconfont/iconfont.json';
+
+const { proxy } = getCurrentInstance();
 
 const filterIcons = (icons, type) => {
   return icons.filter(icon => icon.font_class.indexOf(`${type}-`) >= 0);
 };
 
 const handleCopy = (name, type) => {
+  proxy.$dpmessage.success('copy success');
   copy(`<dp-icon name="dpui-${name}" type="${type}" />`);
 };
 </script>

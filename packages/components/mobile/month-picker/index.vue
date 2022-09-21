@@ -1,5 +1,5 @@
 <template>
-  <div class="dp-month-picker" v-click-outside="onClose">
+  <div class="dpm-month-picker" v-click-outside="onClose">
     <dp-input
       readonly
       @focus="onOpen"
@@ -9,8 +9,14 @@
     ></dp-input>
     <transition name="option-slide">
       <div class="dp-picker-inner" v-if="state.visible">
-        <!-- <div class="picker-arrow"></div> -->
         <div class="dp-picker-box">
+          <div class="dp-pick-close" @click="onClose">
+            <dp-icon
+              style="width: 16px; height: 16px"
+              name="dpui-line-x"
+              type="line"
+            />
+          </div>
           <div class="dp-picker-select">
             <div class="picker-select-left">
               <dp-icon
@@ -56,7 +62,7 @@
 <script setup>
 import dayjs from 'dayjs';
 import DpInput from './input.vue';
-import { clickOutside } from '../../../utils/packages/util';
+import { clickOutside } from '@packages/utils/util';
 import { ref, reactive, computed, toRefs } from 'vue';
 
 const vClickOutside = { clickOutside };
@@ -64,7 +70,7 @@ const emit = defineEmits(['update:modelValue', 'change']);
 const props = defineProps({
   modelValue: { type: String, default: '' },
   format: { type: String, default: 'MMM YYYY' },
-  icon: { type: String, default: 'dpui-line-chevron-down' },
+  icon: { type: String, default: 'dpui-line-chevron-down' }
 });
 
 const incomingTime = computed(() => {

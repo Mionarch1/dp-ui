@@ -2,11 +2,12 @@
   <div class="dp-tooltip">
     <slot />
     <div
-      v-html="content"
       class="dp-tooltiptext"
       :class="[position ? position : '']"
       :style="style"
-    ></div>
+    >
+      <div v-if="$slots.content"><slot name="content" /></div>
+    </div>
   </div>
 </template>
 
