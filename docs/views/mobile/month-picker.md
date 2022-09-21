@@ -8,7 +8,7 @@ Used to select the month.
 
 ```html
 <template>
-  <dpm-month-picker v-model="currentTime" @change="handleChange"></dpm-month-picker>
+  <dpm-month-picker v-model="currentTime" @change="handleChange" icon="dpui-line-calendar1"></dpm-month-picker>
 </template>
 <script>
 export default {
@@ -34,6 +34,7 @@ export default {
 | ------- | -------------- | ------- | --------------------------------------------- | --------- |
 | v-model    | 选中项绑定值      | date   | -                                        | currentTime |
 | format   | 显示在输入框中的格式         | String	  |       -                         |'MMM YYYY'  |
+| icon   | 图标名称         | String	  |       -                         |  |
 
 ### Event
 | 事件名   | 说明            | 参数   |

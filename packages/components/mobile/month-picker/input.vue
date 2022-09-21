@@ -18,11 +18,12 @@
       <p class="after-count" v-if="showCount">
         {{ props.value?.length }}/{{ max }}
       </p>
-      <i
+      <!-- <i
         class="meta-iconfont meta-Close dp-input-icon-close"
         @touchstart.passive="onClear"
         v-show="clear && !!value"
-      ></i>
+      ></i> -->
+	  <dp-icon :name="icon" type="line" />
     </div>
   </div>
 </template>
@@ -38,7 +39,8 @@ const props = defineProps({
   hint: { type: String, default: '' },
   type: { type: String, default: 'text' },
   disabled: { type: Boolean, default: false },
-  readonly: { type: Boolean, default: false }
+  readonly: { type: Boolean, default: false },
+  icon:{ type: String, default: '' },
 });
 
 const emit = defineEmits([
@@ -95,6 +97,10 @@ const onClear = () => {
     font-style: normal;
     font-weight: 400;
     color: #333;
+  }
+  .dp-input-after {
+	display: flex;
+	align-items: center;
   }
 }
 </style>
