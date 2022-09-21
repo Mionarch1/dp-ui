@@ -38,7 +38,7 @@
 @mixin body() {
   font-size: 18px;
   line-height: 24px;
-  @include font-size-base(800);
+  @include font-size-base(400);
 }
 
 @mixin small-body-bold() {

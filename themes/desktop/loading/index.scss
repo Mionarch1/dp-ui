@@ -1,0 +1,51 @@
+@mixin position {
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dp-loading {
+  z-index: 2000;
+  margin: auto;
+  background: $color-black-overlay;
+  @include position();
+  @include flexCenter();
+  &-icon {
+    font-size: 36px !important;
+    animation: dp-animation-rotate 2s linear infinite;
+    color: $color-yellow-500 !important;
+    @media screen and (max-width: 768px) {
+      font-size: 24px !important;
+    }
+  }
+  &-content {
+    @include body();
+    cursor: default;
+    margin-top: 8px;
+    color: $color-white-default;
+    @media screen and (max-width: 768px) {
+      @include small-body();
+      color: $color-white-default;
+    }
+  }
+  &-cancel {
+    @include small-body-bold();
+    cursor: pointer;
+    margin-top: 8px;
+    color: $color-yellow-500;
+    @media screen and (max-width: 768px) {
+      @include caption();
+      color: $color-yellow-500;
+    }
+  }
+}
