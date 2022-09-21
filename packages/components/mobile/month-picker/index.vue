@@ -61,7 +61,7 @@
 <script setup>
 import dayjs from 'dayjs';
 import DpInput from './input.vue';
-import { clickOutside } from '../../../utils/packages/util';
+import { clickOutside } from '@packages/utils/util';
 import { ref, reactive, computed, toRefs } from 'vue';
 
 const vClickOutside = { clickOutside };

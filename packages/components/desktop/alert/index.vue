@@ -9,18 +9,20 @@
       class="dp-alert-icon"
       name="dpui-line-x"
       size="16px"
-      @click="handleClose()"
+      @click.stop="handleClose()"
     />
   </div>
 </template>
 <script setup>
 import { computed, ref } from 'vue';
+import DpIcon from '../icon'
 
 const props = defineProps({
   type: { type: String, default: 'info' },
   icon: { type: Boolean, default: false },
   closable: { type: Boolean, default: false }
 });
+const emits = defineEmits(['onClose']);
 const visible = ref(true);
 
 const containerClasses = computed(() => {
@@ -41,6 +43,7 @@ const iconName = computed(() => {
 });
 
 const handleClose = () => {
+  emits('onClose');
   visible.value = false;
 };
 </script>
