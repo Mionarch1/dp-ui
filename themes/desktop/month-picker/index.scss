@@ -5,6 +5,7 @@ i {
 .dp-month-picker {
 	position: relative;
 
+
 	.dp-picker-inner {
 		position: absolute;
 		z-index: 500;
@@ -34,8 +35,15 @@ i {
 				line-height: 34px;
 				color: $color-black-500;
 				justify-content: space-around;
-				align-content: center;
 				align-items: center;
+
+				.picker-select-left,
+				.picker-select-right {
+					display: flex;
+					align-items: center;
+					cursor: pointer;
+				}
+
 
 				.dp-button {
 					button {
@@ -129,7 +137,7 @@ i {
 }
 
 .openPicker {
-	border: 1px solid blue !important;
+	border: 1px solid #ffdd00 !important;
 }
 
 :deep(.dp-input-inner) {
@@ -138,10 +146,6 @@ i {
 	color: $color-black-500;
 }
 
-.rev {
-	transform: rotate(180deg);
-	/* Equal to rotateZ(45deg) */
-}
 
 .icon {
 	margin-right: 12px;
