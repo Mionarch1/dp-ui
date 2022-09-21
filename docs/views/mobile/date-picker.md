@@ -16,6 +16,14 @@ Date-Picker 用于选择或输入日期
   >
     1233333333333
   </dpm-date-picker>
+  <dpm-date-picker-panel
+    v-model:modelValue="value2"
+    format="D MMM YYYY"
+    :isStart="true"
+    @onChange=onChange
+  >
+    1233333333333
+  </dpm-date-picker-panel>
 </template>
 
 <script>
@@ -23,12 +31,16 @@ Date-Picker 用于选择或输入日期
     data() {
       return {
         value1: '',
-        endTime: ''
+        endTime: '',
+        value2: ''
       };
     },
     methods: {
       aaa() {
         this.a++;
+      },
+      onChange(item) {
+        console.log('改变了时间',item);
       }
     }
   };

@@ -1,91 +1,59 @@
 <template>
-  <div class="dpm-date-picker" ref="date_picker">
-    <section class="dpm-data-input" @click="onOpen">
-      <input
-        :value="modelValue ? dayjs(modelValue).format(props.format) : ''"
-        :placeholder="hint"
-        readonly
-      />
-    </section>
-    <transition name="option-slide">
-      <div class="dpm-picker-inner" v-if="state.visibled">
-        <div class="dpm-picker-box">
-          <div v-if="isNest" class="dpm-pick-back">
-            <dp-icon
-              name="dpui-line-chevron-left"
-              type="line"
-              @click="onClose"
-              size="20px"
-            />
-          </div>
-          <div v-else class="dpm-pick-close">
-            <dp-icon
-              name="dpui-line-x"
-              type="line"
-              size="16px"
-              @click="onClose"
-            />
-          </div>
-          <div class="dpm-picker-select">
-            <div class="picker-select-left">
-              <dp-icon
-                name="dpui-line-chevron-left"
-                type="line"
-                @click="onMonthChange('reduce')"
-                size="16px"
-              />
-            </div>
-            <div class="picker-select-middle">
-              <p class="picker-select-month">
-                {{ state.months[state.month - 1].en }}
-              </p>
-              <p class="picker-select-year">{{ state.year }}</p>
-            </div>
-            <div class="picker-select-right">
-              <dp-icon
-                name="dpui-line-chevron-right"
-                type="line"
-                @click="onMonthChange('add')"
-                size="16px"
-              />
-            </div>
-          </div>
-
-          <div class="day-screen">
-            <div class="screen-item sec-week">
-              <span
-                class="sec-week-item"
-                v-for="(item, index) in state.weeks"
-                :key="`week-${index}`"
-              >
-                {{ item['en'] }}
-              </span>
-            </div>
-            <div class="screen-item sec-days">
-              <template
-                v-for="(item, index) in state.days"
-                :key="`day-${index}`"
-              >
-                <span
-                  @click="onSelectDay(item)"
-                  :class="[
-                    'day-item',
-                    `${item.type}-month`,
-                    isActive(item.day, item.month)
-                  ]"
-                >
-                  {{ item.day }}
-                </span>
-              </template>
-            </div>
-          </div>
-        </div>
+  <div class="date-picker-panel">
+    <div class="dpm-picker-select">
+      <div class="picker-select-left">
+        <dp-icon
+          name="dpui-line-chevron-left"
+          type="line"
+          @click="onMonthChange('reduce')"
+          size="16px"
+        />
       </div>
-    </transition>
+      <div class="picker-select-middle">
+        <p class="picker-select-month">
+          {{ state.months[state.month - 1].en }}
+        </p>
+        <p class="picker-select-year">{{ state.year }}</p>
+      </div>
+      <div class="picker-select-right">
+        <dp-icon
+          name="dpui-line-chevron-right"
+          type="line"
+          @click="onMonthChange('add')"
+          size="16px"
+        />
+      </div>
+    </div>
+
+    <div class="day-screen">
+      <div class="screen-item sec-week">
+        <span
+          class="sec-week-item"
+          v-for="(item, index) in state.weeks"
+          :key="`week-${index}`"
+        >
+          {{ item['en'] }}
+        </span>
+      </div>
+      <div class="screen-item sec-days">
+        <template v-for="(item, index) in state.days" :key="`day-${index}`">
+          <span
+            @click="onSelectDay(item)"
+            :class="[
+              'day-item',
+              `${item.type}-month`,
+              isActive(item.day, item.month)
+            ]"
+          >
+            {{ item.day }}
+          </span>
+        </template>
+      </div>
+    </div>
   </div>
 </template>
 <script setup>
-import { ref, reactive, onDeactivated } from 'vue';
+import { reactive, onMounted } from 'vue';
 import dayjs from 'dayjs';
 
 /**
@@ -94,25 +62,18 @@ import dayjs from 'dayjs';
  * isStart为是否为范围开始的时间选择器
  */
 /** format 为时间选择器时间格式    默认为 2022-02-11这种
- *  hint 为时间选择器的标题显示    默认为空
  */
-// 获取时间选择器
-// const date_picker = ref(null);
 
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue', 'onChange']);
 const props = defineProps({
   modelValue: { type: String, default: '' },
-  isRight: { type: Boolean, default: false },
-  hint: { type: String, default: '' },
   format: { type: String, default: 'YYYY-MM-DD' },
   isStart: { type: Boolean, default: false },
   scope: { type: Number, default: 90 },
-  association: { type: String, default: `${new Date()}` },
-  isNest: { type: Boolean, default: false }
+  association: { type: String, default: `${new Date()}` }
 });
 
 const state = reactive({
-  visibled: false,
   year: 2001,
   month: 1,
   day: 1,
@@ -183,11 +144,6 @@ const onOpen = () => {
   }
 
   renderScreen();
-  state.visibled = true;
-};
-
-const onClose = () => {
-  state.visibled = false;
 };
 
 /**
@@ -264,7 +220,10 @@ const onSelectDay = (item = {}) => {
     return;
   }
   emit('update:modelValue', `${state.year}-${state.month}-${state.day}`);
-  onClose();
+  emit(
+    'onChange',
+    dayjs(`${state.year}-${state.month}-${state.day}`).format(props.format)
+  );
 };
 // 限制时间范围时，判断当前时间是否可选
 const isChoose = current => {
@@ -317,20 +276,7 @@ const renderScreen = () => {
 const isLeapYear = year => {
   return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
 };
-
-// window.addEventListener('click', event => {
-//   if (!date_picker.value.contains(event.target)) {
-//     state.visibled = false;
-//   }
-// });
-// window.addEventListener('touchstart', event => {
-//   if (!date_picker.value.contains(event.target)) {
-//     state.visibled = false;
-//   }
-// });
-
-// onDeactivated(() => {
-//   window.removeEventListener('resize');
-//   window.removeEventListener('scroll');
-// });
+onMounted(() => {
+  onOpen();
+});
 </script>
