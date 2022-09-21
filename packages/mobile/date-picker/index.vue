@@ -11,14 +11,16 @@
       <div class="dpm-picker-inner" v-if="state.visibled">
         <div class="dpm-picker-box">
           <div class="dpm-pick-close" @click="onClose">
-            <span>X</span>
+            <dp-icon name="dpui-line-x" type="line" size="16px" />
           </div>
           <div class="dpm-picker-select">
             <div class="picker-select-left">
-              <i
-                class="meta-iconfont meta-Back"
+              <dp-icon
+                name="dpui-line-chevron-left"
+                type="line"
                 @click="onMonthChange('reduce')"
-              ></i>
+                size="16px"
+              />
             </div>
             <div class="picker-select-middle">
               <p class="picker-select-month">
@@ -26,11 +28,13 @@
               </p>
               <p class="picker-select-year">{{ state.year }}</p>
             </div>
-            <div class="picker-select-right rev">
-              <i
-                class="meta-iconfont meta-Back"
+            <div class="picker-select-right">
+              <dp-icon
+                name="dpui-line-chevron-right"
+                type="line"
                 @click="onMonthChange('add')"
-              ></i>
+                size="16px"
+              />
             </div>
           </div>
 
@@ -71,7 +75,7 @@
 import { ref, reactive, onDeactivated } from 'vue';
 import dayjs from 'dayjs';
 
-/** 
+/**
  * association为范围关联时间
  * scope为时间范围天数
  * isStart为是否为范围开始的时间选择器
