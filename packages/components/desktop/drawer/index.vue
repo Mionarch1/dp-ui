@@ -23,7 +23,7 @@
         ]"
         :style="style"
       >
-        <div class="iconList">
+        <div class="iconList" v-if="showHeader">
           <dp-icon class="icon-back" v-if="isNest" @click="handleClose" name="dpui-line-chevron-left" type="line" />
           <dp-icon class="icon-close" name="dpui-line-x" type="line"  @click.self="handleClose"/>
         </div>
@@ -45,9 +45,10 @@ const { ctx } = getCurrentInstance();
 const props = defineProps({
   direction: { type: String, default: 'right' },
   modelValue: { type: Boolean, default: false },
-  width: { type: String, default: '250px' },
+  width: { type: String, default: '' },
   borderRadius: { type: String, default: '0px' },
-  isNest: { type: Boolean, default: false }
+  isNest: { type: Boolean, default: false },
+  showHeader: { type: Boolean, default: true}
 });
 const borderRadiusDeal = () => {
   switch (props.direction) {
