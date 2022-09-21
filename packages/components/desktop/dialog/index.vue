@@ -14,7 +14,7 @@
           class="dp-dialog"
           :class="[
             `is-${props.theme}`,
-            { 'is-fullscreen': props.full },
+            { 'is-fullscreen': props.fullscreen },
             { 'is-header': props.showHeader },
             { 'is-dark': props.dark }
           ]"
@@ -25,7 +25,7 @@
               <dp-icon
                 name="dpui-line-x"
                 type="line"
-                @click="handleToggle()"
+                @click="handleToggle(false)"
                 size="16px"
               />
             </div>
@@ -47,7 +47,7 @@
 const props = defineProps({
   appendToBody: { type: Boolean, default: false },
   modelValue: { type: Boolean, default: false },
-  full: { type: Boolean, default: false },
+  fullscreen: { type: Boolean, default: false },
   showHeader: { type: Boolean, default: true },
   overlayCloseable: { type: Boolean, default: false },
   title: { type: String, default: '' },

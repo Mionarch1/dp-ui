@@ -1,4 +1,4 @@
-export { default as DpShare} from './share';
+export { default as DpShare } from './share';
 export { default as DpButton } from './button';
 export { default as DpDatePicker } from './date-picker';
 export { default as DpTag } from './tag';
@@ -17,3 +17,4 @@ export { default as DpInput } from './input';
 export { default as DpMessage } from './message';
 export { default as DpLoading } from './loading';
 export { default as DpSkeleton } from './skeleton';
+export { default as DpSelectDrop } from './select-drop';

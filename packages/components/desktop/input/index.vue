@@ -14,6 +14,7 @@
         :placeholder="placeholder"
         :style="innerStyle"
         :maxlength="maxLength"
+        :readonly="readonly"
         @input="handleInput"
         @focus="handleFocus"
         @blur="handleBlur"
@@ -46,6 +47,7 @@ import { computed, toRefs, ref, reactive, useSlots } from 'vue';
 const props = defineProps({
   showCount: { type: Boolean, default: false },
   clearable: { type: Boolean, default: false },
+  readonly: { type: Boolean, default: false },
   dark: { type: Boolean, default: false },
   maxLength: { type: [String, Number], default: '' },
   modelValue: { type: [String, Number], default: '' },

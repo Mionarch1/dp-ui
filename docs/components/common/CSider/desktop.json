@@ -46,6 +46,11 @@
             "path": "/desktop/select"
           },
           {
+            "nameZh": "下拉选择",
+            "nameEn": "Select Drop",
+            "path": "/desktop/select-drop"
+          },
+          {
             "nameZh": "开关",
             "nameEn": "Switch",
             "path": "/desktop/switch"
