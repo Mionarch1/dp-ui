@@ -4,7 +4,7 @@ const { merge } = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(common, {
-  entry: './packages/desktop/index.js',
+  entry: './packages/components/desktop/index.js',
   output: {
     filename: 'index.js',
     path: resolve('../libs/dp-ui'),
