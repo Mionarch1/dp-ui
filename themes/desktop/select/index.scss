@@ -44,6 +44,7 @@
 .dp-select-dropdown{
     position: fixed;
     background-color: $color-white-default;
+    z-index: 10;
 }
 .dp-select-dropdown ul{
     overflow: hidden;
