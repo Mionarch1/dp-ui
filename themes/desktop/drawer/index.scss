@@ -136,6 +136,12 @@
 				width: 16px !important;
 				height: 16px !important;
 			}
+			.icon-close-left {
+				position: absolute;
+				left: 14px;
+				width: 16px !important;
+				height: 16px !important;
+			}
 
 			.icon-back {
 				position: absolute;
@@ -161,6 +167,10 @@
 		}
 
 	}
+}
+.dp-drawer-body {
+	width: 100%;
+	height: 100%;
 }
 
 i {

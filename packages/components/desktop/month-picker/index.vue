@@ -1,5 +1,5 @@
 <template>
-  <div class="dp-month-picker" v-click-outside="onClose">
+  <div class="dp-month-picker" ref="month_picker" >
     <dp-input
       readonly
       @focus="onOpen"
@@ -8,7 +8,7 @@
       :icon="icon"
     ></dp-input>
     <transition name="option-slide">
-      <div class="dp-picker-inner" v-if="state.visible">
+      <div class="dp-picker-inner" v-if="state.visible" @click.self="onClose">
         <!-- <div class="picker-arrow"></div> -->
         <div class="dp-picker-box">
           <div class="dp-picker-select">
@@ -59,7 +59,7 @@ import DpInput from './input.vue';
 import { clickOutside } from '@packages/utils/util';
 import { ref, reactive, computed, toRefs } from 'vue';
 
-const vClickOutside = { clickOutside };
+// const vClickOutside = { clickOutside };
 const emit = defineEmits(['update:modelValue', 'change']);
 const props = defineProps({
   modelValue: { type: String, default: '' },
@@ -72,6 +72,14 @@ const incomingTime = computed(() => {
     return dayjs(new Date()).format('MMM YYYY');
   } else {
     return dayjs(props.modelValue).format('MMM YYYY');
+  }
+});
+const month_picker = ref(null);
+
+
+window.addEventListener('click', event => {
+  if (!month_picker.value.contains(event.target)) {
+    onClose()
   }
 });
 const state = reactive({

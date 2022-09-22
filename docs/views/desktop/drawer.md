@@ -16,6 +16,7 @@ Exhale a temporary sidebar that supports up, down, left and right.
 	  @on-opened="onOpened"
 	  border-radius="24px"
 	  direction="bottom"
+	  closePosition="left"
 	>
 	Hi,desty!
   <dp-button @click="handleClick1">open</dp-button>
@@ -67,6 +68,7 @@ export default {
 | width    | 尺寸                      | String  |                                    | `250px`  |
 | borderRadius    | 圆角属性            | String  |                                    | `-`  |
 | isNest    |是否为嵌套的Drawer，嵌套必须指定该属性并赋值为 true   | Boolean  |               | `-`  |
+| closePosition    | closeIcon的位置   | String  | left/right           | `right`  |
 
 ### Event
 | 事件名   | 说明            | 参数   |

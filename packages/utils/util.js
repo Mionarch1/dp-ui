@@ -6,6 +6,7 @@
     // 初始化事件
     beforeMount(el, binding, vnode) {
       function handleClick(e) {
+        console.log(e);
         // 如果为元素本身，则返回
         if (el.contains(e.target) || e.target.className.includes(binding.arg)) {
           return false;

@@ -12,7 +12,7 @@ Date-Picker 用于选择或输入日期
     v-model:modelValue="value1"
     hint="选择时间"
     format="D MMM YYYY"
-    :isStart="true"
+    :isStart="false"
   >
     1233333333333
   </dpm-date-picker>
