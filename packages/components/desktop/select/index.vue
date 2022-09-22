@@ -9,7 +9,7 @@
       <!-- 选中内容 -->
       <span>{{ selctValue }}</span>
       <div class="select-icon" :class="{ selectOpen: selectOpen }">
-        <dp-icon name="dpui-line-chevron-down" type="line"  size='12px'/>
+        <dp-icon name="dpui-line-chevron-down" type="line" size="12px" />
       </div>
     </div>
     <!-- 下拉框 -->
@@ -79,7 +79,7 @@ watch(selectOpen, val => {
 });
 
 // watch(selctValue, () => {
-  // setupContext.emit('update:modelValue', selctValue.value);
+// setupContext.emit('update:modelValue', selctValue.value);
 // });
 
 // 计算位置
@@ -108,14 +108,22 @@ window.addEventListener('touchstart', event => {
   }
 });
 
-window.addEventListener('resize', () => {
-  // 计算面板位置
-  calculateLocation();
-});
-window.addEventListener('scroll', () => {
-  // 计算面板位置
-  calculateLocation();
-});
+window.addEventListener(
+  'resize',
+  () => {
+    // 计算面板位置
+    calculateLocation();
+  },
+  true
+);
+window.addEventListener(
+  'scroll',
+  () => {
+    // 计算面板位置
+    calculateLocation();
+  },
+  true
+);
 
 onDeactivated(() => {
   window.removeEventListener('resize');
