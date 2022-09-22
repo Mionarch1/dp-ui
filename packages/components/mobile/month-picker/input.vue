@@ -23,7 +23,7 @@
         @touchstart.passive="onClear"
         v-show="clear && !!value"
       ></i> -->
-	  <dp-icon :name="icon" type="line" />
+	  <dp-icon :name="icon" type="line" size="12px"/>
     </div>
   </div>
 </template>
@@ -78,6 +78,17 @@ const onClear = () => {
 };
 </script>
 <style lang="scss" scoped>
+  .openPicker {
+  .dp-input-after {
+    transform: rotate(180deg);
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+
+  }
+}
 .dp-input {
   width: 264px;
   line-height: 48px;
