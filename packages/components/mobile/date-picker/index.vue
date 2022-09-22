@@ -13,7 +13,7 @@
           <div v-if="isNest" class="dpm-pick-back">
             <dp-icon
               name="dpui-line-chevron-left"
-              type="line"
+              type="normal"
               @click="onClose"
               size="20px"
             />
@@ -21,7 +21,7 @@
           <div v-else class="dpm-pick-close">
             <dp-icon
               name="dpui-line-x"
-              type="line"
+              type="normal"
               size="16px"
               @click="onClose"
             />
@@ -30,7 +30,7 @@
             <div class="picker-select-left">
               <dp-icon
                 name="dpui-line-chevron-left"
-                type="line"
+                type="normal"
                 @click="onMonthChange('reduce')"
                 size="16px"
               />
@@ -44,7 +44,7 @@
             <div class="picker-select-right">
               <dp-icon
                 name="dpui-line-chevron-right"
-                type="line"
+                type="normal"
                 @click="onMonthChange('add')"
                 size="16px"
               />

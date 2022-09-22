@@ -14,7 +14,7 @@
             <dp-icon
               style="width: 16px; height: 16px"
               name="dpui-line-x"
-              type="line"
+              type="normal"
             />
           </div>
           <div class="dp-picker-select">
@@ -22,7 +22,7 @@
               <dp-icon
                 @click="onYearChange('reduce')"
                 name="dpui-line-chevron-left"
-                type="line"
+                type="normal"
               />
             </div>
             <div class="picker-select-middle">
@@ -32,7 +32,7 @@
               <dp-icon
                 @click="onYearChange('add')"
                 name="dpui-line-chevron-right"
-                type="line"
+                type="normal"
               />
             </div>
           </div>

@@ -29,13 +29,13 @@
             v-if="isNest"
             @click="handleClose"
             name="dpui-line-chevron-left"
-            type="line"
+            type="normal"
           />
           <dp-icon
             :class="['icon-close',`icon-close-${closePosition}`]"
             v-show="!isNest"
             name="dpui-line-x"
-            type="line"
+            type="normal"
             @click.self="handleClose"
           />
         </div>

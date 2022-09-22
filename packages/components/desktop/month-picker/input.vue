@@ -23,7 +23,7 @@
         @touchstart.passive="onClear"
         v-show="clear && !!value"
       ></i> -->
-      <dp-icon :name="icon" type="line" size="12px" />
+      <dp-icon :name="icon" type="normal" size="12px" />
     </div>
   </div>
 </template>
