@@ -24,8 +24,20 @@
         :style="style"
       >
         <div class="iconList" v-if="showHeader">
-          <dp-icon class="icon-back" v-if="isNest" @click="handleClose" name="dpui-line-chevron-left" type="line" />
-          <dp-icon class="icon-close" name="dpui-line-x" type="line"  @click.self="handleClose"/>
+          <dp-icon
+            class="icon-back"
+            v-if="isNest"
+            @click="handleClose"
+            name="dpui-line-chevron-left"
+            type="line"
+          />
+          <dp-icon
+            :class="['icon-close',`icon-close-${closePosition}`]"
+            v-show="!isNest"
+            name="dpui-line-x"
+            type="line"
+            @click.self="handleClose"
+          />
         </div>
         <div class="dp-drawer-body">
           <slot></slot>
@@ -48,7 +60,8 @@ const props = defineProps({
   width: { type: String, default: '' },
   borderRadius: { type: String, default: '0px' },
   isNest: { type: Boolean, default: false },
-  showHeader: { type: Boolean, default: true}
+  showHeader: { type: Boolean, default: true },
+  closePosition: { type: String, default: 'right' }
 });
 const borderRadiusDeal = () => {
   switch (props.direction) {
