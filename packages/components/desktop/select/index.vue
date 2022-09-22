@@ -49,6 +49,7 @@ const props = defineProps({
 });
 const page = getCurrentInstance();
 const slots = useSlots();
+const emit = defineEmits(['change']);
 
 // 获取按钮
 const select_button = ref(null);
@@ -143,6 +144,7 @@ onMounted(() => {
   Bus.$on('chooseSelectItem', res => {
     if (res.token === page.token) {
       selctValue.value = res.value;
+      emit('change', res.value);
       selectOpen.value = false;
       Bus.$emit('chooseActive', { token: token, value: selctValue.value });
     }
