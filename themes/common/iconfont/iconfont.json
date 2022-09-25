@@ -6,7 +6,7 @@
   "description": "Yellow/Black/White",
   "glyphs": [
     {
-      "icon_id": "31943643",
+      "icon_id": "31969859",
       "name": "line-more",
       "font_class": "line-more",
       "unicode": "e7d5",
@@ -372,7 +372,7 @@
     {
       "icon_id": "31916772",
       "name": "fill-affiliate",
-      "font_class": "fill-affiliate1",
+      "font_class": "fill-affiliate",
       "unicode": "e7a4",
       "unicode_decimal": 59300
     },
