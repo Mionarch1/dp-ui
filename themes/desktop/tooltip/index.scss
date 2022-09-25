@@ -24,7 +24,7 @@
 		/* 超过了100%就是反向距离 */
 		opacity: 0;
 		/* 延迟一秒再变为清晰度是1 */
-		transition: all 1s;
+		@include transition-default();
 
 		/* 设置提示框的after属性，并添加一个尖角 */
 		&:hover {
