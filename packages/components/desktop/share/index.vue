@@ -61,7 +61,14 @@ const key = computed(() => {
   return props.network.toLocaleLowerCase();
 });
 const rawLink = computed(() => {
-  return props.networks[key];
+  const ua = navigator.userAgent.toLowerCase();
+  if (
+    key.value === 'sms' &&
+    (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1)
+  ) {
+    return networks.value[key.value].replace(':?', ':&');
+  }
+  return networks.value[key.value];
 });
 const encodedHashtags = computed(() => {
   if (props.key === 'facebook' && props.hashtags.length) {
@@ -73,13 +80,14 @@ const shareLink = computed(() => {
   let link = rawLink;
   if (key === 'twitter') {
     if (!props.hashtags.length) {
-      link = link.replace('&hashtags=@h', '');
+      link.value = link.value.replace('&hashtags=@h', '');
     }
     if (!props.twitterUser.length) {
-      link = link.replace('@tu', '');
+      link.value = link.value.replace('@tu', '');
     }
   }
-  return link
+  console.log(link.value);
+  return link.value
     .replace(/@tu/g, '&via=' + encodeURIComponent(props.twitterUser))
     .replace(/@u/g, encodeURIComponent(props.url))
     .replace(/@t/g, encodeURIComponent(props.title))
@@ -111,18 +119,19 @@ const openSharing = () => {
     page_url: window.location.href,
     sharing_platform: props.network
   });
+  resizePopup();
   window.open(
-    shareLink,
+    shareLink.value,
     '',
     'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=' +
       props.popup.height +
       ',width=' +
       props.popup.width +
       ',top=' +
-      popupTop +
+      popupTop.value +
       ',left=' +
-      popupLeft
+      popupLeft.value
   );
-  emit('click', shareLink);
+  emit('click', shareLink.value);
 };
 </script>
