@@ -17,7 +17,7 @@ To trigger an operation.
   </dp-select>
   <br />
   <br />
-  <dp-select>
+  <dp-select @change="selectChange">
     <template #selectDropDown>
       <dp-select-item value="扬州市">扬州市</dp-select-item>
       <dp-select-item value="南京市">南京市</dp-select-item>
@@ -28,6 +28,15 @@ To trigger an operation.
     </template>
   </dp-select>
 </template>
+<script>
+  export default {
+    methods: {
+      selectChange(item) {
+        console.log(item);
+      }
+    }
+  };
+</script>
 ```
 
 :::
@@ -42,3 +51,9 @@ dp-select-item 为 select 下选项子标签(选项标签), dp-select-item 内�
 | -------- | ------------------------------------------------------------------------- | ------ | ------ | --------- |
 | selected | 默认选中的值,如果不填或为空则默认选中插槽中的第一个 tk-select-item 中的值 | String |        | `default` |
 | value    | 词选项默认返回的数据 (必须设置)                                           | String |        |           |
+
+### Event
+
+| 事件名 | 说明                  | 参数        |
+| ------ | --------------------- | ----------- |
+| change | select 选项改变时触发 | ----------- |

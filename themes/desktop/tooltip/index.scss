@@ -24,7 +24,7 @@
 		/* 超过了100%就是反向距离 */
 		opacity: 0;
 		/* 延迟一秒再变为清晰度是1 */
-		transition: all 1s;
+		@include transition-default();
 
 		/* 设置提示框的after属性，并添加一个尖角 */
 		&:hover {
@@ -34,14 +34,14 @@
 	}
 
 	.bottom {
-		bottom: -150%;
+		top: calc(100% + 15px);
 		left: 50%;
 		transform: translate(-50%, 0);
 
 		&::after {
 			content: "";
 			position: absolute;
-			top: -33%;
+			bottom: 100%;
 			left: 50%;
 			border-width: 10px;
 			transform: translate(-50%, 0);
@@ -51,7 +51,7 @@
 	}
 
 	.top {
-		bottom: 125%;
+		bottom: calc(100% + 15px);
 		left: 50%;
 		transform: translate(-50%, 0);
 
@@ -68,14 +68,14 @@
 	}
 
 	.left {
-		top: -10%;
-		left: -195%;
-
+		top: 50%;
+		right: calc(100% + 15px);
+		transform: translate(0,-50%);
 		&::after {
 			content: "";
 			position: absolute;
 			top: 50%;
-			right: -10%;
+			right: -20px;
 			border-width: 10px;
 			border-style: solid;
 			transform: translate(0, -50%);
@@ -84,14 +84,14 @@
 	}
 
 	.right {
-		top: -10%;
-		right: -195%;
-
+		top: 50%;
+		left: calc(100% + 15px);
+		transform: translate(0,-50%);
 		&::after {
 			content: "";
 			position: absolute;
 			top: 50%;
-			left: -10%;
+			left: -20px;
 			border-width: 10px;
 			border-style: solid;
 			transform: translate(0, -50%);

@@ -1,0 +1,35 @@
+.dp-select-drop {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  &-selection {
+    cursor: pointer;
+    box-sizing: border-box;
+    user-select: none;
+    &-rendered {
+      height: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+  &-down {
+    margin: 0px;
+    margin-top: 13px;
+    position: absolute;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.select-drop-fade-enter-active,
+.select-drop-fade-leave-active {
+  @include transition-drop-in();
+}
+.select-drop-fade-enter,
+.select-drop-fade-leave-active {
+  @include transition-drop-out();
+}

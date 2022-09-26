@@ -35,10 +35,12 @@
     .dp-input {
       border-radius: unset;
       border: none;
-      border-bottom: 1px solid $color-black-200;
+      border-bottom: 1px solid $color-black-400;
       height: 52px;
       padding: 0;
+      background: transparent;
       &-inner {
+        background: transparent;
         color: $color-white-default;
         &::placeholder {
           color: $color-black-400;
@@ -57,6 +59,7 @@
     }
     &.is-disabled {
       .dp-input {
+        padding: 0 12px;
         border-radius: $radius-small;
         &,
         &-inner {

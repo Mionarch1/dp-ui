@@ -1,22 +1,24 @@
 # Message
 
-## demo
+#### Base use
 
 :::demo
 
 ```html
 <template>
-  <dp-button @click="handleClick()">message</dp-button>
+  <dp-button @click="handleClick('success')">success message</dp-button>
+  <dp-button @click="handleClick('warning')">warning message</dp-button>
+  <dp-button @click="handleClick('error')">error message</dp-button>
 </template>
 
 <script>
   export default {
     methods: {
-      handleClick() {
-        this.$message('12312')
+      handleClick(type) {
+        this.$dpmessage[type](`${type} message`);
       }
     }
-  }
+  };
 </script>
 ```
 
@@ -24,16 +26,15 @@
 
 ### Attributes
 
-| 参数            | 说明                              | 类型    | 可选值                 | 默认值  |
-| --------------- | --------------------------------- | ------- | ---------------------- | ------- |
-| round           | 圆角                              | Boolean | true / false           | `false` |
-| size            | 尺寸                              | String  | large / middle / small | `small` |
-| backgroundColor | 背景颜色                          | String  |                        |         |
-| color           | 文字颜色                          | String  |                        |         |
-| borderColor     | border 颜色（默认和背景颜色相同） | String  |                        |         |
+| 参数     | 说明                 | 类型   | 可选值 | 默认值 |
+| -------- | -------------------- | ------ | ------ | ------ |
+| content  | 消息文字             | String | ——     | ——     |
+| duration | 显示时间，单位为毫秒 | Number | ——     | `3000` |
 
-### Event
+### Methods
 
-| 事件名 | 说明                  | 默认值 |
-| ------ | --------------------- | ------ |
-| click  | 点击 Tag 时触发的事件 |        |
+| 方法名  | 说明     |
+| ------- | -------- |
+| success | 成功消息 |
+| warning | 警告消息 |
+| error   | 错误消息 |
