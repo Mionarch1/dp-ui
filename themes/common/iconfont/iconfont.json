@@ -6,7 +6,35 @@
   "description": "Yellow/Black/White",
   "glyphs": [
     {
-      "icon_id": "31943643",
+      "icon_id": "32032459",
+      "name": "color-google",
+      "font_class": "color-google",
+      "unicode": "e7d6",
+      "unicode_decimal": 59350
+    },
+    {
+      "icon_id": "32032460",
+      "name": "color-lazada",
+      "font_class": "color-lazada",
+      "unicode": "e7d7",
+      "unicode_decimal": 59351
+    },
+    {
+      "icon_id": "32032462",
+      "name": "color-shopee",
+      "font_class": "color-shopee",
+      "unicode": "e7d8",
+      "unicode_decimal": 59352
+    },
+    {
+      "icon_id": "32032463",
+      "name": "color-whatsapp",
+      "font_class": "color-whatsapp",
+      "unicode": "e7d9",
+      "unicode_decimal": 59353
+    },
+    {
+      "icon_id": "31969859",
       "name": "line-more",
       "font_class": "line-more",
       "unicode": "e7d5",
@@ -372,7 +400,7 @@
     {
       "icon_id": "31916772",
       "name": "fill-affiliate",
-      "font_class": "fill-affiliate1",
+      "font_class": "fill-affiliate",
       "unicode": "e7a4",
       "unicode_decimal": 59300
     },

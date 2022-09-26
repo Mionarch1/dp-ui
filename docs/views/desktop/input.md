@@ -243,6 +243,60 @@ Input 组件支持禁用.
 
 :::
 
+#### Dark
+
+Input 组件暗黑模式.
+
+:::demo
+
+```html
+<template>
+  <div class="demo-input-dark">
+    <dp-input
+      class="input-item"
+      v-model="value1"
+      max-length="20"
+      show-count
+      dark
+    />
+    <dp-input
+      class="input-item"
+      v-model="value2"
+      max-length="20"
+      show-count
+      clearable
+      disabled
+      dark
+    />
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        value1: '',
+        value2: 'disabled status'
+      };
+    }
+  };
+</script>
+
+<style>
+  .demo-input-dark {
+    background: #333333;
+    width: 400px;
+    height: 160px;
+  }
+  .input-item {
+    width: 312px;
+    margin: 10px;
+  }
+</style>
+```
+
+:::
+
 ### Attributes
 
 | 参数             | 说明                   | 类型            | 可选值                | 默认值  |

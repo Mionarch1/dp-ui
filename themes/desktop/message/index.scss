@@ -1,8 +1,15 @@
 .dp-message {
+  z-index: 2000;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   min-width: 430px;
+}
+
+@media screen and (max-width: 768px) {
+  .dp-message {
+    min-width: 312px;
+  }
 }
 
 .message-slideY-enter-active {

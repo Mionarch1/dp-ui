@@ -24,7 +24,7 @@
             <div class="dp-dialog-header-item">
               <dp-icon
                 name="dpui-line-x"
-                type="line"
+                type="normal"
                 @click="handleToggle(false)"
                 size="16px"
               />

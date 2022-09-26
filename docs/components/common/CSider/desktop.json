@@ -41,6 +41,11 @@
             "path": "/desktop/input"
           },
           {
+            "nameZh": "弹性输入框",
+            "nameEn": "Field",
+            "path": "/desktop/field"
+          },
+          {
             "nameZh": "选择器",
             "nameEn": "Select",
             "path": "/desktop/select"
@@ -54,6 +59,11 @@
             "nameZh": "开关",
             "nameEn": "Switch",
             "path": "/desktop/switch"
+          },
+          {
+            "nameZh": "滑块",
+            "nameEn": "Slider",
+            "path": "/desktop/slider"
           },
           {
             "nameZh": "日期选择器",
@@ -124,6 +134,11 @@
             "nameZh": "文字提示",
             "nameEn": "Tooltip",
             "path": "/desktop/tooltip"
+          },
+          {
+            "nameZh": "气泡卡片",
+            "nameEn": "Popover",
+            "path": "/desktop/popover"
           }
         ]
       }

@@ -20,7 +20,7 @@
             <div class="picker-select-left">
               <dp-icon
                 name="dpui-line-chevron-left"
-                type="line"
+                type="normal"
                 @click="onMonthChange('reduce')"
                 size="16px"
               />
@@ -34,7 +34,7 @@
             <div class="picker-select-right">
               <dp-icon
                 name="dpui-line-chevron-right"
-                type="line"
+                type="normal"
                 @click="onMonthChange('add')"
                 size="16px"
               />
