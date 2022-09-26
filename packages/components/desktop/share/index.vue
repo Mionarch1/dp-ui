@@ -107,10 +107,10 @@ const resizePopup = () => {
     ($window.screenTop !== undefined ? $window.screenTop : $window.screenY);
 };
 const openSharing = () => {
-  // proxy?.$amplitude.getInstance().logEvent('dp-b:share page successfully', {
-  //   page_url: window.location.href,
-  //   sharing_platform: props.network
-  // });
+  proxy?.$amplitude.getInstance().logEvent('dp-b:share page successfully', {
+    page_url: window.location.href,
+    sharing_platform: props.network
+  });
   window.open(
     shareLink,
     '',
