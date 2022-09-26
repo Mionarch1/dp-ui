@@ -1,0 +1,43 @@
+.dp-popover {
+  position: relative;
+  display: inline-block;
+  &-panel {
+    margin-top: 6px;
+    background: $color-black-500;
+    border: 1px solid $color-black-400;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 9;
+
+    &.is-left {
+      left: 0px;
+    }
+    &.is-center {
+      left: 50%;
+    }
+    &.is-right {
+      right: 0px;
+    }
+  }
+  &-badge {
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    border-style: solid;
+    border-width: 6px;
+    z-index: 8;
+    border-color: transparent transparent $color-black-400 transparent;
+    &::before {
+      content: ' ';
+      position: absolute;
+
+      left: -6px;
+      top: -4px;
+      border-style: solid;
+      border-width: 6px;
+      border-color: transparent transparent $color-black-400 transparent;
+    }
+  }
+}

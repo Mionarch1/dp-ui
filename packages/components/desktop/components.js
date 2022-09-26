@@ -18,3 +18,6 @@ export { default as DpMessage } from './message';
 export { default as DpLoading } from './loading';
 export { default as DpSkeleton } from './skeleton';
 export { default as DpSelectDrop } from './select-drop';
+export { default as DpField } from './field';
+export { default as DpPopover } from './popover';
+export { default as DpSlider } from './slider';
