@@ -18,7 +18,7 @@ const props = defineProps({
   unit: { type: String, default: '' },
   disabled: { type: Boolean, default: false }
 });
-const emits = defineEmits(['update:modelValue']);
+const emits = defineEmits(['update:modelValue','input']);
 
 const barEle = ref(null);
 const stepEle = ref(null);
@@ -83,6 +83,7 @@ watch(
   () => inputValue.value,
   value => {
     emits('update:modelValue', value);
+    emits('input', value);
     btnEle.value.style.left = width.value + 'px';
     stepEle.value.style.width = stepWidth.value + 'px';
   }
