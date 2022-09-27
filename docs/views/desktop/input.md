@@ -72,6 +72,71 @@ Input 组件提供自定义校验方法.
 
 :::
 
+#### Custom Validate
+
+Input 组件提供自定义校验方法.
+
+:::demo 通过设置`validate-trigger=custom` 与 组件暴露的`handleError`方法搭配使用
+
+```html
+<template>
+  <div class="demo-input-container">
+    <dp-input
+      class="input-item"
+      v-model="value"
+      ref="inputRef"
+      style="width: 312px"
+      :on-validate="verify"
+      validate-trigger="blur"
+    />
+    <dp-button class="input-item" size="middle" @click="handleVerify()">
+      custom verify
+    </dp-button>
+  </div>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        value: ''
+      };
+    },
+    methods: {
+      handleVerify() {
+        this.$refs.inputRef.handleError();
+      },
+      verify() {
+        if (this.value) {
+          return {
+            code: true
+          };
+        }
+        return {
+          code: false,
+          message: 'value is not exist'
+        };
+      }
+    }
+  };
+</script>
+
+<style>
+  .demo-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .input-item {
+    width: 312px;
+    margin: 10px;
+  }
+</style>
+```
+
+:::
+
 #### Icon
 
 Input 组件支持 icon 以及插槽.
