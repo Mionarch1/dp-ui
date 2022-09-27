@@ -22,6 +22,8 @@
     height: 16px;
   }
   &-content {
+    display: flex;
+    justify-content: flex-start;
     .dp-alert-icon {
       margin-right: 8px;
       &.is-warning {

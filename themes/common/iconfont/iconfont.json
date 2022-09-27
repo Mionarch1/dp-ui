@@ -6,6 +6,13 @@
   "description": "Yellow/Black/White",
   "glyphs": [
     {
+      "icon_id": "32057216",
+      "name": "line-voucher-unselected",
+      "font_class": "line-voucher-unselected",
+      "unicode": "e7da",
+      "unicode_decimal": 59354
+    },
+    {
       "icon_id": "32032459",
       "name": "color-google",
       "font_class": "color-google",
