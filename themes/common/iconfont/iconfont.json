@@ -6,6 +6,62 @@
   "description": "Yellow/Black/White",
   "glyphs": [
     {
+      "icon_id": "24937912",
+      "name": "facebook",
+      "font_class": "color-facebook",
+      "unicode": "e712",
+      "unicode_decimal": 59154
+    },
+    {
+      "icon_id": "24937914",
+      "name": "insta",
+      "font_class": "color-insta",
+      "unicode": "e715",
+      "unicode_decimal": 59157
+    },
+    {
+      "icon_id": "24937915",
+      "name": "tiktok",
+      "font_class": "color-tiktok",
+      "unicode": "e716",
+      "unicode_decimal": 59158
+    },
+    {
+      "icon_id": "24937916",
+      "name": "line",
+      "font_class": "color-line",
+      "unicode": "e717",
+      "unicode_decimal": 59159
+    },
+    {
+      "icon_id": "24937917",
+      "name": "whatsapp",
+      "font_class": "color-full-whatsapp",
+      "unicode": "e718",
+      "unicode_decimal": 59160
+    },
+    {
+      "icon_id": "24937918",
+      "name": "tritter",
+      "font_class": "color-twitter",
+      "unicode": "e719",
+      "unicode_decimal": 59161
+    },
+    {
+      "icon_id": "32092234",
+      "name": "check-line-copy",
+      "font_class": "line-tick",
+      "unicode": "e7dc",
+      "unicode_decimal": 59356
+    },
+    {
+      "icon_id": "32080800",
+      "name": "color-edit",
+      "font_class": "color-edit",
+      "unicode": "e7db",
+      "unicode_decimal": 59355
+    },
+    {
       "icon_id": "32057216",
       "name": "line-voucher-unselected",
       "font_class": "line-voucher-unselected",
