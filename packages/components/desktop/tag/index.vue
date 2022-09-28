@@ -2,7 +2,6 @@
   <div
     :class="[
       'dp-tag',
-      type ? `dp-tag-${type}` : '',
       round ? 'dp-tag-round' : '',
       size ? `dp-tag-${size}` : ''
     ]"

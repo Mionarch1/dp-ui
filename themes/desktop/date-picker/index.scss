@@ -189,7 +189,7 @@
   width: 264px;
   height: 48px;
   background: #ffffff;
-  border: 1px solid $color-yellow-500;
+  border: 1px solid $color-black-200;
   border-radius: 8px;
   input {
     border: 0;
@@ -201,6 +201,16 @@
   }
   input:focus {
     outline: none;
+  }
+
+  &:hover {
+    border: 1px solid $color-black-300;
+  }
+}
+.isopen {
+  border: 1px solid $color-yellow-500 !important;
+  i {
+    transform: rotate(180deg);
   }
 }
 .isright {

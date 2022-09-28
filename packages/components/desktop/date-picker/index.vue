@@ -1,11 +1,15 @@
 <template>
   <div class="dp-date-picker" ref="date_picker">
-    <section class="dp-data-input" @click="onOpen">
+    <section
+      :class="['dp-data-input', { isopen: state.visibled }]"
+      @click="onOpen"
+    >
       <input
         :value="modelValue ? dayjs(modelValue).format(props.format) : ''"
         :placeholder="hint"
         readonly
       />
+      <dp-icon name="dpui-line-chevron-down" type="normal" />
     </section>
     <transition name="option-slide">
       <div

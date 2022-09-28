@@ -134,7 +134,6 @@ const innerStyle = computed(() => {
 
 const handleError = () => {
   const { code, message } = props.onValidate();
-  console.log(code, message);
   validate.code = code;
   validate.message = message || '';
 };
