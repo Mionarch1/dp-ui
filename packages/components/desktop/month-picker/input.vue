@@ -1,5 +1,5 @@
 <template>
-  <div class="dp-input">
+  <div class="dp-input" @click="onFocus">
     <slot name="prefix" class="dp-input-prefix"></slot>
     <input
       :value="value"
@@ -90,7 +90,7 @@ const onClear = () => {
   display: inline-flex;
   padding: 0 15px;
   border-radius: 8px;
-  // border: 1px solid #ffdd00;
+  font-family: 'Plus Jakarta Sans';
   border: 1px solid #c6c6c6;
   &:hover {
     border-color: #959595;
