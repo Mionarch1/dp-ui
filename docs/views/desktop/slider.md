@@ -45,3 +45,8 @@
 | min        | 最小限制 | String / Number | ——           | `0`     |
 | unit       | 单位     | String          | ——           | ——      |
 | disabled   | 禁用     | Boolean         | true / false | `false` |
+
+### Event
+| 事件名   | 说明            | 参数   |
+| ------- | -------------- | --------- |
+| input   | value改变触发的函数            | -   |
