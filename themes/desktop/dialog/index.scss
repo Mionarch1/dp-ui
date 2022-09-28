@@ -33,11 +33,20 @@
       justify-content: center;
       align-items: center;
       gap: 16px;
-      &-item {
+      &-close {
         width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        align-items: center;
+        padding: 0px;
+        gap: 10px;
+      }
+      &-back {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: center;
         padding: 0px;
         gap: 10px;
@@ -91,6 +100,12 @@
       }
       .dp-dialog-header {
         color: $color-white;
+        span {
+          color: $color-white;
+        }
+        i {
+          color: $color-white !important;
+        }
       }
       .dp-dialog-footer {
         color: $color-white;

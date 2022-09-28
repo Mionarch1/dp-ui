@@ -21,9 +21,20 @@
           :style="props.innerStyle"
         >
           <header class="dp-dialog-header" v-if="props.showHeader">
-            <div class="dp-dialog-header-item">
+            <div
+              v-if="props.closeType == 'close'"
+              class="dp-dialog-header-close"
+            >
               <dp-icon
                 name="dpui-line-x"
+                type="normal"
+                @click="handleToggle(false)"
+                size="16px"
+              />
+            </div>
+            <div v-else class="dp-dialog-header-back">
+              <dp-icon
+                name="dpui-line-chevron-left"
                 type="normal"
                 @click="handleToggle(false)"
                 size="16px"
@@ -53,7 +64,8 @@ const props = defineProps({
   title: { type: String, default: '' },
   theme: { type: String, default: 'white' }, // white | black
   innerStyle: { type: Object, default: () => {} },
-  dark: { type: Boolean, default: false }
+  dark: { type: Boolean, default: false },
+  closeType: { type: String, default: 'close' } // back | close
 });
 
 const emit = defineEmits([
