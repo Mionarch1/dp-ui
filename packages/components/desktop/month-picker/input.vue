@@ -1,5 +1,5 @@
 <template>
-  <div class="dp-input">
+  <div class="dp-input" @click="onFocus">
     <slot name="prefix" class="dp-input-prefix"></slot>
     <input
       :value="value"
@@ -18,11 +18,6 @@
       <p class="after-count" v-if="showCount">
         {{ props.value?.length }}/{{ max }}
       </p>
-      <!-- <i
-        class="meta-iconfont meta-Close dp-input-icon-close"
-        @touchstart.passive="onClear"
-        v-show="clear && !!value"
-      ></i> -->
       <dp-icon :name="icon" type="normal" size="12px" />
     </div>
   </div>
@@ -94,8 +89,13 @@ const onClear = () => {
   line-height: 48px;
   display: inline-flex;
   padding: 0 15px;
-  border-radius: 4px;
-  border: 1px solid #ffdd00;
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans';
+  border: 1px solid #c6c6c6;
+  &:hover {
+    border-color: #959595;
+  }
+
   input {
     border: none;
   }

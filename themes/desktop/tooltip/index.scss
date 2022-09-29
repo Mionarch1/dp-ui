@@ -8,7 +8,7 @@
 		.dp-tooltiptext {
 			visibility: visible;
 			opacity: 1;
-			background-color: $color-black-400;
+			background-color: $color-black-500;
 			color: $color-white-default;
 		}
 	}
@@ -46,7 +46,7 @@
 			border-width: 10px;
 			transform: translate(-50%, 0);
 			border-style: solid;
-			border-color: transparent transparent $color-black-400 transparent;
+			border-color: transparent transparent $color-black-500 transparent;
 		}
 	}
 
@@ -63,7 +63,7 @@
 			transform: translate(-50%, 0);
 			border-width: 10px;
 			border-style: solid;
-			border-color: $color-black-400 transparent transparent transparent;
+			border-color: $color-black-500 transparent transparent transparent;
 		}
 	}
 
@@ -79,7 +79,7 @@
 			border-width: 10px;
 			border-style: solid;
 			transform: translate(0, -50%);
-			border-color: transparent transparent transparent $color-black-400 ;
+			border-color: transparent transparent transparent $color-black-500 ;
 		}
 	}
 
@@ -95,7 +95,7 @@
 			border-width: 10px;
 			border-style: solid;
 			transform: translate(0, -50%);
-			border-color: transparent $color-black-400 transparent transparent;
+			border-color: transparent $color-black-500 transparent transparent;
 		}
 	}
 }

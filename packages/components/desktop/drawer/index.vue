@@ -19,7 +19,8 @@
           'dp-drawer',
           `dp-drawer-${direction}`,
           `dp-drawer-${direction}-out`,
-          modelValue && `dp-drawer-${direction}-in`
+          modelValue && `dp-drawer-${direction}-in`,
+          { 'is-dark': dark }
         ]"
         :style="style"
       >
@@ -32,7 +33,7 @@
             type="normal"
           />
           <dp-icon
-            :class="['icon-close',`icon-close-${closePosition}`]"
+            :class="['icon-close', `icon-close-${closePosition}`]"
             v-show="!isNest"
             name="dpui-line-x"
             type="normal"
@@ -61,7 +62,8 @@ const props = defineProps({
   borderRadius: { type: String, default: '0px' },
   isNest: { type: Boolean, default: false },
   showHeader: { type: Boolean, default: true },
-  closePosition: { type: String, default: 'right' }
+  closePosition: { type: String, default: 'right' },
+  dark: { type: Boolean, default: false }
 });
 const borderRadiusDeal = () => {
   switch (props.direction) {
