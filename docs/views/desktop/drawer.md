@@ -29,6 +29,7 @@ Exhale a temporary sidebar that supports up, down, left and right.
 	  border-radius="24px"
 	  direction="bottom"
     :isNest="true"
+    dark
 	>
 	Hi,desty!!!!
 	</dp-drawer>
@@ -68,7 +69,8 @@ export default {
 | width    | 尺寸                      | String  |                                    | `250px`  |
 | borderRadius    | 圆角属性            | String  |                                    | `-`  |
 | isNest    |是否为嵌套的Drawer，嵌套必须指定该属性并赋值为 true   | Boolean  |               | `-`  |
-| closePosition    | closeIcon的位置   | String  | left/right           | `right`  |
+| closePosition    | closeIcon的位置   | String  | left/right                           | `right`  |
+| dark    | 暗黑模式        | Boolean     |  true /false                                 | `flase`  |
 
 ### Event
 | 事件名   | 说明            | 参数   |

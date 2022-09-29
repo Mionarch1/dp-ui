@@ -9,7 +9,6 @@
     ></dp-input>
     <transition name="option-slide">
       <div class="dp-picker-inner" v-if="state.visible" @click.self="onClose">
-        <!-- <div class="picker-arrow"></div> -->
         <div class="dp-picker-box">
           <div class="dp-picker-select">
             <div class="picker-select-left">
