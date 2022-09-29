@@ -1,8 +1,8 @@
 @font-face {
   font-family: "dpui-iconfont"; /* Project id 3658413 */
-  src: url('@themes/common/iconfont/iconfont.woff2?t=1664248812792') format('woff2'),
-       url('@themes/common/iconfont/iconfont.woff?t=1664248812792') format('woff'),
-       url('@themes/common/iconfont/iconfont.ttf?t=1664248812792') format('truetype');
+  src: url('@themes/common/iconfont/iconfont.woff2?t=1664359570905') format('woff2'),
+       url('@themes/common/iconfont/iconfont.woff?t=1664359570905') format('woff'),
+       url('@themes/common/iconfont/iconfont.ttf?t=1664359570905') format('truetype');
 }
 
 .dpui-iconfont {
@@ -11,6 +11,38 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dpui-color-facebook:before {
+  content: "\e712";
+}
+
+.dpui-color-insta:before {
+  content: "\e715";
+}
+
+.dpui-color-tiktok:before {
+  content: "\e716";
+}
+
+.dpui-color-line:before {
+  content: "\e717";
+}
+
+.dpui-color-full-whatsapp:before {
+  content: "\e718";
+}
+
+.dpui-color-twitter:before {
+  content: "\e719";
+}
+
+.dpui-line-tick:before {
+  content: "\e7dc";
+}
+
+.dpui-color-edit:before {
+  content: "\e7db";
 }
 
 .dpui-line-voucher-unselected:before {
