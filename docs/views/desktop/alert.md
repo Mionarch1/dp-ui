@@ -28,7 +28,15 @@ Alert 支持开启 icon.
   <br />
   <dp-alert type="warning" icon>123</dp-alert>
   <br />
-  <dp-alert type="error" icon>123</dp-alert>
+  <dp-alert type="error" icon>
+    <div>
+      <div>this is a block element title</div>
+      <div>this is a block element content1</div>
+      <div>this is a block element content2</div>
+      <div>this is a block element content3</div>
+      <div>this is a block element content4</div>
+    </div>
+  </dp-alert>
 </template>
 ```
 

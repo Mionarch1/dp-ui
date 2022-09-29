@@ -65,6 +65,7 @@ Dialog 弹出一个对话框，适合需要定制性更大的场景。。
     :innerStyle="{ width: '312px' }"
     @onOpened="onOpened"
     @on-closed="onClosed"
+    close-type="back"
     dark
   >
     <span>

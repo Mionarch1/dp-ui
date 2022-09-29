@@ -42,7 +42,7 @@
 </template>
 
 <script setup>
-import { computed, toRefs, ref, reactive, useSlots } from 'vue';
+import { computed, toRefs, ref, reactive, useSlots, watch } from 'vue';
 
 const props = defineProps({
   showCount: { type: Boolean, default: false },
@@ -58,9 +58,9 @@ const props = defineProps({
   suffixIcon: { type: String, default: '' },
   validateTrigger: {
     type: String,
-    default: 'blur',
+    default: 'custom',
     validator: trigger => {
-      return ['blur', 'input'].includes(trigger);
+      return ['custom', 'blur', 'input'].includes(trigger);
     }
   },
   onValidate: {
@@ -81,7 +81,7 @@ const slots = useSlots();
 const isBlur = ref(true);
 const isFocus = ref(false);
 const validate = reactive({
-  trigger: props.validateTrigger || 'blur', // blur / input
+  trigger: props.validateTrigger || 'custom', // blur / input / custom
   code: true,
   message: ''
 });
@@ -172,4 +172,8 @@ const handleClear = () => {
   emit('clear');
   emit('input', '');
 };
+
+defineExpose({
+  handleError
+});
 </script>
