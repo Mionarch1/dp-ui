@@ -17,7 +17,8 @@ module.exports = {
     alias: {
       '@docs': resolve('../docs'),
       '@packages': resolve('../packages'),
-      '@themes': resolve('../themes')
+      '@themes': resolve('../themes'),
+      '@utils':resolve('../utils')
     },
     extensions: ['.js', '.jsx', '.json', '.tsx', '.ts', '.vue', '.css', '.scss', '.md']
   },

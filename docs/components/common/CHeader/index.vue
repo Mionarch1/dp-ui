@@ -2,7 +2,8 @@
   <div class="c-header">
     <img
       class="c-header-logo"
-      src="https://static.desty.app/desty-page-v2/DP-page/poseidon/footer/desty-page-footer-logo.svg"
+      src="@docs/assets/mionarch.jpg"
+      @click="showInfo('success')"
     />
     <div class="c-header-navs">
       <div
@@ -19,7 +20,7 @@
         {{ nav.name }}
       </div>
       <svg
-        @click="goLink('https://code.desty.app:11443/pinganzhang/dp-ui')"
+        @click="goLink('https://github.com/Mionarch1/dp-ui')"
         width="24"
         height="24"
         class="c-header-code"
@@ -66,12 +67,19 @@
 </template>
 
 <script setup>
+import { ref, getCurrentInstance, watch, onMounted, onUnmounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+const { debounce, throttle } = require('@utils/funcHandle/index.js');
 
+const stepWord = ref(0);
+const lastClickTime = ref(0);
+const timer = ref(null);
+
+const { proxy } = getCurrentInstance();
 const route = useRoute();
 const router = useRouter();
 const navs = [
-{
+  {
     name: 'Guide',
     type: 'guide',
     path: '/guide'
@@ -96,6 +104,40 @@ const navs = [
 const goRoute = route => {
   router.push(route.path);
 };
+const showInfo = type => {
+  lastClickTime.value = new Date().getTime() * 1;
+  throttle((type = 'success') => {
+    if (stepWord.value === 0) {
+      proxy.$dpmessage[type](`Hello,I'm Mionarch`);
+      stepWord.value++;
+    } else if (stepWord.value === 1) {
+      proxy.$dpmessage[type](`Welcome to my displayUi`);
+      stepWord.value++;
+    } else if (stepWord.value === 2) {
+      proxy.$dpmessage[type](`Hope you have a good day!`);
+      stepWord.value = 0;
+    }
+  }, 1000)();
+};
+
+const isTimeOut = () => {
+  timer.value = setInterval(() => {
+    let nowTime = new Date().getTime(); // 获取当前时间
+    // 假设我们需求是：5秒钟不进行点击操作，就重新提示
+    if (nowTime - lastClickTime.value > 1000 * 5) {
+      // 这里要清除定时器，结束任务
+      clearInterval(timer);
+      stepWord.value = 0;
+    }
+  }, 1000);
+};
+onMounted(() => {
+  isTimeOut();
+});
+
+onUnmounted(() => {
+  timer.value = null;
+});
 
 const goLink = link => {
   window.open(link, '_blank');
@@ -111,8 +153,10 @@ const goLink = link => {
   align-items: center;
   padding: 0 20px;
   &-logo {
-    width: 86px;
-    height: 30px;
+    width: 40px;
+    margin-left: 40px;
+    border-radius: 50%;
+    overflow: hidden;
     cursor: pointer;
   }
   &-navs {
