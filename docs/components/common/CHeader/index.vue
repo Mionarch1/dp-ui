@@ -104,26 +104,42 @@ const navs = [
 const goRoute = route => {
   router.push(route.path);
 };
-const showInfo = type => {
+// 节流失败案例
+// const showInfo = type => {
+//   lastClickTime.value = new Date().getTime() * 1;
+//   throttle((type = 'success') => {
+//     if (stepWord.value === 0) {
+//       proxy.$dpmessage[type](`Hello,I'm Mionarch`);
+//       stepWord.value++;
+//     } else if (stepWord.value === 1) {
+//       proxy.$dpmessage[type](`Welcome to my displayUi`);
+//       stepWord.value++;
+//     } else if (stepWord.value === 2) {
+//       proxy.$dpmessage[type](`Hope you have a good day!`);
+//       stepWord.value = 0;
+//     }
+//   }, 3000)();
+// };
+
+// 节流
+const showInfo = throttle((type = 'success') => {
   lastClickTime.value = new Date().getTime() * 1;
-  throttle((type = 'success') => {
-    if (stepWord.value === 0) {
-      proxy.$dpmessage[type](`Hello,I'm Mionarch`);
-      stepWord.value++;
-    } else if (stepWord.value === 1) {
-      proxy.$dpmessage[type](`Welcome to my displayUi`);
-      stepWord.value++;
-    } else if (stepWord.value === 2) {
-      proxy.$dpmessage[type](`Hope you have a good day!`);
-      stepWord.value = 0;
-    }
-  }, 1000)();
-};
+  if (stepWord.value === 0) {
+    proxy.$dpmessage[type](`Hello,I'm Mionarch`);
+    stepWord.value++;
+  } else if (stepWord.value === 1) {
+    proxy.$dpmessage[type](`Welcome to my displayUi`);
+    stepWord.value++;
+  } else if (stepWord.value === 2) {
+    proxy.$dpmessage[type](`Hope you have a good day!`);
+    stepWord.value = 0;
+  }
+}, 3000);
 
 const isTimeOut = () => {
   timer.value = setInterval(() => {
     let nowTime = new Date().getTime(); // 获取当前时间
-    // 假设我们需求是：5秒钟不进行点击操作，就重新提示
+    // 5秒钟不进行点击操作，就重新提示
     if (nowTime - lastClickTime.value > 1000 * 5) {
       // 这里要清除定时器，结束任务
       clearInterval(timer);
