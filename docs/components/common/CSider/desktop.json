@@ -29,6 +29,11 @@
             "nameZh": "标签",
             "nameEn": "Tag",
             "path": "/desktop/tag"
+          },
+          {
+            "nameZh": "评分",
+            "nameEn": "Rate",
+            "path": "/desktop/rate"
           }
         ]
       },

@@ -21,3 +21,4 @@ export { default as DpSelectDrop } from './select-drop';
 export { default as DpField } from './field';
 export { default as DpPopover } from './popover';
 export { default as DpSlider } from './slider';
+export { default as DpRate } from './rate';

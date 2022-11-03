@@ -8,10 +8,11 @@
       :icon="icon"
     ></dp-input>
     <transition name="option-slide">
-      <div class="dp-picker-inner" v-if="state.visible">
+      <div class="dp-picker-inner" v-if="state.visible" @click="handleClick">
         <div class="dp-picker-box">
-          <div class="dp-pick-close" @click="onClose">
+          <div class="dp-pick-close">
             <dp-icon
+              @click="onClose"
               style="width: 16px; height: 16px"
               name="dpui-line-x"
               type="normal"
@@ -65,7 +66,8 @@ import DpInput from './input.vue';
 import { clickOutside } from '@packages/utils/util';
 import { ref, reactive, computed, toRefs } from 'vue';
 
-const vClickOutside = { clickOutside };
+const vClickOutside = clickOutside;
+
 const emit = defineEmits(['update:modelValue', 'change']);
 const props = defineProps({
   modelValue: { type: String, default: '' },
@@ -132,6 +134,12 @@ const onOpen = () => {
 
 const onClose = () => {
   state.visible = false;
+};
+
+const handleClick = e => {
+  if(e.target.className === 'dp-picker-inner') {
+    onClose()
+  }
 };
 
 const onYearChange = (type = 'specify', year = '') => {
