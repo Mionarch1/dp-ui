@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=chat webpack-dev-server --config build/docs/webpack.dev.js --mode development",
     "build:docs": "cross-env NODE_ENV=chat webpack --config build/docs/webpack.docs.js  --mode production",
-    "build:desktop": "rm -rf libs/dp-ui && cross-env NODE_ENV=production webpack --config build/package/webpack.desktop.js",
+    "build": "rm -rf libs/dp-ui && cross-env NODE_ENV=production webpack --config build/package/webpack.desktop.js",
     "build:mobile": "rm -rf libs/dpm-ui && cross-env NODE_ENV=production webpack --config build/package/webpack.mobile.js",
     "build:material": "rm -rf libs/meta-ui && cross-env NODE_ENV=production webpack --config build/package/webpack.material.js",
     "build:libs": "rm -rf libs && yarn build:desktop && yarn build:mobile && yarn build:material"
