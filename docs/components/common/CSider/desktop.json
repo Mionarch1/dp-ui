@@ -104,6 +104,11 @@
             "nameZh": "标签页",
             "nameEn": "Tabs",
             "path": "/desktop/tabs"
+          },
+          {
+            "nameZh": "折叠面板",
+            "nameEn": "Collapse",
+            "path": "/desktop/collapse"
           }
         ]
       },

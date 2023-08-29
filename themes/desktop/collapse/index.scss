@@ -1,0 +1,22 @@
+.dp-collapse-body {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    transition: height 0.4s ease-in-out;
+    position: relative;
+
+    .dp-collapse-text {
+        display: flex;
+        padding: 8px 10px;
+        border-bottom: 1px solid #ccc;
+        background-color: #e9e7df;
+
+        .icon-collapse {
+            margin-right: 8px;
+        }
+    }
+
+    .dp-collapse-child {
+        padding: 8px 10px;
+    }
+}
